@@ -99,13 +99,18 @@ Hello!Hello!Hello!
 進捗状況を表示するプログレスバーを作成します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar [<!repeat=[■, <!calc=<!score=progress>/10>]><!repeat=[□, <!calc=10-<!score=progress>/10>]>] <!score=progress>%
+/execute as @a run scriptevent capi:actionbar [<!repeat=[■, <!calc=floor(<!score=progress>/10)>]><!repeat=[□, <!calc=10-floor(<!score=progress>/10)>]>] <!score=progress>%
 ```
 
 **出力例**（progress=50の場合）:
 ```
 [■■■■■□□□□□] 50%
 ```
+
+:::tip
+`floor()` 関数を使用して、進捗値を10で割った結果を整数に切り捨てています。  
+これにより、0-100の範囲の進捗値が0-10の範囲に正しく変換されます。
+:::
 
 ## 活用例
 
