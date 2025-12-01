@@ -28,10 +28,10 @@ last_update:
 
 | 演算子 | 意味 | 数値 | 文字列 |
 |---|---|---|---|
-| `=` | 等しい | ✅ | ✅ |
-| `!=` | 等しくない | ✅ | ✅ |
-| `<` | より小さい | ✅ | ❌ |
-| `<=` | 以下 | ✅ | ❌ |
+| `=` | 等しい | 対応 | 対応 |
+| `!=` | 等しくない | 対応 | 対応 |
+| `<` | より小さい | 対応 | 非対応 |
+| `<=` | 以下 | 対応 | 非対応 |
 
 :::info
 `<` と `<=` は数値の比較のみサポートしています。  
@@ -78,16 +78,20 @@ last_update:
 
 ### 数値の比較（以下）
 
-スコアが10以下かどうかを判定します。
+体力が10以下かどうかを判定します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell <!if=[<!score=health><=10,§c危険！体力が低下しています,§a体力は十分です]>
+/execute as @a run scriptevent capi:tell <!if=[<!score=capi:health><=10,§c危険！体力が低下しています,§a体力は十分です]>
 ```
 
 **出力例**（health=5の場合）:
 ```
 危険！体力が低下しています
 ```
+
+:::info Commander APIのスコア
+この例では Commander API が提供する [`capi:health`](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) スコアを使用しています。
+:::
 
 ### 文字列の比較
 
@@ -115,7 +119,7 @@ VIPでないプレイヤーを判定します。
 条件が真の場合のみテキストを表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell <!if=[<!score=level><=5,初心者です]>
+/execute as @a run scriptevent capi:tell <!if=[<!score=capi:level><=5,初心者です]>
 ```
 
 **出力例**（level=3の場合）:
@@ -131,7 +135,7 @@ VIPでないプレイヤーを判定します。
 複数の条件を組み合わせます。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell ステータス: <!if=[<!score=health><=0,§c死亡,<!if=[<!score=health><=10,§e危険,§a健康]>]>
+/execute as @a run scriptevent capi:tell ステータス: <!if=[<!score=capi:health><=0,§c死亡,<!if=[<!score=capi:health><=10,§e危険,§a健康]>]>
 ```
 
 **出力例**（health=0の場合）:
@@ -153,10 +157,10 @@ VIPでないプレイヤーを判定します。
 
 ### ランク表示システム
 
-スコアに基づいてランクを表示します。
+経験値に基づいてランクを表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar ランク: <!if=[<!score=exp><100,ブロンズ,<!if=[<!score=exp><500,シルバー,ゴールド]>]>
+/execute as @a run scriptevent capi:actionbar ランク: <!if=[<!score=capi:totalXp><100,ブロンズ,<!if=[<!score=capi:totalXp><500,シルバー,ゴールド]>]>
 ```
 
 ### お金の状態表示

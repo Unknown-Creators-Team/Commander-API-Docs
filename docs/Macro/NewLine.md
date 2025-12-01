@@ -70,14 +70,18 @@ Notch
 プレイヤー名の下にステータスを表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:rename <!name><!nl>§c❤ <!score=health>
+/execute as @a run scriptevent capi:rename <!name><!nl>§c HP: <!score=capi:health>
 ```
 
 **出力例**:
 ```
 Notch
-❤ 20
+HP: 20
 ```
+
+:::info Commander APIのスコア
+この例では Commander API が提供する [`capi:health`](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) スコアを使用しています。
+:::
 
 ## 変数からの移行
 

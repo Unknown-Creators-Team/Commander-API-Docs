@@ -47,12 +47,12 @@ Hello!Hello!Hello!
 区切り文字を含めて繰り返します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell <!repeat=[★, 5]>
+/execute as @a run scriptevent capi:tell <!repeat=[*, 5]>
 ```
 
 **出力例**:
 ```
-★★★★★
+*****
 ```
 
 ### 体力バーの作成
@@ -60,25 +60,29 @@ Hello!Hello!Hello!
 スコアに基づいて体力バーを作成します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar §c<!repeat=[❤, <!calc=<!score=health>/2>]>
+/execute as @a run scriptevent capi:actionbar §c<!repeat=[|, <!calc=<!score=capi:health>/2>]>
 ```
 
 **出力例**（health=10の場合）:
 ```
-❤❤❤❤❤
+|||||
 ```
+
+:::info Commander APIのスコア
+この例では Commander API が提供する [`capi:health`](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) スコアを使用しています。
+:::
 
 ### レベル表示
 
 レベルに応じた星を表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell レベル: <!repeat=[⭐, <!score=level>]>
+/execute as @a run scriptevent capi:tell レベル: <!repeat=[*, <!score=capi:level>]>
 ```
 
 **出力例**（level=3の場合）:
 ```
-レベル: ⭐⭐⭐
+レベル: ***
 ```
 
 ### 装飾ライン
@@ -99,12 +103,12 @@ Hello!Hello!Hello!
 進捗状況を表示するプログレスバーを作成します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar [<!repeat=[■, <!calc=floor(<!score=progress>/10)>]><!repeat=[□, <!calc=10-floor(<!score=progress>/10)>]>] <!score=progress>%
+/execute as @a run scriptevent capi:actionbar [<!repeat=[#, <!calc=floor(<!score=progress>/10)>]><!repeat=[-, <!calc=10-floor(<!score=progress>/10)>]>] <!score=progress>%
 ```
 
 **出力例**（progress=50の場合）:
 ```
-[■■■■■□□□□□] 50%
+[#####-----] 50%
 ```
 
 :::tip
@@ -119,12 +123,12 @@ Hello!Hello!Hello!
 レビューの星評価を表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell 評価: <!repeat=[★, <!score=rating>]><!repeat=[☆, <!calc=5-<!score=rating>>]>
+/execute as @a run scriptevent capi:tell 評価: <!repeat=[*, <!score=rating>]><!repeat=[-, <!calc=5-<!score=rating>>]>
 ```
 
 **出力例**（rating=3の場合）:
 ```
-評価: ★★★☆☆
+評価: ***--
 ```
 
 ### ローディング表示
@@ -140,12 +144,12 @@ Hello!Hello!Hello!
 装飾付きのメッセージを表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell <!repeat=[✧, 3]> お知らせ <!repeat=[✧, 3]>
+/execute as @a run scriptevent capi:tell <!repeat=[-, 3]> お知らせ <!repeat=[-, 3]>
 ```
 
 **出力例**:
 ```
-✧✧✧ お知らせ ✧✧✧
+--- お知らせ ---
 ```
 
 ### 階段状の表示

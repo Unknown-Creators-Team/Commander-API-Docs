@@ -39,6 +39,11 @@ last_update:
 指定された軸の速度を返します。  
 実行者がエンティティでない場合は、マクロがそのまま残ります。
 
+:::info Commander APIのスコア
+Commander API では速度を [スコア](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) としても提供しています。  
+`capi:velocity_x`, `capi:velocity_y`, `capi:velocity_z`, `capi:velocity_xz`, `capi:velocity_xyz` が利用可能です。
+:::
+
 ## 使用例
 
 ### 水平速度の表示
@@ -90,12 +95,12 @@ last_update:
 リアルタイムでスピードを表示するスピードメーターを作成します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar §e⚡ スピード: <!velocity=xz> m/s
+/execute as @a run scriptevent capi:actionbar スピード: <!velocity=xz> m/s
 ```
 
 **出力例**:
 ```
-⚡ スピード: 0.234 m/s
+スピード: 0.234 m/s
 ```
 
 ### 各軸の速度を表示
@@ -116,7 +121,7 @@ X: 0.15 | Y: -0.08 | Z: 0.12
 Y軸の速度が負の場合、落下していることを示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar <!if=[<!velocity=y><0,§c落下中！,§a安全]>
+/execute as @a run scriptevent capi:actionbar <!if=[<!velocity=y><0,§c落下中,§a安全]>
 ```
 
 :::tip
@@ -126,7 +131,7 @@ Y軸の速度が負の場合、落下していることを示します。
 
 **出力例**（落下中）:
 ```
-落下中！
+落下中
 ```
 
 **出力例**（地上）:

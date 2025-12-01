@@ -83,6 +83,23 @@ last_update:
 管理者: Notch, Jeb
 ```
 
+### Commander API タグを使用
+
+Commander API が提供するタグを使用してフィルタします。
+
+```mcfunction
+/execute as @a run scriptevent capi:tell 飛行中のプレイヤー: <!selector={tag=capi:isFlying}>
+```
+
+**出力例**:
+```
+飛行中のプレイヤー: Steve
+```
+
+:::info Commander APIのタグ
+この例では Commander API が提供する [`capi:isFlying`](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/tags.ts) タグを使用しています。
+:::
+
 ### 座標を指定して検索
 
 特定の座標周辺のプレイヤーを検索します。
@@ -158,5 +175,5 @@ VIPプレイヤー: Alex, Jeb
 一定距離内のプレイヤーに警告を表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell ⚠ 近くにいるプレイヤー: <!selector={r=15,c=3}>
+/execute as @a run scriptevent capi:tell 近くにいるプレイヤー: <!selector={r=15,c=3}>
 ```
