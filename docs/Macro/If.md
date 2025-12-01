@@ -89,10 +89,6 @@ last_update:
 危険！体力が低下しています
 ```
 
-:::info Commander APIのスコア
-この例では Commander API が提供する [`capi:health`](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) スコアを使用しています。
-:::
-
 ### 文字列の比較
 
 タグの値が特定の文字列かどうかを判定します。
@@ -160,7 +156,7 @@ VIPでないプレイヤーを判定します。
 経験値に基づいてランクを表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar ランク: <!if=[<!score=capi:totalXp><100,ブロンズ,<!if=[<!score=capi:totalXp><500,シルバー,ゴールド]>]>
+/execute as @a run scriptevent capi:actionbar ランク: <!if=[<!score=capi:total_xp><100,ブロンズ,<!if=[<!score=capi:total_xp><500,シルバー,ゴールド]>]>
 ```
 
 ### お金の状態表示

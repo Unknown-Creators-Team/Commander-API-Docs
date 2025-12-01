@@ -9,6 +9,11 @@ last_update:
 
 **Selector マクロ** は、セレクターでプレイヤーを検索し、マッチしたプレイヤー名をカンマ区切りで返すマクロです。
 
+:::warning 警告
+コマンドのセレクターに仕様を近づけていますが、完全な互換性は保証していません。<br />
+特に、複雑なセレクター引数の組み合わせや、一部の特殊な引数は正しく動作しない場合があります。
+:::
+
 ## 構文
 
 ```plaintext
@@ -88,17 +93,13 @@ last_update:
 Commander API が提供するタグを使用してフィルタします。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell 飛行中のプレイヤー: <!selector={tag=capi:isFlying}>
+/execute as @a run scriptevent capi:tell 飛行中のプレイヤー: <!selector={tag=capi:fly}>
 ```
 
 **出力例**:
 ```
 飛行中のプレイヤー: Steve
 ```
-
-:::info Commander APIのタグ
-この例では Commander API が提供する [`capi:isFlying`](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/tags.ts) タグを使用しています。
-:::
 
 ### 座標を指定して検索
 

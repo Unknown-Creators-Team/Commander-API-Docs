@@ -68,10 +68,6 @@ Hello!Hello!Hello!
 |||||
 ```
 
-:::info Commander APIのスコア
-この例では Commander API が提供する [`capi:health`](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) スコアを使用しています。
-:::
-
 ### レベル表示
 
 レベルに応じた星を表示します。

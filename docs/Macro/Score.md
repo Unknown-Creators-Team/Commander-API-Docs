@@ -27,28 +27,9 @@ last_update:
 指定されたスコアボードの値を返します。  
 スコアが設定されていない場合は、マクロがそのまま残ります。
 
-## Commander API 提供のスコア
+<!-- ## Commander API 提供のスコア
 
-Commander API では、以下のスコアが自動的に更新されます。詳細は [scores.ts](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) を参照してください。
-
-| スコア名 | 説明 |
-|---|---|
-| `capi:health` | プレイヤーの体力 |
-| `capi:level` | プレイヤーのレベル |
-| `capi:totalXp` | プレイヤーの合計経験値 |
-| `capi:velocity_x` | X軸の速度 |
-| `capi:velocity_y` | Y軸の速度 |
-| `capi:velocity_z` | Z軸の速度 |
-| `capi:velocity_xz` | 水平速度 |
-| `capi:velocity_xyz` | 総合速度 |
-| `capi:location_x` | X座標 |
-| `capi:location_y` | Y座標 |
-| `capi:location_z` | Z座標 |
-| `capi:rotation_x` | X軸の回転 |
-| `capi:rotation_y` | Y軸の回転 |
-| `capi:dimension` | ディメンション（-1: ネザー, 0: オーバーワールド, 1: エンド） |
-| `capi:selectedSlotIndex` | 選択中のスロット番号 |
-| `capi:timestamp` | 現在のタイムスタンプ |
+Commander API では、以下のスコアが自動的に更新されます。詳細は [scores.ts](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) を参照してください。 -->
 
 ## 使用例
 
@@ -110,7 +91,7 @@ Notchはレベル42です！
 複数のステータスを同時に表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar HP: <!score=capi:health> | LV: <!score=capi:level> | XP: <!score=capi:totalXp>
+/execute as @a run scriptevent capi:actionbar HP: <!score=capi:health> | LV: <!score=capi:level> | XP: <!score=capi:total_xp>
 ```
 
 **出力例**:

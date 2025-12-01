@@ -28,3 +28,115 @@
   --ifm-color-primary-lightest: #c8deff;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* KaTeX: テーブル内での二重表示を防ぐ */
+table .katex-html {
+  display: none;
+}
+
+table .katex-display .katex-html {
+  display: none;
+}
+
+/* KaTeX: mathmlのみを表示 */
+.katex .katex-html {
+  display: none;
+}
+
+/* リンクカードのスタイリング */
+.link-card {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1.25rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  background-color: var(--ifm-card-background-color);
+}
+
+.link-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  color: inherit;
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .link-card {
+  background-color: var(--ifm-background-surface-color);
+}
+
+.link-card-content {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.link-card-icon {
+  font-size: 1.5rem;
+  color: var(--ifm-color-primary);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.link-card-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.link-card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+  flex-shrink: 0;
+}
+
+.link-card-path {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+  text-align: right;
+  white-space: nowrap;
+  font-family: var(--ifm-font-family-monospace);
+  margin-left: auto;
+}
+
+/* oEmbed リンクカードのスタイリング */
+.oembed-card {
+  display: block;
+  margin: 1.5rem 0;
+  padding: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  background-color: var(--ifm-card-background-color);
+}
+
+.oembed-card:hover {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+
+[data-theme='dark'] .oembed-card {
+  background-color: var(--ifm-background-surface-color);
+}
+
+/* oEmbedのiframeラッパー */
+.embedder-wrapper {
+  margin: 1.5rem 0;
+}
+
+.embedder-wrapper iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}

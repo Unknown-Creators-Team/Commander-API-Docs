@@ -27,30 +27,6 @@ last_update:
 指定されたタグ名に対応する値を返します。  
 該当するタグが見つからない場合は、マクロがそのまま残ります。
 
-## Commander API 提供のタグ
-
-Commander API では、以下のタグが自動的に更新されます。詳細は [tags.ts](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/tags.ts) を参照してください。
-
-| タグ名 | 説明 |
-|---|---|
-| `capi:isOp` | オペレーター権限を持っている |
-| `capi:isFlying` | 飛行中 |
-| `capi:isGliding` | エリトラで滑空中 |
-| `capi:isJumping` | ジャンプ中 |
-| `capi:isClimbing` | はしごなどを登っている |
-| `capi:isFalling` | 落下中 |
-| `capi:isInWater` | 水中にいる |
-| `capi:isOnGround` | 地面に立っている |
-| `capi:isSneaking` | スニーク中 |
-| `capi:isSprinting` | ダッシュ中 |
-| `capi:isSwimming` | 泳いでいる |
-| `capi:isSleeping` | 寝ている |
-| `capi:isEmoting` | エモート中 |
-| `capi:isRiding` | 乗り物に乗っている |
-| `capi:isDesktop` | デスクトップ版 |
-| `capi:isMobile` | モバイル版 |
-| `capi:isConsole` | コンソール版 |
-
 ## 使用例
 
 ### ランクシステム

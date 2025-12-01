@@ -155,11 +155,6 @@ Commander API のディメンションスコアを使用して現在のディメ
 /execute as @a run scriptevent capi:tell 現在地: <!match=[<!calc=<!score=capi:dimension>+1>, ネザー, オーバーワールド, エンド]>
 ```
 
-:::info Commander APIのスコア
-この例では Commander API が提供する [`capi:dimension`](https://github.com/Unknown-Creators-Team/Commander-API/blob/alpha/src/events/scores.ts) スコアを使用しています。  
--1: ネザー, 0: オーバーワールド, 1: エンド
-:::
-
 ### 難易度表示
 
 難易度に応じた表示を行います。

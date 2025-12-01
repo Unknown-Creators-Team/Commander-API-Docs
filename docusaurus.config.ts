@@ -3,6 +3,8 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import remarkDirective from "remark-directive";
+import remarkLinkCard from "./src/remark/linkCard.js";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -51,8 +53,12 @@ const config: Config = {
                     showLastUpdateAuthor: true,
                     showLastUpdateTime: true,
                     sidebarPath: "./sidebars.ts",
-                    remarkPlugins: [remarkMath],
-                    rehypePlugins: [rehypeKatex],
+                    remarkPlugins: [
+                        remarkMath,
+                        remarkDirective,
+                        remarkLinkCard
+                    ],
+                    rehypePlugins: [[rehypeKatex, { strict: false, output: 'mathml' }]],
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
