@@ -126,6 +126,7 @@ last_update:
 
 ### シンプルなメニュー
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
     "type": "action",
@@ -149,9 +150,35 @@ last_update:
     ]
 }
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:form {
+    "type": "action",
+    "title": "メニュー",
+    "body": "操作を選択してください",
+    "btns": [
+        {
+            "txt": "体力回復",
+            "act": {
+                "type": "run",
+                "value": "effect @s regeneration 10 1"
+            }
+        },
+        {
+            "txt": "アイテム受取",
+            "act": {
+                "type": "run",
+                "value": "give @s diamond 1"
+            }
+        }
+    ]
+}
+```
++++
 
 ### アイコン付きボタン
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
     "type": "action",
@@ -177,9 +204,37 @@ last_update:
     ]
 }
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:form {
+    "type": "action",
+    "title": "ショップ",
+    "body": "購入する商品を選択してください",
+    "btns": [
+        {
+            "txt": "ダイヤモンドの剣",
+            "img": "textures/items/diamond_sword",
+            "act": {
+                "type": "run",
+                "value": "give @s diamond_sword"
+            }
+        },
+        {
+            "txt": "金のリンゴ",
+            "img": "textures/items/golden_apple",
+            "act": {
+                "type": "run",
+                "value": "give @s golden_apple"
+            }
+        }
+    ]
+}
+```
++++
 
 ### タグを追加するアクション
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
     "type": "act",
@@ -203,9 +258,35 @@ last_update:
     ]
 }
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:form {
+    "type": "act",
+    "title": "チーム選択",
+    "body": "参加するチームを選択してください",
+    "btns": [
+        {
+            "txt": "レッドチーム",
+            "act": {
+                "type": "add_tag",
+                "value": "team_red"
+            }
+        },
+        {
+            "txt": "ブルーチーム",
+            "act": {
+                "type": "at",
+                "value": "team_blue"
+            }
+        }
+    ]
+}
+```
++++
 
 ### スコアを設定するアクション
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
     "type": "action",
@@ -245,11 +326,53 @@ last_update:
     ]
 }
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:form {
+    "type": "action",
+    "title": "難易度選択",
+    "body": "難易度を選択してください",
+    "btns": [
+        {
+            "txt": "簡単",
+            "act": {
+                "type": "set_score",
+                "value": {
+                    "object": "difficulty",
+                    "value": 1
+                }
+            }
+        },
+        {
+            "txt": "普通",
+            "act": {
+                "type": "ss",
+                "value": {
+                    "object": "difficulty",
+                    "value": 2
+                }
+            }
+        },
+        {
+            "txt": "難しい",
+            "act": {
+                "type": "set_s",
+                "value": {
+                    "object": "difficulty",
+                    "value": 3
+                }
+            }
+        }
+    ]
+}
+```
++++
 
 ### 複数のアクションを実行
 
 アクションフォームでは1つのボタンに1つのアクションしか設定できませんが、`run_command` で複数のコマンドを実行できます。
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
     "type": "action",
@@ -266,11 +389,30 @@ last_update:
     ]
 }
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:form {
+    "type": "action",
+    "title": "特典受取",
+    "body": "毎日の特典を受け取りますか？",
+    "btns": [
+        {
+            "txt": "受け取る",
+            "act": {
+                "type": "run",
+                "value": "give @s diamond 10"
+            }
+        }
+    ]
+}
+```
++++
 
 ## 選択結果の取得
 
 ボタンが押されると、`capi:act_form` スコアに選択されたボタンのインデックス（1から開始）が設定されます。
 
++++ JSON
 ```mcfunction
 # フォームを表示
 /execute as @a run scriptevent capi:form {"type":"action","title":"選択","body":"選択してください","btns":[{"txt":"オプション1"},{"txt":"オプション2"},{"txt":"オプション3"}]}
@@ -280,6 +422,17 @@ last_update:
 /execute as @a[scores={capi:act_form=2}] run say オプション2を選択しました
 /execute as @a[scores={capi:act_form=3}] run say オプション3を選択しました
 ```
++++ ESON
+```mcfunction
+# フォームを表示
+/execute as @a run scriptevent capi:form {type=action,title=選択,body=選択してください,btns=[{txt=オプション1},{txt=オプション2},{txt=オプション3}]}
+
+# 選択結果を確認
+/execute as @a[scores={capi:act_form=1}] run say オプション1を選択しました
+/execute as @a[scores={capi:act_form=2}] run say オプション2を選択しました
+/execute as @a[scores={capi:act_form=3}] run say オプション3を選択しました
+```
++++
 
 ## 注意事項
 

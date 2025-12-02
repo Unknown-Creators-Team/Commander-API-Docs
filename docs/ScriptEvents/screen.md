@@ -63,25 +63,41 @@ last_update:
 
 タイトルのみを表示します。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:screen {title=Welcome!}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {"title": "Welcome!"}
 ```
++++
 
 ### タイトルとサブタイトル
 
 タイトルとサブタイトルを表示します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {
     "title": "§6ゲーム開始",
     "subtitle": "§7頑張ってください！"
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:screen {
+    "title": "§6ゲーム開始",
+    "subtitle": "§7頑張ってください！"
+}
+```
++++
 
 ### 表示時間を指定
 
 フェードイン、表示、フェードアウトの時間を指定します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {
     "title": "§cカウントダウン",
@@ -92,11 +108,24 @@ last_update:
     }
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:screen {
+    "title": "§cカウントダウン",
+    "options": {
+        "in": 10,
+        "out": 10,
+        "stay": 40
+    }
+}
+```
++++
 
 ### 長時間の表示
 
 5秒間表示します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {
     "title": "§6重要なお知らせ",
@@ -108,11 +137,25 @@ last_update:
     }
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:screen {
+    "title": "§6重要なお知らせ",
+    "subtitle": "§7イベントが開始されました",
+    "options": {
+        "in": 20,
+        "out": 20,
+        "stay": 100
+    }
+}
+```
++++
 
 ### 素早い表示
 
 素早くフェードイン・アウトします。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {
     "title": "§c警告!",
@@ -123,17 +166,38 @@ last_update:
     }
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:screen {
+    "title": "§c警告!",
+    "options": {
+        "in": 5,
+        "out": 5,
+        "stay": 20
+    }
+}
+```
++++
 
 ### プレイヤー名を含むタイトル
 
 マクロを使用してプレイヤー名を含めます。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {
     "title": "ようこそ",
     "subtitle": "<!name>さん"
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:screen {
+    "title": "ようこそ",
+    "subtitle": "<!name>さん"
+}
+```
++++
 
 ::: !ref ../Macro/Name.md
 
@@ -141,12 +205,21 @@ last_update:
 
 スコアを表示します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {
     "title": "§6レベルアップ!",
     "subtitle": "レベル <!score=player_level>"
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:screen {
+    "title": "§6レベルアップ!",
+    "subtitle": "レベル <!score=player_level>"
+}
+```
++++
 
 ::: !ref ../Macro/Score.md
 
@@ -154,6 +227,17 @@ last_update:
 
 カウントダウンを表示します（繰り返し実行が必要）。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:screen {title=§c3}
+# 1秒待機
+/execute as @a run scriptevent capi:screen {title=§c2}
+# 1秒待機
+/execute as @a run scriptevent capi:screen {title=§c1}
+# 1秒待機
+/execute as @a run scriptevent capi:screen {title=§aスタート!}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {"title": "§c3"}
 # 1秒待機
@@ -163,11 +247,13 @@ last_update:
 # 1秒待機
 /execute as @a run scriptevent capi:screen {"title": "§aスタート!"}
 ```
++++
 
 ### ゲーム終了の表示
 
 ゲーム終了時に表示します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {
     "title": "§6ゲーム終了",
@@ -179,11 +265,25 @@ last_update:
     }
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:screen {
+    "title": "§6ゲーム終了",
+    "subtitle": "§7お疲れ様でした",
+    "options": {
+        "in": 20,
+        "out": 40,
+        "stay": 60
+    }
+}
+```
++++
 
 ### 勝利の表示
 
 勝者を表示します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:screen {
     "title": "§6§l勝利!",
@@ -195,6 +295,19 @@ last_update:
     }
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:screen {
+    "title": "§6§l勝利!",
+    "subtitle": "<!name>の勝利です！",
+    "options": {
+        "in": 10,
+        "out": 20,
+        "stay": 80
+    }
+}
+```
++++
 
 ::: !ref ../Macro/Name.md
 

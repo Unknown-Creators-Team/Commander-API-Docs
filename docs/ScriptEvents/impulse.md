@@ -50,54 +50,95 @@ last_update:
 
 エンティティを上に押し上げます。
 
++++ ESON
+```mcfunction
+/execute as @e[type=zombie] run scriptevent capi:impulse {vector=[0,1,0]}
+```
++++ JSON
 ```mcfunction
 /execute as @e[type=zombie] run scriptevent capi:impulse {"vector": [0, 1, 0]}
 ```
++++
 
 ### 前方への衝撃
 
 エンティティを前方に押し出します。
 
++++ ESON
+```mcfunction
+/execute as @e[type=creeper] run scriptevent capi:impulse {vector=[0,0,1]}
+```
++++ JSON
 ```mcfunction
 /execute as @e[type=creeper] run scriptevent capi:impulse {"vector": [0, 0, 1]}
 ```
++++
 
 ### 複合方向への衝撃
 
 斜め上方向に押し出します。
 
++++ ESON
+```mcfunction
+/execute as @e[type=skeleton] run scriptevent capi:impulse {vector=[1,1,1]}
+```
++++ JSON
 ```mcfunction
 /execute as @e[type=skeleton] run scriptevent capi:impulse {"vector": [1, 1, 1]}
 ```
++++
 
 ### 速度をクリアしてから衝撃
 
 現在の速度をリセットしてから新しい衝撃を与えます。
 
++++ ESON
 ```mcfunction
 /execute as @e[type=zombie] run scriptevent capi:impulse {
     "vector": [0, 2, 0],
     "clear_velocity": true
 }
 ```
++++ JSON
+```mcfunction
+/execute as @e[type=zombie] run scriptevent capi:impulse {
+    "vector": [0, 2, 0],
+    "clear_velocity": true
+}
+```
++++
 
 ### 強い衝撃
 
 大きなベクトルで強い衝撃を与えます。
 
++++ ESON
+```mcfunction
+/execute as @e[type=pig] run scriptevent capi:impulse {vector=[0,5,0]}
+```
++++ JSON
 ```mcfunction
 /execute as @e[type=pig] run scriptevent capi:impulse {"vector": [0, 5, 0]}
 ```
++++
 
 ### ランダムな方向への衝撃
 
 マクロを使用してランダムな方向に押し出します。
 
++++ ESON
 ```mcfunction
 /execute as @e[type=chicken] run scriptevent capi:impulse {
     "vector": ["<!calc=random(-1,1)>", "1", "<!calc=random(-1,1)>"]
 }
 ```
++++ JSON
+```mcfunction
+/execute as @e[type=chicken] run scriptevent capi:impulse {
+    "vector": ["<!calc=random(-1,1)>", "1", "<!calc=random(-1,1)>"]
+}
+```
++++
 
 ::: !ref ../Macro/Calc.md
 
@@ -105,12 +146,21 @@ last_update:
 
 複数の衝撃を組み合わせて遠くに飛ばします。
 
++++ ESON
 ```mcfunction
 /execute as @e[type=arrow] run scriptevent capi:impulse {
     "vector": [0, 0, 10],
     "clear_velocity": true
 }
 ```
++++ JSON
+```mcfunction
+/execute as @e[type=arrow] run scriptevent capi:impulse {
+    "vector": [0, 0, 10],
+    "clear_velocity": true
+}
+```
++++
 
 ## ベクトルの説明
 

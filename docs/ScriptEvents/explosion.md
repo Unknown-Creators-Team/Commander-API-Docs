@@ -61,63 +61,109 @@ last_update:
 
 指定した威力で爆発を生成します。
 
++++ ESON
+```mcfunction
+/scriptevent capi:explosion {radius=3}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:explosion {"radius": 3}
 ```
++++
 
 ### 座標を指定した爆発
 
 特定の座標で爆発を生成します。
 
++++ ESON
+```mcfunction
+/scriptevent capi:explosion {radius=5,location=[100,64,100]}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:explosion {"radius": 5, "location": [100, 64, 100]}
 ```
++++
 
 ### ブロックを破壊しない爆発
 
 エフェクトのみの爆発を生成します。
 
++++ ESON
+```mcfunction
+/scriptevent capi:explosion {radius=3,options={breaks_blocks=false}}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:explosion {"radius": 3, "options": {"breaks_blocks": false}}
 ```
++++
 
 ### 火を発生させる爆発
 
 火災を引き起こす爆発を生成します。
 
++++ ESON
+```mcfunction
+/scriptevent capi:explosion {radius=4,options={causes_fire=true}}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:explosion {"radius": 4, "options": {"causes_fire": true}}
 ```
++++
 
 ### 水中での爆発
 
 水中でも機能する爆発を生成します。
 
++++ ESON
+```mcfunction
+/scriptevent capi:explosion {radius=3,options={allow_under_water=true}}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:explosion {"radius": 3, "options": {"allow_under_water": true}}
 ```
++++
 
 ### 相対座標での爆発
 
 プレイヤーの位置からの相対座標で爆発を生成します。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:explosion {radius=2,location=[~,~,~5]}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:explosion {"radius": 2, "location": ["~", "~", "~5"]}
 ```
++++
 
 ### ネザーでの爆発
 
 ネザーディメンションで爆発を生成します。
 
++++ ESON
+```mcfunction
+/scriptevent capi:explosion {radius=5,location=[0,64,0],dimension=nether}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:explosion {"radius": 5, "location": [0, 64, 0], "dimension": "nether"}
 ```
++++
 
 ### カスタマイズされた爆発
 
 全てのオプションを設定した爆発を生成します。
 
++++ ESON
 ```mcfunction
+/scriptevent capi:explosion {radius=6,location=[0,100,0],dimension=overworld,options={breaks_blocks=true,causes_fire=true,allow_under_water=false}}
+```
++++ JSON
 /scriptevent capi:explosion {
     "radius": 10,
     "location": [100, 64, 100],
@@ -134,9 +180,15 @@ last_update:
 
 ダメージなしの演出用爆発を生成します。
 
++++ ESON
+```mcfunction
+/scriptevent capi:explosion {radius=2,options={breaks_blocks=false,causes_fire=false}}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:explosion {"radius": 2, "options": {"breaks_blocks": false, "causes_fire": false}}
 ```
++++
 
 ## 注意事項
 

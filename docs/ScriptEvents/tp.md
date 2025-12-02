@@ -108,25 +108,43 @@ last_update:
 
 プレイヤーの向きに応じた座標にテレポートします。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:tp {location=["^0","^0","^10"]}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:tp {"location": ["^0", "^0", "^10"]}
 ```
++++
 
 ### スポーン地点へのテレポート
 
 スポーン地点にテレポートします。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:tp {location=[0,64,0],rotation=[0,0]}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:tp {"location": [0, 64, 0], "rotation": [0, 0]}
 ```
++++
 
 ### ランダムな場所へテレポート
 
 マクロを使用してランダムな座標にテレポートします。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:tp {location=["<!calc=random(-100,100)>","64","<!calc=random(-100,100)>"]}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:tp {"location": ["<!calc=random(-100,100)>", "64", "<!calc=random(-100,100)>"]}
 ```
++++
 
 ::: !ref ../Macro/Calc.md
 
@@ -134,9 +152,15 @@ last_update:
 
 セレクターと組み合わせて、他のプレイヤーの位置へテレポートします。
 
++++ ESON
+```mcfunction
+/execute at @p[name=Notch] as @a[tag=teleport] run scriptevent capi:tp {location=["~","~","~"]}
+```
++++ JSON
 ```mcfunction
 /execute at @p[name=Notch] as @a[tag=teleport] run scriptevent capi:tp {"location": ["~", "~", "~"]}
 ```
++++
 
 ## 注意事項
 

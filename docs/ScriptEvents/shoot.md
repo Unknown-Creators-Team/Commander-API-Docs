@@ -55,6 +55,7 @@ last_update:
 
 前方に矢を発射します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:shoot {
     "id": "minecraft:arrow",
@@ -63,11 +64,22 @@ last_update:
     "speed": 2
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:shoot {
+    "id": "minecraft:arrow",
+    "location": ["~", "~1.5", "~"],
+    "vector": [0, 0, 1],
+    "speed": 2
+}
+```
++++
 
 ### 火の玉の発射
 
 火の玉を発射します。
 
++++ ESON
 ```mcfunction
 /scriptevent capi:shoot {
     "id": "minecraft:fireball",
@@ -76,11 +88,22 @@ last_update:
     "speed": 1
 }
 ```
++++ JSON
+```mcfunction
+/scriptevent capi:shoot {
+    "id": "minecraft:fireball",
+    "location": [100, 65, 100],
+    "vector": [1, 0, 0],
+    "speed": 1
+}
+```
++++
 
 ### 炎上する矢
 
 炎上した状態の矢を発射します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:shoot {
     "id": "minecraft:arrow",
@@ -90,11 +113,23 @@ last_update:
     "fire": 999
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:shoot {
+    "id": "minecraft:arrow",
+    "location": ["~", "~1.5", "~"],
+    "vector": [0, 0, 1],
+    "speed": 2,
+    "fire": 999
+}
+```
++++
 
 ### 名前付き発射物
 
 カスタム名を付けた発射物を発射します。
 
++++ ESON
 ```mcfunction
 /scriptevent capi:shoot {
     "id": "minecraft:arrow",
@@ -104,11 +139,23 @@ last_update:
     "speed": 3
 }
 ```
++++ JSON
+```mcfunction
+/scriptevent capi:shoot {
+    "id": "minecraft:arrow",
+    "nameTag": "§c特殊な矢",
+    "location": [100, 65, 100],
+    "vector": [0, 0, 1],
+    "speed": 3
+}
+```
++++
 
 ### 上方向への発射
 
 真上に発射します。
 
++++ ESON
 ```mcfunction
 /scriptevent capi:shoot {
     "id": "minecraft:arrow",
@@ -117,11 +164,22 @@ last_update:
     "speed": 2
 }
 ```
++++ JSON
+```mcfunction
+/scriptevent capi:shoot {
+    "id": "minecraft:arrow",
+    "location": [100, 64, 100],
+    "vector": [0, 1, 0],
+    "speed": 2
+}
+```
++++
 
 ### 斜め方向への発射
 
 斜め上に発射します。
 
++++ ESON
 ```mcfunction
 /scriptevent capi:shoot {
     "id": "minecraft:arrow",
@@ -130,11 +188,22 @@ last_update:
     "speed": 2
 }
 ```
++++ JSON
+```mcfunction
+/scriptevent capi:shoot {
+    "id": "minecraft:arrow",
+    "location": [100, 64, 100],
+    "vector": [1, 1, 0],
+    "speed": 2
+}
+```
++++
 
 ### 高速発射
 
 非常に速い速度で発射します。
 
++++ ESON
 ```mcfunction
 /scriptevent capi:shoot {
     "id": "minecraft:arrow",
@@ -143,11 +212,22 @@ last_update:
     "speed": 5
 }
 ```
++++ JSON
+```mcfunction
+/scriptevent capi:shoot {
+    "id": "minecraft:arrow",
+    "location": [100, 64, 100],
+    "vector": [0, 0, 1],
+    "speed": 5
+}
+```
++++
 
 ### 相対座標での発射
 
 プレイヤーの目の高さから発射します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:shoot {
     "id": "minecraft:arrow",
@@ -156,11 +236,22 @@ last_update:
     "speed": 2
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:shoot {
+    "id": "minecraft:arrow",
+    "location": ["~", "~1.6", "~"],
+    "vector": [0, 0, 1],
+    "speed": 2
+}
+```
++++
 
 ### プレイヤーの向きに合わせて発射
 
 プレイヤーが向いている方向に発射します（ベクトルの計算が必要）。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:shoot {
     "id": "minecraft:arrow",
@@ -169,6 +260,16 @@ last_update:
     "speed": 2
 }
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:shoot {
+    "id": "minecraft:arrow",
+    "location": ["~", "~1.6", "~"],
+    "vector": ["<!velocity=x>", "<!velocity=y>", "<!velocity=z>"],
+    "speed": 2
+}
+```
++++
 
 ::: !ref ../Macro/Velocity.md
 
@@ -176,6 +277,7 @@ last_update:
 
 ネザーで火の玉を発射します。
 
++++ ESON
 ```mcfunction
 /scriptevent capi:shoot {
     "id": "minecraft:fireball",
@@ -185,6 +287,17 @@ last_update:
     "dimension": "nether"
 }
 ```
++++ JSON
+```mcfunction
+/scriptevent capi:shoot {
+    "id": "minecraft:fireball",
+    "location": [0, 64, 0],
+    "vector": [1, 0, 0],
+    "speed": 1,
+    "dimension": "nether"
+}
+```
++++
 
 ## よく使われる発射物
 

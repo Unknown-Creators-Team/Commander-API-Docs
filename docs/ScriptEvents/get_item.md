@@ -47,30 +47,49 @@ last_update:
 
 現在選択しているアイテムの情報を取得します。
 
++++ ESON
 ```mcfunction
 /execute as @a run scriptevent capi:get_item {}
 ```
++++ JSON
+```mcfunction
+/execute as @a run scriptevent capi:get_item {}
+```
++++
 
 ### 特定のスロットのアイテムを取得
 
 スロット0（ホットバー左端）のアイテムを取得します。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:get_item {slot=0}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:get_item {"slot": 0}
 ```
++++
 
 ### 完全な情報を取得
 
 最小化せずに完全なアイテム情報を取得します。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:get_item {slot=0,minimize=false}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:get_item {"slot": 0, "minimize": false}
 ```
++++
 
 ### 取得した情報を使用
 
 取得したアイテム情報をタグから読み取ります。
 
++++ ESON
 ```mcfunction
 # アイテム情報を取得
 /execute as @a run scriptevent capi:get_item {}
@@ -78,6 +97,15 @@ last_update:
 # タグが付いているかチェック
 /execute as @a[tag=capi:get_item] run say アイテム情報を取得しました
 ```
++++ JSON
+```mcfunction
+# アイテム情報を取得
+/execute as @a run scriptevent capi:get_item {}
+
+# タグが付いているかチェック
+/execute as @a[tag=capi:get_item] run say アイテム情報を取得しました
+```
++++
 
 ### スロット番号の参考
 

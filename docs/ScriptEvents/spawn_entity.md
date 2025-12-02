@@ -51,54 +51,91 @@ last_update:
 
 クリーパーをスポーンします。
 
++++ ESON
+```mcfunction
+/scriptevent capi:spawn_entity {id=minecraft:creeper}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:spawn_entity {"id": "minecraft:creeper"}
 ```
++++
 
 ### 名前付きエンティティ
 
 名前を付けてゾンビをスポーンします。
 
++++ ESON
+```mcfunction
+/scriptevent capi:spawn_entity {id=minecraft:zombie,name=ボスゾンビ}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:spawn_entity {"id": "minecraft:zombie", "name": "ボスゾンビ"}
 ```
++++
 
 ### 座標を指定してスポーン
 
 特定の座標にスケルトンをスポーンします。
 
++++ ESON
+```mcfunction
+/scriptevent capi:spawn_entity {id=minecraft:skeleton,location=[100,64,100]}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:spawn_entity {"id": "minecraft:skeleton", "location": [100, 64, 100]}
 ```
++++
 
 ### 相対座標でスポーン
 
 プレイヤーの前方にエンダーマンをスポーンします。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:spawn_entity {id=minecraft:enderman,location=["~","~","~5"]}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:spawn_entity {"id": "minecraft:enderman", "location": ["~", "~", "~5"]}
 ```
++++
 
 ### 炎上状態でスポーン
 
 炎上した状態でゾンビをスポーンします。
 
++++ ESON
+```mcfunction
+/scriptevent capi:spawn_entity {id=minecraft:zombie,set_on_fire=10}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:spawn_entity {"id": "minecraft:zombie", "set_on_fire": 10}
 ```
++++
 
 ### ネザーでスポーン
 
 ネザーディメンションでブレイズをスポーンします。
 
++++ ESON
+```mcfunction
+/scriptevent capi:spawn_entity {id=minecraft:blaze,location=[0,64,0],dimension=nether}
+```
++++ JSON
 ```mcfunction
 /scriptevent capi:spawn_entity {"id": "minecraft:blaze", "location": [0, 64, 0], "dimension": "nether"}
 ```
++++
 
 ### 完全にカスタマイズされたスポーン
 
 全てのオプションを設定してスポーンします。
 
++++ ESON
 ```mcfunction
 /scriptevent capi:spawn_entity {
     "id": "minecraft:wither_skeleton",
@@ -108,14 +145,31 @@ last_update:
     "set_on_fire": 999
 }
 ```
++++ JSON
+```mcfunction
+/scriptevent capi:spawn_entity {
+    "id": "minecraft:wither_skeleton",
+    "name": "§4炎の戦士",
+    "location": [100, 64, 100],
+    "dimension": "overworld",
+    "set_on_fire": 999
+}
+```
++++
 
 ### マクロを使用したスポーン
 
 プレイヤー名を含む名前でスポーンします。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:spawn_entity {id=minecraft:zombie,name=<!name>のゾンビ}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:spawn_entity {"id": "minecraft:zombie", "name": "<!name>のゾンビ"}
 ```
++++
 
 ::: !ref ../Macro/Name.md
 
@@ -123,9 +177,15 @@ last_update:
 
 繰り返しコマンドで複数のエンティティをスポーンします。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:spawn_entity {id=minecraft:chicken,location=["~","~","~"]}
+```
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:spawn_entity {"id": "minecraft:chicken", "location": ["~", "~", "~"]}
 ```
++++
 
 ## よく使われるエンティティID
 
