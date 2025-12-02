@@ -22,9 +22,6 @@ last_update:
 |---|---|
 | `コマンド` | 実行するコマンド（スラッシュなし） |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -49,7 +46,7 @@ last_update:
 Notch joined the game
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ### スコアを使用したコマンド
 
@@ -59,7 +56,7 @@ Notch joined the game
 /execute as @a run scriptevent capi:run give @s diamond <!score=reward_count>
 ```
 
-[!ref ../Macro/Score.md]
+[!ref Score マクロ](../Macro/Score.md)
 
 ### 条件付きコマンド実行
 
@@ -69,7 +66,7 @@ Notch joined the game
 /execute as @a run scriptevent capi:run <!if=score:capi:health<10>effect @s regeneration 10 1<!endif>
 ```
 
-[!ref ../Macro/If.md]
+[!ref If マクロ](../Macro/If.md)
 
 ### 複雑なコマンドの実行
 
@@ -79,7 +76,7 @@ Notch joined the game
 /execute as @a run scriptevent capi:run tp @s <!calc=floor({x})> <!calc=floor({y})+10> <!calc=floor({z})>
 ```
 
-[!ref ../Macro/Calc.md]
+[!ref Calc マクロ](../Macro/Calc.md)
 
 ### タグに基づくコマンド
 
@@ -89,7 +86,7 @@ Notch joined the game
 /execute as @a run scriptevent capi:run effect @s <!tag=effect> 30 1
 ```
 
-[!ref ../Macro/Tag.md]
+[!ref Tag マクロ](../Macro/Tag.md)
 
 ## 注意事項
 

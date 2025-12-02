@@ -48,9 +48,6 @@ JSON形式でパラメータを指定します：
 | `breaks_blocks` | ブロックを破壊 | true |
 | `causes_fire` | 火を発生させる | false |
 
-## 戻り値
-
-なし
 
 ## 使用例
 

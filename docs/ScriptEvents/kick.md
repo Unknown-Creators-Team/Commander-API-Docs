@@ -22,9 +22,6 @@ last_update:
 |---|---|
 | `理由` | キックの理由（省略可） |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -62,7 +59,7 @@ last_update:
 Notchさんは長時間操作がありませんでした
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ### 条件付きキック
 

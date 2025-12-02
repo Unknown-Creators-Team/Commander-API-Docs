@@ -42,9 +42,6 @@ JSON形式でパラメータを指定します：
 | `speed` | 発射速度 | × |
 | `dimension` | ディメンション名 | × |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -167,7 +164,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-[!ref ../Macro/Velocity.md]
+[!ref Velocity マクロ](../Macro/Velocity.md)
 
 ### ネザーでの発射
 

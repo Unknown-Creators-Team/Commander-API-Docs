@@ -52,9 +52,6 @@ JSON形式でパラメータを指定します：
 | `dimension` | ディメンション名 | × |
 | `clear_velocity` | 速度をクリア | × |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -202,7 +199,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ## よく使われるアイテムID
 

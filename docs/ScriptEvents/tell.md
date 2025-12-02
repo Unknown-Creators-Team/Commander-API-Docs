@@ -22,9 +22,6 @@ last_update:
 |---|---|
 | `メッセージ` | 送信するメッセージ |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -54,7 +51,7 @@ last_update:
 こんにちは、Notchさん！
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ### スコアの通知
 
@@ -69,7 +66,7 @@ last_update:
 あなたの所持金は1000円です
 ```
 
-[!ref ../Macro/Score.md]
+[!ref Score マクロ](../Macro/Score.md)
 
 ### 条件付きメッセージ
 
@@ -84,7 +81,7 @@ last_update:
 警告: 体力が低下しています！
 ```
 
-[!ref ../Macro/If.md]
+[!ref If マクロ](../Macro/If.md)
 
 ### 計算結果の表示
 
@@ -99,7 +96,7 @@ last_update:
 合計ダメージ: 150
 ```
 
-[!ref ../Macro/Calc.md]
+[!ref Calc マクロ](../Macro/Calc.md)
 
 ### 複数行のメッセージ
 
@@ -116,7 +113,7 @@ HP: 20
 LV: 42
 ```
 
-[!ref ../Macro/NewLine.md]
+[!ref NewLine マクロ](../Macro/NewLine.md)
 
 ### At記号を含むメッセージ
 
@@ -131,7 +128,7 @@ LV: 42
 @Notch さんが参加しました！
 ```
 
-[!ref ../Macro/At.md]
+[!ref At マクロ](../Macro/At.md)
 
 ## 注意事項
 

@@ -32,9 +32,6 @@ JSON形式でパラメータを指定します：
 | `horizontal_force` | 水平方向の力 [x, z] | ✓ |
 | `vertical_strength` | 垂直方向の強さ | ✓ |
 
-## 戻り値
-
-なし
 
 ## 使用例
 

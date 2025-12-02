@@ -22,9 +22,6 @@ last_update:
 |---|---|
 | `メッセージ` | 送信するメッセージ |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -54,7 +51,7 @@ last_update:
 Notchさんがゲームに参加しました！
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ### イベント通知
 
@@ -95,7 +92,7 @@ Notchさんがゲームに参加しました！
 Notchが10キルを達成しました！
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ### 改行を含むアナウンス
 
@@ -112,7 +109,7 @@ Notchが10キルを達成しました！
 ===============
 ```
 
-[!ref ../Macro/NewLine.md]
+[!ref NewLine マクロ](../Macro/NewLine.md)
 
 ## 注意事項
 

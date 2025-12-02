@@ -36,9 +36,6 @@ last_update:
 | 7 | 右から2番目 |
 | 8 | ホットバー右端 |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -74,7 +71,7 @@ last_update:
 /execute as @a run scriptevent capi:set_slot <!score=slot_number>
 ```
 
-[!ref ../Macro/Score.md]
+[!ref Score マクロ](../Macro/Score.md)
 
 ### 武器スロットに切り替え
 

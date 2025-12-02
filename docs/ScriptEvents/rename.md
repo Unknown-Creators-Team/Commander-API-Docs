@@ -27,9 +27,6 @@ rename によって変更できるのはネームタグのみです。
 |---|---|
 | `ネームタグ` | 設定するネームタグ |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -59,7 +56,7 @@ name マクロを活用し、既存の名前に色を付けます。
 Notch (赤色)
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ### タグに応じて色を変更する
 
@@ -75,8 +72,8 @@ tag マクロを活用し、タグによって色が変わるようにします�
 Notch (赤色)
 ```
 
-[!ref ../Macro/Name.md]
-[!ref ../Macro/Tag.md]
+[!ref Name マクロ](../Macro/Name.md)
+[!ref Tag マクロ](../Macro/Tag.md)
 
 ### ネームタグに体力を表示する
 
@@ -92,9 +89,9 @@ Notch
 HP: 20
 ```
 
-[!ref ../Macro/Name.md]
-[!ref ../Macro/NewLine.md]
-[!ref ../Macro/Score.md]
+[!ref Name マクロ](../Macro/Name.md)
+[!ref NewLine マクロ](../Macro/NewLine.md)
+[!ref Score マクロ](../Macro/Score.md)
 
 ### ネームタグにレベルを表示する
 
@@ -110,9 +107,9 @@ Notch
 Lv.42
 ```
 
-[!ref ../Macro/Name.md]
-[!ref ../Macro/NewLine.md]
-[!ref ../Macro/Score.md]
+[!ref Name マクロ](../Macro/Name.md)
+[!ref NewLine マクロ](../Macro/NewLine.md)
+[!ref Score マクロ](../Macro/Score.md)
 
 ### 条件付きネームタグ
 
@@ -128,8 +125,8 @@ Notch
 [危険]
 ```
 
-[!ref ../Macro/Name.md]
-[!ref ../Macro/If.md]
+[!ref Name マクロ](../Macro/Name.md)
+[!ref If マクロ](../Macro/If.md)
 
 ### 称号を表示する
 
@@ -144,7 +141,7 @@ Notch
 [管理者] Notch
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ## 注意事項
 

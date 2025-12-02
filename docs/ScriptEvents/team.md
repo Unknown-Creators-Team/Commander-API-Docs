@@ -22,9 +22,6 @@ last_update:
 |---|---|
 | `チーム番号` | 設定するチーム番号（整数） |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -60,7 +57,7 @@ last_update:
 /execute as @a run scriptevent capi:team <!score=team_number>
 ```
 
-[!ref ../Macro/Score.md]
+[!ref Score マクロ](../Macro/Score.md)
 
 ### タグに基づいてチーム分け
 
@@ -80,7 +77,7 @@ last_update:
 /execute as @a run scriptevent capi:team <!calc=random(1,4)>
 ```
 
-[!ref ../Macro/Calc.md]
+[!ref Calc マクロ](../Macro/Calc.md)
 
 ### チーム変更の通知
 

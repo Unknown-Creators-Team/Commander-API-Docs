@@ -38,9 +38,6 @@ JSON形式でパラメータを指定します：
 | `dimension` | ディメンション名 | × |
 | `set_on_fire` | 炎上させる秒数 | × |
 
-## 戻り値
-
-なし
 
 ## 使用例
 
@@ -114,7 +111,7 @@ JSON形式でパラメータを指定します：
 /execute as @a run scriptevent capi:spawn_entity {"id": "minecraft:zombie", "name": "<!name>のゾンビ"}
 ```
 
-[!ref ../Macro/Name.md]
+[!ref Name マクロ](../Macro/Name.md)
 
 ### 複数のエンティティをスポーン
 
