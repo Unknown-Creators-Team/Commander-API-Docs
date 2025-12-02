@@ -13,13 +13,14 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:screen <JSON形式のパラメータ>
+/scriptevent capi:screen <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "title": "タイトル",
@@ -31,6 +32,11 @@ JSON形式でパラメータを指定します：
     }
 }
 ```
++++ ESON
+```plaintext
+{title=タイトル,subtitle=サブタイトル,options={in=フェードイン時間,out=フェードアウト時間,stay=表示時間}}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|

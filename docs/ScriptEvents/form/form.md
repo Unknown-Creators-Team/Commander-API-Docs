@@ -27,7 +27,7 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:form <JSON形式のパラメータ>
+/scriptevent capi:form <パラメータ>
 ```
 
 ## 共通の仕様

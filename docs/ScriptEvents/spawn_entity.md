@@ -13,13 +13,14 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:spawn_entity <JSON形式のパラメータ>
+/scriptevent capi:spawn_entity <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "id": "エンティティID",
@@ -29,6 +30,11 @@ JSON形式でパラメータを指定します：
     "set_on_fire": 秒数
 }
 ```
++++ ESON
+```plaintext
+{id=エンティティID,name=名前,location=[x,y,z],dimension=ディメンション名,set_on_fire=秒数}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|

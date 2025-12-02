@@ -13,13 +13,14 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:explosion <JSON形式のパラメータ>
+/scriptevent capi:explosion <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "radius": 威力,
@@ -32,6 +33,11 @@ JSON形式でパラメータを指定します：
     }
 }
 ```
++++ ESON
+```plaintext
+{radius=威力,location=[x,y,z],dimension=ディメンション名,options={allow_under_water=true,breaks_blocks=true,causes_fire=true}}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|

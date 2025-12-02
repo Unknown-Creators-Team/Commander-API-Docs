@@ -18,19 +18,25 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:impulse <JSON形式のパラメータ>
+/scriptevent capi:impulse <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "vector": [x, y, z],
     "clear_velocity": true/false
 }
 ```
++++ ESON
+```plaintext
+{vector=[x,y,z],clear_velocity=true}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|

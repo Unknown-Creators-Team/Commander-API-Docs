@@ -13,19 +13,25 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:knockback <JSON形式のパラメータ>
+/scriptevent capi:knockback <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "horizontal_force": [x, z],
     "vertical_strength": y
 }
 ```
++++ ESON
+```plaintext
+{horizontal_force=[x,z],vertical_strength=y}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|

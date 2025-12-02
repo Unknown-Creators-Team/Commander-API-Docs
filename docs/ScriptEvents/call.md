@@ -32,7 +32,7 @@ last_update:
 ```
 +++ ESON
 ```plaintext
-name=呼び出し名 args={arg1=値1 arg2=値2}
+{name=呼び出し名,args={arg1=値1,arg2=値2}}
 ```
 +++
 
@@ -54,7 +54,7 @@ name=呼び出し名 args={arg1=値1 arg2=値2}
 ```
 +++ ESON
 ```mcfunction
-/scriptevent capi:call name=welcome
+/scriptevent capi:call {name=welcome}
 ```
 +++
 
@@ -74,7 +74,7 @@ name=呼び出し名 args={arg1=値1 arg2=値2}
 ```
 +++ ESON
 ```mcfunction
-/scriptevent capi:call name=give_items args={item=diamond amount=10}
+/scriptevent capi:call {name=give_items,args={item=diamond,amount=10}}
 ```
 +++
 
@@ -93,7 +93,7 @@ name=呼び出し名 args={arg1=値1 arg2=値2}
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:call name=player_setup args={player=<!name>}
+/execute as @a run scriptevent capi:call {name=player_setup,args={player=<!name>}}
 ```
 +++
 
@@ -114,7 +114,7 @@ name=呼び出し名 args={arg1=値1 arg2=値2}
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:call name=level_up args={level=<!score=player_level>}
+/execute as @a run scriptevent capi:call {name=level_up,args={level=<!score=player_level>}}
 ```
 +++
 

@@ -13,13 +13,14 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:tp <JSON形式のパラメータ>
+/scriptevent capi:tp <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "location": [x, y, z],
@@ -27,6 +28,11 @@ JSON形式でパラメータを指定します：
     "dimension": "ディメンション名"
 }
 ```
++++ ESON
+```plaintext
+{location=[x,y,z],rotation=[rx,ry],dimension=ディメンション名}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|
@@ -47,31 +53,49 @@ JSON形式でパラメータを指定します：
 
 指定した座標にテレポートします。
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:tp {"location": [100, 64, 100]}
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:tp {location=[100,64,100]}
+```
++++
 
 ### 相対座標へのテレポート
 
 現在位置からの相対座標にテレポートします。
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:tp {"location": ["~10", "~", "~10"]}
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:tp {location=[~10,~,~10]}
+```
++++
 
 ### 向きを指定してテレポート
 
 座標と向きを指定してテレポートします。
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:tp {"location": [0, 64, 0], "rotation": [0, 0]}
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:tp {location=[0,64,0],rotation=[0,0]}
+```
++++
 
 ### ディメンションを指定してテレポート
 
 異なるディメンションにテレポートします。
 
-```mcfunction
++++ JSON
 /execute as @a run scriptevent capi:tp {"location": [0, 64, 0], "dimension": "nether"}
 ```
 

@@ -13,13 +13,14 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:shoot <JSON形式のパラメータ>
+/scriptevent capi:shoot <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "id": "エンティティID",
@@ -31,6 +32,11 @@ JSON形式でパラメータを指定します：
     "dimension": "ディメンション名"
 }
 ```
++++ ESON
+```plaintext
+{id=エンティティID,nameTag=名前,fire=秒数,location=[x,y,z],vector=[vx,vy,vz],speed=速度,dimension=ディメンション名}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|

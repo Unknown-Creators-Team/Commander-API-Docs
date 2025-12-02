@@ -13,13 +13,14 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:set_item <JSON形式のパラメータ>
+/scriptevent capi:set_item <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "id": "アイテムID",
@@ -34,6 +35,11 @@ JSON形式でパラメータを指定します：
     "keep_on_death": true/false
 }
 ```
++++ ESON
+```plaintext
+{id=アイテムID,name=アイテム名,amount=数量,slot=スロット番号,lore=[説明文1,説明文2],enchants=[{name=エンチャント名,level=レベル}],can_place_on=[ブロックID],can_destroy=[ブロックID],lock=ロックモード,keep_on_death=true}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|

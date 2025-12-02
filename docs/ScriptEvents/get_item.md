@@ -13,19 +13,25 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:get_item <JSON形式のパラメータ>
+/scriptevent capi:get_item <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "slot": スロット番号,
     "minimize": true/false
 }
 ```
++++ ESON
+```plaintext
+{slot=スロット番号,minimize=true}
+```
++++
 
 | パラメータ | 説明 | デフォルト |
 |---|---|---|
