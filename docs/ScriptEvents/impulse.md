@@ -96,7 +96,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-::: !ref ../Macro/Calc.md
+[!ref ../Macro/Calc.md]
 
 ### エンティティを遠くに飛ばす
 

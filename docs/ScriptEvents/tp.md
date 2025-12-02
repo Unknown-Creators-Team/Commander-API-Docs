@@ -107,7 +107,7 @@ JSON形式でパラメータを指定します：
 /execute as @a run scriptevent capi:tp {"location": ["<!calc=random(-100,100)>", "64", "<!calc=random(-100,100)>"]}
 ```
 
-::: !ref ../Macro/Calc.md
+[!ref ../Macro/Calc.md]
 
 ### 他のプレイヤーの位置へテレポート
 

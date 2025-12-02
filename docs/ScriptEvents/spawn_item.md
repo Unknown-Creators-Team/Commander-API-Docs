@@ -202,7 +202,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ## よく使われるアイテムID
 

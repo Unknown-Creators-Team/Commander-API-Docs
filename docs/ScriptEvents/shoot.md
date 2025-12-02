@@ -167,7 +167,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-::: !ref ../Macro/Velocity.md
+[!ref ../Macro/Velocity.md]
 
 ### ネザーでの発射
 

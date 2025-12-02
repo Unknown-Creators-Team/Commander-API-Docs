@@ -76,7 +76,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ### スコアを引数として渡す
 
@@ -91,7 +91,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-::: !ref ../Macro/Score.md
+[!ref ../Macro/Score.md]
 
 ## コマンドセットの登録方法
 

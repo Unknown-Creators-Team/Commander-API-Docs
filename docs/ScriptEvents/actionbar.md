@@ -54,7 +54,7 @@ last_update:
 ようこそ、Notchさん！
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ### 体力表示
 
@@ -69,7 +69,7 @@ last_update:
 HP: 18 / 20
 ```
 
-::: !ref ../Macro/Score.md
+[!ref ../Macro/Score.md]
 
 ### 座標表示
 
@@ -84,7 +84,7 @@ HP: 18 / 20
 X: 100 Y: 64 Z: -50
 ```
 
-::: !ref ../Macro/Calc.md
+[!ref ../Macro/Calc.md]
 
 ### 複数情報の表示
 
@@ -99,7 +99,7 @@ X: 100 Y: 64 Z: -50
 HP: 20 | LV: 42 | XP: 1500
 ```
 
-::: !ref ../Macro/Score.md
+[!ref ../Macro/Score.md]
 
 ## 注意事項
 

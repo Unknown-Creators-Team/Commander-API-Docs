@@ -60,7 +60,7 @@ last_update:
 /execute as @a run scriptevent capi:team <!score=team_number>
 ```
 
-::: !ref ../Macro/Score.md
+[!ref ../Macro/Score.md]
 
 ### タグに基づいてチーム分け
 
@@ -80,7 +80,7 @@ last_update:
 /execute as @a run scriptevent capi:team <!calc=random(1,4)>
 ```
 
-::: !ref ../Macro/Calc.md
+[!ref ../Macro/Calc.md]
 
 ### チーム変更の通知
 

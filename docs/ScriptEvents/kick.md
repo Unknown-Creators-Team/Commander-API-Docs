@@ -62,7 +62,7 @@ last_update:
 Notchさんは長時間操作がありませんでした
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ### 条件付きキック
 

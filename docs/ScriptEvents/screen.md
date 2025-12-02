@@ -132,7 +132,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ### スコアを含むタイトル
 
@@ -145,7 +145,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-::: !ref ../Macro/Score.md
+[!ref ../Macro/Score.md]
 
 ### カウントダウン表示
 
@@ -193,7 +193,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ## 色とフォーマット
 

@@ -114,7 +114,7 @@ JSON形式でパラメータを指定します：
 /execute as @a run scriptevent capi:spawn_entity {"id": "minecraft:zombie", "name": "<!name>のゾンビ"}
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ### 複数のエンティティをスポーン
 

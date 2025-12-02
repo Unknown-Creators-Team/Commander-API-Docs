@@ -54,7 +54,7 @@ last_update:
 Notchさんがゲームに参加しました！
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ### イベント通知
 
@@ -95,7 +95,7 @@ Notchさんがゲームに参加しました！
 Notchが10キルを達成しました！
 ```
 
-::: !ref ../Macro/Name.md
+[!ref ../Macro/Name.md]
 
 ### 改行を含むアナウンス
 
@@ -112,7 +112,7 @@ Notchが10キルを達成しました！
 ===============
 ```
 
-::: !ref ../Macro/NewLine.md
+[!ref ../Macro/NewLine.md]
 
 ## 注意事項
 
