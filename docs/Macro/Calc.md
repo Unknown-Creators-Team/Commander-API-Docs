@@ -57,10 +57,11 @@ last_update:
 | `ceil` | 切り上げ | `ceil(1.1)` | $\lceil 1.1 \rceil = 2$ | `2` |
 | `log10` | 常用対数 | `log10(100)` | $\log_{10}(100) = 2$ | `2` |
 | `log2` | 二進対数 | `log2(8)` | $\log_{2}(8) = 3$ | `3` |
-| `rand` | ランダム値 | `rand(1,10)` | $1 \leq x \leq 10$ | `1`～`10`の整数 |
+| `rand` | ランダム値 | `rand()` | $0 \leq x < 1$ | `0`～`1`の小数 |
 
 :::info
-`rand(min,max)` は最小値と最大値を含む範囲でランダムな整数を返します。
+`rand()` は 0 以上 1 未満のランダムな小数を返します。  
+特定の範囲の整数が必要な場合は、`floor(rand()*範囲)+最小値` のように計算します。
 :::
 
 ## 使用例
@@ -157,10 +158,25 @@ last_update:
 
 ### ランダム値の生成
 
-ランダムな整数を生成します。
+ランダムな小数（0～1）を生成します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:tell ダイスの目: <!calc=rand(1,6)>
+/execute as @a run scriptevent capi:tell ランダム値: <!calc=rand()>
+```
+
+**出力例**:
+```
+ランダム値: 0.7234
+```
+
+計算式: $rand()$ は 0 以上 1 未満のランダムな小数
+
+### ダイスの目（1～6）を生成
+
+`rand()` を使って 1 から 6 までのランダムな整数を生成します。
+
+```mcfunction
+/execute as @a run scriptevent capi:tell ダイスの目: <!calc=floor(rand()*6)+1>
 ```
 
 **出力例**:
@@ -168,7 +184,7 @@ last_update:
 ダイスの目: 4
 ```
 
-計算式: $rand(1, 6)$ は 1 から 6 までのランダムな整数
+計算式: $\lfloor rand() \times 6 \rfloor + 1$ は 1 から 6 までのランダムな整数
 
 ### 距離の計算
 

@@ -125,11 +125,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=chicken] run scriptevent capi:impulse {vector=[<!calc=rand(-1,1)>,1,<!calc=rand(-1,1)>]}
+/execute as @e[type=chicken] run scriptevent capi:impulse {vector=[<!calc=rand()*2-1>,1,<!calc=rand()*2-1>]}
 ```
 +++ JSON
 ```mcfunction
-/execute as @e[type=chicken] run scriptevent capi:impulse {"vector": ["<!calc=rand(-1,1)>", "1", "<!calc=rand(-1,1)>"]}
+/execute as @e[type=chicken] run scriptevent capi:impulse {"vector": ["<!calc=rand()*2-1>", "1", "<!calc=rand()*2-1>"]}
 ```
 +++
 

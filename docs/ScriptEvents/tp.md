@@ -119,15 +119,15 @@ last_update:
 
 ### ランダムな場所へテレポート
 
-マクロを使用してランダムな座標にテレポートします。
+マクロを使用してランダムな座標にテレポートします（-100～100の範囲）。
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:tp {location=[<!calc=rand(-100,100)>,64,<!calc=rand(-100,100)>]}
+/execute as @a run scriptevent capi:tp {location=[<!calc=floor(rand()*200)-100>,64,<!calc=floor(rand()*200)-100>]}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:tp {"location": ["<!calc=rand(-100,100)>", "64", "<!calc=rand(-100,100)>"]}
+/execute as @a run scriptevent capi:tp {"location": ["<!calc=floor(rand()*200)-100>", "64", "<!calc=floor(rand()*200)-100>"]}
 ```
 +++
 
