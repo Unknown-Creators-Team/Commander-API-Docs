@@ -46,7 +46,10 @@ last_update:
 
 ### 高度な機能
 
-- **[form](./form.md)** - フォームUIを表示
+- **[form](./form/form.md)** - フォームUIを表示
+  - **[action](./form/action.md)** - アクションフォーム
+  - **[message](./form/message.md)** - メッセージフォーム
+  - **[modal](./form/modal.md)** - モーダルフォーム
 - **[call](./call.md)** - 他のスクリプトイベントを呼び出し
 - **[run](./run.md)** - コマンドを実行
 - **[test](./test.md)** - テスト機能

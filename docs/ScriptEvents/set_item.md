@@ -159,7 +159,7 @@ JSON形式でパラメータを指定します：
 }
 ```
 
-[!ref Name マクロ](../Macro/Name.md)
+::: !ref ../Macro/Name.md
 
 ### 特定のブロックにのみ設置可能
 

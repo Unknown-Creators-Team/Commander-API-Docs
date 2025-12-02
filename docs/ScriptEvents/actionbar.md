@@ -51,7 +51,7 @@ last_update:
 ようこそ、Notchさん！
 ```
 
-[!ref Name マクロ](../Macro/Name.md)
+::: !ref ../Macro/Name.md
 
 ### 体力表示
 
@@ -66,14 +66,14 @@ last_update:
 HP: 18 / 20
 ```
 
-[!ref Score マクロ](../Macro/Score.md)
+::: !ref ../Macro/Score.md
 
 ### 座標表示
 
 プレイヤーの座標をアクションバーに表示します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:actionbar X: <!calc=floor({x})> Y: <!calc=floor({y})> Z: <!calc=floor({z})>
+/execute as @a run scriptevent capi:actionbar X: <!score=capi:location_x> Y: <!score=capi:location_y> Z: <!score=capi:location_z>
 ```
 
 **表示例**:
@@ -81,7 +81,7 @@ HP: 18 / 20
 X: 100 Y: 64 Z: -50
 ```
 
-[!ref Calc マクロ](../Macro/Calc.md)
+::: !ref ../Macro/Score.md
 
 ### 複数情報の表示
 
@@ -96,7 +96,7 @@ X: 100 Y: 64 Z: -50
 HP: 20 | LV: 42 | XP: 1500
 ```
 
-[!ref Score マクロ](../Macro/Score.md)
+::: !ref ../Macro/Score.md
 
 ## 注意事項
 

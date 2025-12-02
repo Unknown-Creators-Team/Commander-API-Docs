@@ -13,13 +13,14 @@ last_update:
 ## 構文
 
 ```mcfunction
-/scriptevent capi:call <JSON形式のパラメータ>
+/scriptevent capi:call <パラメータ>
 ```
 
 ## パラメータ
 
-JSON形式でパラメータを指定します：
+パラメータはJSON形式またはESON形式で指定できます：
 
++++ JSON
 ```json
 {
     "name": "呼び出し名",
@@ -29,6 +30,11 @@ JSON形式でパラメータを指定します：
     }
 }
 ```
++++ ESON
+```plaintext
+name=呼び出し名 args={arg1=値1 arg2=値2}
+```
++++
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|
@@ -42,14 +48,21 @@ JSON形式でパラメータを指定します：
 
 登録されたコマンドセットを呼び出します。
 
++++ JSON
 ```mcfunction
 /scriptevent capi:call {"name": "welcome"}
 ```
++++ ESON
+```mcfunction
+/scriptevent capi:call name=welcome
+```
++++
 
 ### 引数付きで呼び出し
 
 引数を渡してコマンドセットを呼び出します。
 
++++ JSON
 ```mcfunction
 /scriptevent capi:call {
     "name": "give_items",
@@ -59,11 +72,17 @@ JSON形式でパラメータを指定します：
     }
 }
 ```
++++ ESON
+```mcfunction
+/scriptevent capi:call name=give_items args={item=diamond amount=10}
+```
++++
 
 ### マクロと組み合わせて使用
 
 マクロを使用して動的に呼び出します。
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:call {
     "name": "player_setup",
@@ -72,13 +91,19 @@ JSON形式でパラメータを指定します：
     }
 }
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:call name=player_setup args={player=<!name>}
+```
++++
 
-[!ref Name マクロ](../Macro/Name.md)
+::: !ref ../Macro/Name.md
 
 ### スコアを引数として渡す
 
 スコアを引数として渡します。
 
++++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:call {
     "name": "level_up",
@@ -87,18 +112,34 @@ JSON形式でパラメータを指定します：
     }
 }
 ```
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:call name=level_up args={level=<!score=player_level>}
+```
++++
 
-[!ref Score マクロ](../Macro/Score.md)
+::: !ref ../Macro/Score.md
 
 ## コマンドセットの登録方法
 
-コマンドセットは `CAPI_CALLS` というスコアボードデータベースに保存されます。  
-登録には別途スクリプトまたはコマンドが必要です。
+コマンドセットは `CAPI_CALLS` というスコアボードデータベースに保存されます。
 
-### 登録例
+### UI での登録
+
+コマンド登録画面を表示するには：
+
+```mcfunction
+/scriptevent capi:call
+```
+
+このコマンドを実行すると、コマンドセットの登録・編集・削除ができるUIが表示されます。
+
+### コードでの登録
+
+TypeScript/JavaScriptで直接登録することもできます。
 
 ```javascript
-// TypeScript/JavaScript での登録例
+// 登録例
 const db = new ScoreboardDatabase<string, string[]>("CAPI_CALLS");
 db.set("welcome", [
     "say Welcome to the server!",

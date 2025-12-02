@@ -71,7 +71,7 @@ last_update:
 /execute as @a run scriptevent capi:set_slot <!score=slot_number>
 ```
 
-[!ref Score マクロ](../Macro/Score.md)
+::: !ref ../Macro/Score.md
 
 ### 武器スロットに切り替え
 

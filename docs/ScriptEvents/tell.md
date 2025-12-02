@@ -51,7 +51,7 @@ last_update:
 こんにちは、Notchさん！
 ```
 
-[!ref Name マクロ](../Macro/Name.md)
+::: !ref ../Macro/Name.md
 
 ### スコアの通知
 
@@ -66,7 +66,7 @@ last_update:
 あなたの所持金は1000円です
 ```
 
-[!ref Score マクロ](../Macro/Score.md)
+::: !ref ../Macro/Score.md
 
 ### 条件付きメッセージ
 
@@ -81,7 +81,7 @@ last_update:
 警告: 体力が低下しています！
 ```
 
-[!ref If マクロ](../Macro/If.md)
+::: !ref ../Macro/If.md
 
 ### 計算結果の表示
 
@@ -96,7 +96,7 @@ last_update:
 合計ダメージ: 150
 ```
 
-[!ref Calc マクロ](../Macro/Calc.md)
+::: !ref ../Macro/Calc.md
 
 ### 複数行のメッセージ
 
@@ -113,7 +113,7 @@ HP: 20
 LV: 42
 ```
 
-[!ref NewLine マクロ](../Macro/NewLine.md)
+::: !ref ../Macro/NewLine.md
 
 ### At記号を含むメッセージ
 
@@ -128,7 +128,7 @@ LV: 42
 @Notch さんが参加しました！
 ```
 
-[!ref At マクロ](../Macro/At.md)
+::: !ref ../Macro/At.md
 
 ## 注意事項
 
