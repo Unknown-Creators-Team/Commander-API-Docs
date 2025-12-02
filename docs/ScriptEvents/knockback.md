@@ -20,16 +20,16 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{horizontal_force=[x,z],vertical_strength=y}
+```
 +++ JSON
 ```json
 {
     "horizontal_force": [x, z],
     "vertical_strength": y
 }
-```
-+++ ESON
-```plaintext
-{horizontal_force=[x,z],vertical_strength=y}
 ```
 +++
 

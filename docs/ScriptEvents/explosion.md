@@ -20,6 +20,10 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{radius=威力,location=[x,y,z],dimension=ディメンション名,options={allow_under_water=true,breaks_blocks=true,causes_fire=true}}
+```
 +++ JSON
 ```json
 {
@@ -32,10 +36,6 @@ last_update:
         "causes_fire": true/false
     }
 }
-```
-+++ ESON
-```plaintext
-{radius=威力,location=[x,y,z],dimension=ディメンション名,options={allow_under_water=true,breaks_blocks=true,causes_fire=true}}
 ```
 +++
 

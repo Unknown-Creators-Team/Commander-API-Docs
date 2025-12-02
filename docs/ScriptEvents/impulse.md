@@ -25,16 +25,16 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{vector=[x,y,z],clear_velocity=true}
+```
 +++ JSON
 ```json
 {
     "vector": [x, y, z],
     "clear_velocity": true/false
 }
-```
-+++ ESON
-```plaintext
-{vector=[x,y,z],clear_velocity=true}
 ```
 +++
 

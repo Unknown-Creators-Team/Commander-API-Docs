@@ -20,6 +20,10 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{item=アイテムID,name=アイテム名,amount=数量,lore=[説明文1,説明文2],enchants=[{name=エンチャント名,level=レベル}],can_place_on=[ブロックID],can_destroy=[ブロックID],lock=ロックモード,keep_on_death=true,location=[x,y,z],dimension=ディメンション名,clear_velocity=true}
+```
 +++ JSON
 ```json
 {
@@ -36,10 +40,6 @@ last_update:
     "dimension": "ディメンション名",
     "clear_velocity": true/false
 }
-```
-+++ ESON
-```plaintext
-{item=アイテムID,name=アイテム名,amount=数量,lore=[説明文1,説明文2],enchants=[{name=エンチャント名,level=レベル}],can_place_on=[ブロックID],can_destroy=[ブロックID],lock=ロックモード,keep_on_death=true,location=[x,y,z],dimension=ディメンション名,clear_velocity=true}
 ```
 +++
 

@@ -20,6 +20,10 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{id=エンティティID,nameTag=名前,fire=秒数,location=[x,y,z],vector=[vx,vy,vz],speed=速度,dimension=ディメンション名}
+```
 +++ JSON
 ```json
 {
@@ -31,10 +35,6 @@ last_update:
     "speed": 速度,
     "dimension": "ディメンション名"
 }
-```
-+++ ESON
-```plaintext
-{id=エンティティID,nameTag=名前,fire=秒数,location=[x,y,z],vector=[vx,vy,vz],speed=速度,dimension=ディメンション名}
 ```
 +++
 

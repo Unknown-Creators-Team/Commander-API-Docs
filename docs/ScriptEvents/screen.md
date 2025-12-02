@@ -20,6 +20,10 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{title=タイトル,subtitle=サブタイトル,options={in=フェードイン時間,out=フェードアウト時間,stay=表示時間}}
+```
 +++ JSON
 ```json
 {
@@ -31,10 +35,6 @@ last_update:
         "stay": 表示時間
     }
 }
-```
-+++ ESON
-```plaintext
-{title=タイトル,subtitle=サブタイトル,options={in=フェードイン時間,out=フェードアウト時間,stay=表示時間}}
 ```
 +++
 

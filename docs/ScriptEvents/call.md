@@ -20,6 +20,10 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{name=呼び出し名,args={arg1=値1,arg2=値2}}
+```
 +++ JSON
 ```json
 {
@@ -29,10 +33,6 @@ last_update:
         "arg2": "値2"
     }
 }
-```
-+++ ESON
-```plaintext
-{name=呼び出し名,args={arg1=値1,arg2=値2}}
 ```
 +++
 
@@ -48,13 +48,13 @@ last_update:
 
 登録されたコマンドセットを呼び出します。
 
-+++ JSON
-```mcfunction
-/scriptevent capi:call {"name": "welcome"}
-```
 +++ ESON
 ```mcfunction
 /scriptevent capi:call {name=welcome}
+```
++++ JSON
+```mcfunction
+/scriptevent capi:call {"name": "welcome"}
 ```
 +++
 
@@ -62,6 +62,10 @@ last_update:
 
 引数を渡してコマンドセットを呼び出します。
 
++++ ESON
+```mcfunction
+/scriptevent capi:call {name=give_items,args={item=diamond,amount=10}}
+```
 +++ JSON
 ```mcfunction
 /scriptevent capi:call {
@@ -72,16 +76,16 @@ last_update:
     }
 }
 ```
-+++ ESON
-```mcfunction
-/scriptevent capi:call {name=give_items,args={item=diamond,amount=10}}
-```
 +++
 
 ### マクロと組み合わせて使用
 
 マクロを使用して動的に呼び出します。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:call {name=player_setup,args={player=<!name>}}
+```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:call {
@@ -91,10 +95,6 @@ last_update:
     }
 }
 ```
-+++ ESON
-```mcfunction
-/execute as @a run scriptevent capi:call {name=player_setup,args={player=<!name>}}
-```
 +++
 
 ::: !ref ../Macro/Name.md
@@ -103,6 +103,10 @@ last_update:
 
 スコアを引数として渡します。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:call {name=level_up,args={level=<!score=player_level>}}
+```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:call {
@@ -111,10 +115,6 @@ last_update:
         "level": "<!score=player_level>"
     }
 }
-```
-+++ ESON
-```mcfunction
-/execute as @a run scriptevent capi:call {name=level_up,args={level=<!score=player_level>}}
 ```
 +++
 
@@ -133,30 +133,6 @@ last_update:
 ```
 
 このコマンドを実行すると、コマンドセットの登録・編集・削除ができるUIが表示されます。
-
-### コードでの登録
-
-TypeScript/JavaScriptで直接登録することもできます。
-
-```javascript
-// 登録例
-const db = new ScoreboardDatabase<string, string[]>("CAPI_CALLS");
-db.set("welcome", [
-    "say Welcome to the server!",
-    "give @s bread 5",
-    "effect @s regeneration 10 1"
-]);
-```
-
-### 引数の使用
-
-登録時に `{arg_name}` を使用して引数を受け取れます。
-
-```javascript
-db.set("give_items", [
-    "give @s {item} {amount}"
-]);
-```
 
 ## 注意事項
 

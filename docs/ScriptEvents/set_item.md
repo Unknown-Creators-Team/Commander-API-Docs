@@ -20,6 +20,10 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{id=アイテムID,name=アイテム名,amount=数量,slot=スロット番号,lore=[説明文1,説明文2],enchants=[{name=エンチャント名,level=レベル}],can_place_on=[ブロックID],can_destroy=[ブロックID],lock=ロックモード,keep_on_death=true}
+```
 +++ JSON
 ```json
 {
@@ -34,10 +38,6 @@ last_update:
     "lock": "ロックモード",
     "keep_on_death": true/false
 }
-```
-+++ ESON
-```plaintext
-{id=アイテムID,name=アイテム名,amount=数量,slot=スロット番号,lore=[説明文1,説明文2],enchants=[{name=エンチャント名,level=レベル}],can_place_on=[ブロックID],can_destroy=[ブロックID],lock=ロックモード,keep_on_death=true}
 ```
 +++
 

@@ -20,16 +20,16 @@ last_update:
 
 パラメータはJSON形式またはESON形式で指定できます：
 
++++ ESON
+```plaintext
+{slot=スロット番号,minimize=true}
+```
 +++ JSON
 ```json
 {
     "slot": スロット番号,
     "minimize": true/false
 }
-```
-+++ ESON
-```plaintext
-{slot=スロット番号,minimize=true}
 ```
 +++
 
