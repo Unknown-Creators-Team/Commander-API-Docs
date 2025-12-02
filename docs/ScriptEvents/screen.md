@@ -79,10 +79,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {
-    "title": "§6ゲーム開始",
-    "subtitle": "§7頑張ってください！"
-}
+/execute as @a run scriptevent capi:screen {title=§6ゲーム開始,subtitle=§7頑張ってください！}
 ```
 +++ JSON
 ```mcfunction
@@ -99,14 +96,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {
-    "title": "§cカウントダウン",
-    "options": {
-        "in": 10,
-        "out": 10,
-        "stay": 40
-    }
-}
+/execute as @a run scriptevent capi:screen {title=§cカウントダウン,options= {in= 10,out= 10,stay= 40}}
 ```
 +++ JSON
 ```mcfunction
@@ -127,15 +117,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {
-    "title": "§6重要なお知らせ",
-    "subtitle": "§7イベントが開始されました",
-    "options": {
-        "in": 20,
-        "out": 20,
-        "stay": 100
-    }
-}
+/execute as @a run scriptevent capi:screen {title=§6重要なお知らせ,subtitle=§7イベントが開始されました,options= {in= 20,out= 20,stay= 100}}
 ```
 +++ JSON
 ```mcfunction
@@ -157,14 +139,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {
-    "title": "§c警告!",
-    "options": {
-        "in": 5,
-        "out": 5,
-        "stay": 20
-    }
-}
+/execute as @a run scriptevent capi:screen {title=§c警告!,options= {in= 5,out= 5,stay= 20}}
 ```
 +++ JSON
 ```mcfunction
@@ -185,10 +160,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {
-    "title": "ようこそ",
-    "subtitle": "<!name>さん"
-}
+/execute as @a run scriptevent capi:screen {title=ようこそ,subtitle=<!name>さん}
 ```
 +++ JSON
 ```mcfunction
@@ -207,10 +179,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {
-    "title": "§6レベルアップ!",
-    "subtitle": "レベル <!score=player_level>"
-}
+/execute as @a run scriptevent capi:screen {title=§6レベルアップ!,subtitle=レベル <!score=player_level>}
 ```
 +++ JSON
 ```mcfunction
@@ -255,15 +224,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {
-    "title": "§6ゲーム終了",
-    "subtitle": "§7お疲れ様でした",
-    "options": {
-        "in": 20,
-        "out": 40,
-        "stay": 60
-    }
-}
+/execute as @a run scriptevent capi:screen {title=§6ゲーム終了,subtitle=§7お疲れ様でした,options= {in= 20,out= 40,stay= 60}}
 ```
 +++ JSON
 ```mcfunction
@@ -285,15 +246,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {
-    "title": "§6§l勝利!",
-    "subtitle": "<!name>の勝利です！",
-    "options": {
-        "in": 10,
-        "out": 20,
-        "stay": 80
-    }
-}
+/execute as @a run scriptevent capi:screen {title=§6§l勝利!,subtitle=<!name>の勝利です！,options= {in= 10,out= 20,stay= 80}}
 ```
 +++ JSON
 ```mcfunction

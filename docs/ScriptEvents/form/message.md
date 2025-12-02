@@ -154,25 +154,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "確認",
-    "body": "本当に実行しますか？",
-    "btn1": {
-        "txt": "はい",
-        "act": {
-            "type": "run",
-            "value": "say 実行しました"
-        }
-    },
-    "btn2": {
-        "text": "いいえ",
-        "act": {
-            "type": "run",
-            "value": "say キャンセルしました"
-        }
-    }
-}
+/execute as @a run scriptevent capi:form {type=message,title=確認,body=本当に実行しますか？,btn1= {txt=はい,act= {type=run,value=say 実行しました}},btn2= {text=いいえ,act= {type=run,value=say キャンセルしました}}}
 ```
 +++
 
@@ -198,21 +180,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {
-    "type": "msg",
-    "title": "警告",
-    "body": "このアイテムを削除しますか？\n§c※この操作は取り消せません",
-    "btn1": {
-        "txt": "削除する",
-        "act": {
-            "type": "run",
-            "value": "clear @s diamond"
-        }
-    },
-    "btn2": {
-        "text": "キャンセル"
-    }
-}
+/execute as @a run scriptevent capi:form {type=msg,title=警告,body=このアイテムを削除しますか？\n§c※この操作は取り消せません,btn1= {txt=削除する,act= {type=run,value=clear @s diamond}},btn2= {text=キャンセル}}
 ```
 +++
 
@@ -242,25 +210,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "PvP設定",
-    "body": "PvPを有効にしますか？",
-    "btn1": {
-        "txt": "有効にする",
-        "act": {
-            "type": "add_tag",
-            "value": "pvp_enabled"
-        }
-    },
-    "btn2": {
-        "text": "無効にする",
-        "act": {
-            "type": "remove_tag",
-            "value": "pvp_enabled"
-        }
-    }
-}
+/execute as @a run scriptevent capi:form {type=message,title=PvP設定,body=PvPを有効にしますか？,btn1= {txt=有効にする,act= {type=add_tag,value=pvp_enabled}},btn2= {text=無効にする,act= {type=remove_tag,value=pvp_enabled}}}
 ```
 +++
 
@@ -296,31 +246,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "クエスト受注",
-    "body": "このクエストを受注しますか？",
-    "btn1": {
-        "txt": "受注する",
-        "act": {
-            "type": "set_score",
-            "value": {
-                "object": "quest_status",
-                "value": 1
-            }
-        }
-    },
-    "btn2": {
-        "text": "断る",
-        "act": {
-            "type": "ss",
-            "value": {
-                "object": "quest_status",
-                "value": 0
-            }
-        }
-    }
-}
+/execute as @a run scriptevent capi:form {type=message,title=クエスト受注,body=このクエストを受注しますか？,btn1= {txt=受注する,act= {type=set_score,value= {object=quest_status,value= 1}}},btn2= {text=断る,act= {type=ss,value= {object=quest_status,value= 0}}}}
 ```
 +++
 
@@ -346,21 +272,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "テレポート",
-    "body": "スポーン地点にテレポートしますか？",
-    "btn1": {
-        "txt": "はい",
-        "act": {
-            "type": "r",
-            "value": "tp @s 0 64 0"
-        }
-    },
-    "btn2": {
-        "text": "いいえ"
-    }
-}
+/execute as @a run scriptevent capi:form {type=message,title=テレポート,body=スポーン地点にテレポートしますか？,btn1= {txt=はい,act= {type=r,value=tp @s 0 64 0}},btn2= {text=いいえ}}
 ```
 +++
 
@@ -386,21 +298,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "ログアウト",
-    "body": "<!name>さん、本当にログアウトしますか？",
-    "btn1": {
-        "txt": "ログアウト",
-        "act": {
-            "type": "run",
-            "value": "kick @s"
-        }
-    },
-    "btn2": {
-        "text": "キャンセル"
-    }
-}
+/execute as @a run scriptevent capi:form {type=message,title=ログアウト,body=<!name>さん、本当にログアウトしますか？,btn1= {txt=ログアウト,act= {type=run,value=kick @s}},btn2= {text=キャンセル}}
 ```
 +++
 

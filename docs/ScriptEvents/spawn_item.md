@@ -109,11 +109,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {
-    "item": "minecraft:diamond_sword",
-    "name": "§6勇者の剣",
-    "lore": ["§7伝説の武器", "§7攻撃力 +10"]
-}
+/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§6勇者の剣,lore= ["§7伝説の武器","§7攻撃力 +10"]}
 ```
 +++ JSON
 ```mcfunction
@@ -131,13 +127,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {
-    "item": "minecraft:diamond_sword",
-    "enchants": [
-        {"name": "sharpness", "level": 5},
-        {"name": "fire_aspect", "level": 2}
-    ]
-}
+/scriptevent capi:spawn_item {item=minecraft:diamond_sword,enchants= [{name=sharpness,level= 5},{name=fire_aspect,level= 2}]}
 ```
 +++ JSON
 ```mcfunction
@@ -199,10 +189,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {
-    "item": "minecraft:totem_of_undying",
-    "keep_on_death": true
-}
+/scriptevent capi:spawn_item {item=minecraft:totem_of_undying,keep_on_death= true}
 ```
 +++ JSON
 ```mcfunction
@@ -219,10 +206,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {
-    "item": "minecraft:stone",
-    "can_place_on": ["minecraft:dirt", "minecraft:grass_block"]
-}
+/scriptevent capi:spawn_item {item=minecraft:stone,can_place_on= ["minecraft:dirt","minecraft:grass_block"]}
 ```
 +++ JSON
 ```mcfunction
@@ -239,10 +223,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {
-    "item": "minecraft:wooden_pickaxe",
-    "can_destroy": ["minecraft:stone", "minecraft:cobblestone"]
-}
+/scriptevent capi:spawn_item {item=minecraft:wooden_pickaxe,can_destroy= ["minecraft:stone","minecraft:cobblestone"]}
 ```
 +++ JSON
 ```mcfunction
@@ -259,25 +240,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {
-    "item": "minecraft:diamond_sword",
-    "name": "§c§l最強の剣",
-    "amount": 1,
-    "lore": [
-        "§7伝説の武器",
-        "§7攻撃力 +100",
-        "§7クリティカル率 +50%"
-    ],
-    "enchants": [
-        {"name": "sharpness", "level": 10},
-        {"name": "fire_aspect", "level": 5},
-        {"name": "looting", "level": 3}
-    ],
-    "keep_on_death": true,
-    "location": [100, 64, 100],
-    "dimension": "overworld",
-    "clear_velocity": true
-}
+/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§c§l最強の剣,amount= 1,lore= ["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants= [{name=sharpness,level= 10},{name=fire_aspect,level= 5},{name=looting,level= 3}],keep_on_death= true,location= [100,64,100],dimension=overworld,clear_velocity= true}
 ```
 +++ JSON
 ```mcfunction
@@ -309,10 +272,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_item {
-    "item": "minecraft:diamond",
-    "name": "<!name>のダイヤモンド"
-}
+/execute as @a run scriptevent capi:spawn_item {item=minecraft:diamond,name=<!name>のダイヤモンド}
 ```
 +++ JSON
 ```mcfunction

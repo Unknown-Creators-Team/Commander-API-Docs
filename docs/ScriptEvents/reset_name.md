@@ -48,18 +48,6 @@ last_update:
 タグが "reset" のプレイヤーの名前が元に戻ります
 ```
 
-### タイマー付きリセット
-
-一定時間後にネームタグをリセットします。
-
-```mcfunction
-# ネームタグを変更
-/execute as @a run scriptevent capi:rename §c<!name>
-
-# 10秒後にリセット
-/schedule on_area 10s run scriptevent capi:reset_name
-```
-
 ### イベント終了時にリセット
 
 イベント終了時に全員の名前をリセットします。

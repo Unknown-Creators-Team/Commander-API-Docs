@@ -94,10 +94,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=zombie] run scriptevent capi:impulse {
-    "vector": [0, 2, 0],
-    "clear_velocity": true
-}
+/execute as @e[type=zombie] run scriptevent capi:impulse {vector=[0,2,0],clear_velocity=true}
 ```
 +++ JSON
 ```mcfunction
@@ -128,15 +125,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=chicken] run scriptevent capi:impulse {
-    "vector": ["<!calc=random(-1,1)>", "1", "<!calc=random(-1,1)>"]
-}
+/execute as @e[type=chicken] run scriptevent capi:impulse {vector=[<!calc=rand(-1,1)>,1,<!calc=rand(-1,1)>]}
 ```
 +++ JSON
 ```mcfunction
-/execute as @e[type=chicken] run scriptevent capi:impulse {
-    "vector": ["<!calc=random(-1,1)>", "1", "<!calc=random(-1,1)>"]
-}
+/execute as @e[type=chicken] run scriptevent capi:impulse {"vector": ["<!calc=rand(-1,1)>", "1", "<!calc=rand(-1,1)>"]}
 ```
 +++
 
@@ -148,10 +141,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=arrow] run scriptevent capi:impulse {
-    "vector": [0, 0, 10],
-    "clear_velocity": true
-}
+/execute as @e[type=arrow] run scriptevent capi:impulse {vector= [0,0,10],clear_velocity= true}
 ```
 +++ JSON
 ```mcfunction

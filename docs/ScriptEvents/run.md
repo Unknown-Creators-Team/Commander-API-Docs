@@ -63,7 +63,7 @@ Notch joined the game
 条件に応じてコマンドを実行します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:run <!if=score:capi:health<10>effect @s regeneration 10 1<!endif>
+/execute as @a run scriptevent capi:run <!if=<!score=health><10>effect @s regeneration 10 1<!endif>
 ```
 
 ::: !ref ../Macro/If.md
@@ -73,7 +73,7 @@ Notch joined the game
 複数のマクロを組み合わせたコマンドを実行します。
 
 ```mcfunction
-/execute as @a run scriptevent capi:run tp @s <!calc=floor({x})> <!calc=floor({y})+10> <!calc=floor({z})>
+/scriptevent capi:run tp @s <!calc=floor({x})> <!calc=floor({y})+10> <!calc=floor({z})>
 ```
 
 ::: !ref ../Macro/Calc.md

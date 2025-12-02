@@ -38,8 +38,32 @@ last_update:
 | `slot` | 取得するスロット番号（0-35） | 選択中のスロット |
 | `minimize` | JSONを最小化するか | true |
 
-アイテム情報がタグとして保存されます。  
-タグ名: `capi:get_item.<プロパティ名>:<値>`
+## タグの説明
+
+アイテム情報は以下の形式でプレイヤーにタグとして保存されます：
+
+```
+capi:get_item.<プロパティ名>:<値>
+```
+
+### 保存されるタグの例
+
+取得したアイテム情報は複数のタグとして保存されます：
+
+| タグ | 説明 | 例 |
+|---|---|---|
+| `capi:get_item.id:<アイテムID>` | アイテムのID | `capi:get_item.id:minecraft:diamond_sword` |
+| `capi:get_item.amount:<個数>` | アイテムの個数 | `capi:get_item.amount:5` |
+| `capi:get_item.data:<データ値>` | アイテムのデータ値 | `capi:get_item.data:0` |
+| `capi:get_item.nameTag:<名前>` | アイテムの名前（カスタム名） | `capi:get_item.nameTag:§l最強の剣` |
+
+これらのタグは、[Tag マクロ](../Macro/Tag.md) を使用して他のコマンドで参照できます：
+
+```mcfunction
+/execute as @a run scriptevent capi:tell あなたは <!tag=capi:get_item.id> を持っています
+```
+
+::: !ref ../Macro/Tag.md
 
 ## 使用例
 

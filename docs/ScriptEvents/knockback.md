@@ -47,10 +47,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=zombie] run scriptevent capi:knockback {
-    "horizontal_force": [1, 0],
-    "vertical_strength": 0.5
-}
+/execute as @e[type=zombie] run scriptevent capi:knockback {horizontal_force= [1,0],vertical_strength= 0.5}
 ```
 +++ JSON
 ```mcfunction
@@ -67,10 +64,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=creeper] run scriptevent capi:knockback {
-    "horizontal_force": [2, 2],
-    "vertical_strength": 1
-}
+/execute as @e[type=creeper] run scriptevent capi:knockback {horizontal_force= [2,2],vertical_strength= 1}
 ```
 +++ JSON
 ```mcfunction
@@ -87,10 +81,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=skeleton] run scriptevent capi:knockback {
-    "horizontal_force": [0, 0],
-    "vertical_strength": 2
-}
+/execute as @e[type=skeleton] run scriptevent capi:knockback {horizontal_force= [0,0],vertical_strength= 2}
 ```
 +++ JSON
 ```mcfunction
@@ -107,10 +98,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:knockback {
-    "horizontal_force": [0, 1],
-    "vertical_strength": 0.5
-}
+/execute as @a run scriptevent capi:knockback {horizontal_force= [0,1],vertical_strength= 0.5}
 ```
 +++ JSON
 ```mcfunction
@@ -127,11 +115,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=zombie] run damage @s 5
-/execute as @e[type=zombie] run scriptevent capi:knockback {
-    "horizontal_force": [1, 1],
-    "vertical_strength": 1
-}
+/execute as @e[type=zombie] run damage @s 5 /execute as @e[type=zombie] run scriptevent capi:knockback {horizontal_force= [1,1],vertical_strength= 1}
 ```
 +++ JSON
 ```mcfunction
@@ -149,17 +133,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-# 東方向
-/execute as @e[type=pig] run scriptevent capi:knockback {
-    "horizontal_force": [1, 0],
-    "vertical_strength": 0.3
-}
-
-# 北方向
-/execute as @e[type=cow] run scriptevent capi:knockback {
-    "horizontal_force": [0, -1],
-    "vertical_strength": 0.3
-}
+# 東方向 /execute as @e[type=pig] run scriptevent capi:knockback {horizontal_force= [1,0],vertical_strength= 0.3} # 北方向 /execute as @e[type=cow] run scriptevent capi:knockback {horizontal_force= [0,-1],vertical_strength= 0.3}
 ```
 +++ JSON
 ```mcfunction
@@ -183,10 +157,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute at @e[type=tnt] as @e[type=!tnt,distance=..5] run scriptevent capi:knockback {
-    "horizontal_force": [2, 2],
-    "vertical_strength": 1.5
-}
+/execute at @e[type=tnt] as @e[type=!tnt,distance=..5] run scriptevent capi:knockback {horizontal_force= [2,2],vertical_strength= 1.5}
 ```
 +++ JSON
 ```mcfunction

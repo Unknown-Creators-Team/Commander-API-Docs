@@ -44,7 +44,6 @@ last_update:
 
 - 絶対座標: `100`, `64`, `-50`
 - 相対座標: `~10`, `~`, `~-5`
-- ローカル座標: `^1`, `^2`, `^-1`
 
 
 ## 使用例
@@ -104,20 +103,6 @@ last_update:
 - `nether` - ネザー
 - `the_end` - ジ・エンド
 
-### ローカル座標へのテレポート
-
-プレイヤーの向きに応じた座標にテレポートします。
-
-+++ ESON
-```mcfunction
-/execute as @a run scriptevent capi:tp {location=["^0","^0","^10"]}
-```
-+++ JSON
-```mcfunction
-/execute as @a run scriptevent capi:tp {"location": ["^0", "^0", "^10"]}
-```
-+++
-
 ### スポーン地点へのテレポート
 
 スポーン地点にテレポートします。
@@ -138,11 +123,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:tp {location=["<!calc=random(-100,100)>","64","<!calc=random(-100,100)>"]}
+/execute as @a run scriptevent capi:tp {location=[<!calc=rand(-100,100)>,64,<!calc=rand(-100,100)>]}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:tp {"location": ["<!calc=random(-100,100)>", "64", "<!calc=random(-100,100)>"]}
+/execute as @a run scriptevent capi:tp {"location": ["<!calc=rand(-100,100)>", "64", "<!calc=rand(-100,100)>"]}
 ```
 +++
 

@@ -57,12 +57,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:shoot {
-    "id": "minecraft:arrow",
-    "location": ["~", "~1.5", "~"],
-    "vector": [0, 0, 1],
-    "speed": 2
-}
+/execute as @a run scriptevent capi:shoot {id=minecraft:arrow,location= ["~","~1.5","~"],vector= [0,0,1],speed= 2}
 ```
 +++ JSON
 ```mcfunction
@@ -81,12 +76,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:shoot {
-    "id": "minecraft:fireball",
-    "location": [100, 65, 100],
-    "vector": [1, 0, 0],
-    "speed": 1
-}
+/scriptevent capi:shoot {id=minecraft:fireball,location= [100,65,100],vector= [1,0,0],speed= 1}
 ```
 +++ JSON
 ```mcfunction
@@ -105,13 +95,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:shoot {
-    "id": "minecraft:arrow",
-    "location": ["~", "~1.5", "~"],
-    "vector": [0, 0, 1],
-    "speed": 2,
-    "fire": 999
-}
+/execute as @a run scriptevent capi:shoot {id=minecraft:arrow,location= ["~","~1.5","~"],vector= [0,0,1],speed= 2,fire= 999}
 ```
 +++ JSON
 ```mcfunction
@@ -131,13 +115,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:shoot {
-    "id": "minecraft:arrow",
-    "nameTag": "§c特殊な矢",
-    "location": [100, 65, 100],
-    "vector": [0, 0, 1],
-    "speed": 3
-}
+/scriptevent capi:shoot {id=minecraft:arrow,nameTag=§c特殊な矢,location= [100,65,100],vector= [0,0,1],speed= 3}
 ```
 +++ JSON
 ```mcfunction
@@ -157,12 +135,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:shoot {
-    "id": "minecraft:arrow",
-    "location": [100, 64, 100],
-    "vector": [0, 1, 0],
-    "speed": 2
-}
+/scriptevent capi:shoot {id=minecraft:arrow,location= [100,64,100],vector= [0,1,0],speed= 2}
 ```
 +++ JSON
 ```mcfunction
@@ -181,12 +154,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:shoot {
-    "id": "minecraft:arrow",
-    "location": [100, 64, 100],
-    "vector": [1, 1, 0],
-    "speed": 2
-}
+/scriptevent capi:shoot {id=minecraft:arrow,location= [100,64,100],vector= [1,1,0],speed= 2}
 ```
 +++ JSON
 ```mcfunction
@@ -205,12 +173,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:shoot {
-    "id": "minecraft:arrow",
-    "location": [100, 64, 100],
-    "vector": [0, 0, 1],
-    "speed": 5
-}
+/scriptevent capi:shoot {id=minecraft:arrow,location= [100,64,100],vector= [0,0,1],speed= 5}
 ```
 +++ JSON
 ```mcfunction
@@ -229,12 +192,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:shoot {
-    "id": "minecraft:arrow",
-    "location": ["~", "~1.6", "~"],
-    "vector": [0, 0, 1],
-    "speed": 2
-}
+/execute as @a run scriptevent capi:shoot {id=minecraft:arrow,location= ["~","~1.6","~"],vector= [0,0,1],speed= 2}
 ```
 +++ JSON
 ```mcfunction
@@ -253,12 +211,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:shoot {
-    "id": "minecraft:arrow",
-    "location": ["~", "~1.6", "~"],
-    "vector": ["<!velocity=x>", "<!velocity=y>", "<!velocity=z>"],
-    "speed": 2
-}
+/execute as @a run scriptevent capi:shoot {id=minecraft:arrow,location= ["~","~1.6","~"],vector= ["<!velocity=x>","<!velocity=y>","<!velocity=z>"],speed= 2}
 ```
 +++ JSON
 ```mcfunction
@@ -279,13 +232,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:shoot {
-    "id": "minecraft:fireball",
-    "location": [0, 64, 0],
-    "vector": [1, 0, 0],
-    "speed": 1,
-    "dimension": "nether"
-}
+/scriptevent capi:shoot {id=minecraft:fireball,location= [0,64,0],vector= [1,0,0],speed= 1,dimension=nether}
 ```
 +++ JSON
 ```mcfunction

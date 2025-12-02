@@ -137,13 +137,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {
-    "id": "minecraft:wither_skeleton",
-    "name": "§4炎の戦士",
-    "location": [100, 64, 100],
-    "dimension": "overworld",
-    "set_on_fire": 999
-}
+/scriptevent capi:spawn_entity {id=minecraft:wither_skeleton,name=§4炎の戦士,location= [100,64,100],dimension=overworld,set_on_fire= 999}
 ```
 +++ JSON
 ```mcfunction
