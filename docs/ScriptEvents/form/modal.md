@@ -20,9 +20,9 @@ last_update:
 
 ```json
 {
-    "type": "modal",
-    "title": "タイトル",
-    "content": [
+    "typ": "modal",
+    "ttl": "タイトル",
+    "cnt": [
         要素の配列
     ]
 }
@@ -49,11 +49,11 @@ last_update:
 
 ```json
 {
-    "type": "dropdown",
-    "label": "ラベル",
-    "options": ["選択肢1", "選択肢2", "選択肢3"],
-    "default": 0,
-    "action": "スコア名"
+    "typ": "dropdown",
+    "lbl": "ラベル",
+    "opt": ["選択肢1", "選択肢2", "選択肢3"],
+    "def": 0,
+    "act": "スコア名"
 }
 ```
 
@@ -75,13 +75,13 @@ last_update:
 
 ```json
 {
-    "type": "slider",
-    "label": "ラベル",
+    "typ": "slider",
+    "lbl": "ラベル",
     "min": 0,
     "max": 100,
-    "step": 1,
-    "default": 50,
-    "action": "スコア名"
+    "stp": 1,
+    "def": 50,
+    "act": "スコア名"
 }
 ```
 
@@ -105,11 +105,11 @@ last_update:
 
 ```json
 {
-    "type": "textField",
-    "label": "ラベル",
-    "placeholder": "プレースホルダー",
-    "default": "デフォルト値",
-    "action": "タグ名"
+    "typ": "textField",
+    "lbl": "ラベル",
+    "plh": "プレースホルダー",
+    "def": "デフォルト値",
+    "act": "タグ名"
 }
 ```
 
@@ -131,10 +131,10 @@ ON/OFF を切り替えます。
 
 ```json
 {
-    "type": "toggle",
-    "label": "ラベル",
-    "default": false,
-    "action": "スコア名"
+    "typ": "toggle",
+    "lbl": "ラベル",
+    "def": false,
+    "act": "スコア名"
 }
 ```
 
@@ -156,37 +156,37 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "modal",
-    "title": "設定",
-    "content": [
+    "typ": "modal",
+    "ttl": "設定",
+    "cnt": [
         {
-            "type": "dropdown",
-            "label": "難易度",
-            "options": ["簡単", "普通", "難しい"],
-            "default": 1,
-            "action": "difficulty"
+            "typ": "dropdown",
+            "lbl": "難易度",
+            "opt": ["簡単", "普通", "難しい"],
+            "def": 1,
+            "act": "difficulty"
         },
         {
-            "type": "slider",
-            "label": "音量",
+            "typ": "slider",
+            "lbl": "音量",
             "min": 0,
             "max": 100,
-            "step": 10,
-            "default": 50,
-            "action": "volume"
+            "stp": 10,
+            "def": 50,
+            "act": "volume"
         },
         {
-            "type": "toggle",
-            "label": "PvP有効",
-            "default": false,
-            "action": "pvp_enabled"
+            "typ": "toggle",
+            "lbl": "PvP有効",
+            "def": false,
+            "act": "pvp_enabled"
         }
     ]
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=modal,title=設定,content= [{type=dropdown,label=難易度,options= ["簡単","普通","難しい"],default= 1,action=difficulty},{type=slider,label=音量,min= 0,max= 100,step= 10,default= 50,action=volume},{type=toggle,label=PvP有効,default= false,action=pvp_enabled}]}
+/execute as @a run scriptevent capi:form {typ=modal,ttl=設定,cnt= [{typ=dropdown,lbl=難易度,opt= ["簡単","普通","難しい"],def= 1,act=difficulty},{typ=slider,lbl=音量,min= 0,max= 100,stp= 10,def= 50,act=volume},{typ=toggle,lbl=PvP有効,def= false,act=pvp_enabled}]}
 ```
 +++
 
@@ -195,42 +195,42 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "mdl",
-    "title": "設定",
-    "content": [
+    "typ": "mdl",
+    "ttl": "設定",
+    "cnt": [
         {
-            "type": "dd",
-            "label": "チーム",
-            "options": ["レッド", "ブルー", "グリーン"],
-            "action": "team_selection"
+            "typ": "dd",
+            "lbl": "チーム",
+            "opt": ["レッド", "ブルー", "グリーン"],
+            "act": "team_selection"
         },
         {
-            "type": "s",
-            "label": "レベル",
+            "typ": "s",
+            "lbl": "レベル",
             "min": 1,
             "max": 10,
-            "step": 1,
-            "default": 5,
-            "action": "player_level"
+            "stp": 1,
+            "def": 5,
+            "act": "player_level"
         },
         {
-            "type": "tf",
-            "label": "プレイヤー名",
-            "placeholder": "名前を入力",
-            "action": "player_name"
+            "typ": "tf",
+            "lbl": "プレイヤー名",
+            "plh": "名前を入力",
+            "act": "player_name"
         },
         {
-            "type": "t",
-            "label": "通知を受け取る",
-            "default": true,
-            "action": "notifications"
+            "typ": "t",
+            "lbl": "通知を受け取る",
+            "def": true,
+            "act": "notifications"
         }
     ]
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=mdl,title=設定,content= [{type=dd,label=チーム,options= ["レッド","ブルー","グリーン"],action=team_selection},{type=s,label=レベル,min= 1,max= 10,step= 1,default= 5,action=player_level},{type=tf,label=プレイヤー名,placeholder=名前を入力,action=player_name},{type=t,label=通知を受け取る,default= true,action=notifications}]}
+/execute as @a run scriptevent capi:form {typ=mdl,ttl=設定,cnt= [{typ=dd,lbl=チーム,opt= ["レッド","ブルー","グリーン"],act=team_selection},{typ=s,lbl=レベル,min= 1,max= 10,stp= 1,def= 5,act=player_level},{typ=tf,lbl=プレイヤー名,plh=名前を入力,act=player_name},{typ=t,lbl=通知を受け取る,def= true,act=notifications}]}
 ```
 +++
 
@@ -239,42 +239,42 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "modal",
-    "title": "ゲーム設定",
-    "content": [
+    "typ": "modal",
+    "ttl": "ゲーム設定",
+    "cnt": [
         {
-            "type": "dropdown",
-            "label": "ゲームモード",
-            "options": ["サバイバル", "クリエイティブ", "アドベンチャー"],
-            "action": "gamemode_selection"
+            "typ": "dropdown",
+            "lbl": "ゲームモード",
+            "opt": ["サバイバル", "クリエイティブ", "アドベンチャー"],
+            "act": "gamemode_selection"
         },
         {
-            "type": "slider",
-            "label": "時間",
+            "typ": "slider",
+            "lbl": "時間",
             "min": 0,
             "max": 24000,
-            "step": 1000,
-            "default": 6000,
-            "action": "time_setting"
+            "stp": 1000,
+            "def": 6000,
+            "act": "time_setting"
         },
         {
-            "type": "toggle",
-            "label": "天候を有効化",
-            "default": true,
-            "action": "weather_enabled"
+            "typ": "toggle",
+            "lbl": "天候を有効化",
+            "def": true,
+            "act": "weather_enabled"
         },
         {
-            "type": "toggle",
-            "label": "モブスポーンを有効化",
-            "default": true,
-            "action": "mob_spawn_enabled"
+            "typ": "toggle",
+            "lbl": "モブスポーンを有効化",
+            "def": true,
+            "act": "mob_spawn_enabled"
         }
     ]
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=modal,title=ゲーム設定,content= [{type=dropdown,label=ゲームモード,options= ["サバイバル","クリエイティブ","アドベンチャー"],action=gamemode_selection},{type=slider,label=時間,min= 0,max= 24000,step= 1000,default= 6000,action=time_setting},{type=toggle,label=天候を有効化,default= true,action=weather_enabled},{type=toggle,label=モブスポーンを有効化,default= true,action=mob_spawn_enabled}]}
+/execute as @a run scriptevent capi:form {typ=modal,ttl=ゲーム設定,cnt= [{typ=dropdown,lbl=ゲームモード,opt= ["サバイバル","クリエイティブ","アドベンチャー"],act=gamemode_selection},{typ=slider,lbl=時間,min= 0,max= 24000,stp= 1000,def= 6000,act=time_setting},{typ=toggle,lbl=天候を有効化,def= true,act=weather_enabled},{typ=toggle,lbl=モブスポーンを有効化,def= true,act=mob_spawn_enabled}]}
 ```
 +++
 
@@ -283,33 +283,33 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "modal",
-    "title": "プレイヤー登録",
-    "content": [
+    "typ": "modal",
+    "ttl": "プレイヤー登録",
+    "cnt": [
         {
-            "type": "textField",
-            "label": "表示名",
-            "placeholder": "表示名を入力してください",
-            "action": "display_name"
+            "typ": "textField",
+            "lbl": "表示名",
+            "plh": "表示名を入力してください",
+            "act": "display_name"
         },
         {
-            "type": "dropdown",
-            "label": "年齢層",
-            "options": ["10代", "20代", "30代", "40代以上"],
-            "action": "age_group"
+            "typ": "dropdown",
+            "lbl": "年齢層",
+            "opt": ["10代", "20代", "30代", "40代以上"],
+            "act": "age_group"
         },
         {
-            "type": "toggle",
-            "label": "利用規約に同意する",
-            "default": false,
-            "action": "terms_accepted"
+            "typ": "toggle",
+            "lbl": "利用規約に同意する",
+            "def": false,
+            "act": "terms_accepted"
         }
     ]
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=modal,title=プレイヤー登録,content= [{type=textField,label=表示名,placeholder=表示名を入力してください,action=display_name},{type=dropdown,label=年齢層,options= ["10代","20代","30代","40代以上"],action=age_group},{type=toggle,label=利用規約に同意する,default= false,action=terms_accepted}]}
+/execute as @a run scriptevent capi:form {typ=modal,ttl=プレイヤー登録,cnt= [{typ=textField,lbl=表示名,plh=表示名を入力してください,act=display_name},{typ=dropdown,lbl=年齢層,opt= ["10代","20代","30代","40代以上"],act=age_group},{typ=toggle,lbl=利用規約に同意する,def= false,act=terms_accepted}]}
 ```
 +++
 
@@ -318,40 +318,40 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "modal",
-    "title": "クエスト設定",
-    "content": [
+    "typ": "modal",
+    "ttl": "クエスト設定",
+    "cnt": [
         {
-            "type": "dd",
-            "label": "クエストの種類",
-            "options": ["収集", "討伐", "探索", "護衛"],
-            "default": 0,
-            "action": "quest_type"
+            "typ": "dd",
+            "lbl": "クエストの種類",
+            "opt": ["収集", "討伐", "探索", "護衛"],
+            "def": 0,
+            "act": "quest_type"
         },
         {
-            "type": "s",
-            "label": "目標数",
+            "typ": "s",
+            "lbl": "目標数",
             "min": 1,
             "max": 100,
-            "step": 1,
-            "default": 10,
-            "action": "quest_target"
+            "stp": 1,
+            "def": 10,
+            "act": "quest_target"
         },
         {
-            "type": "s",
-            "label": "報酬額",
+            "typ": "s",
+            "lbl": "報酬額",
             "min": 100,
             "max": 10000,
-            "step": 100,
-            "default": 1000,
-            "action": "quest_reward"
+            "stp": 100,
+            "def": 1000,
+            "act": "quest_reward"
         }
     ]
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=modal,title=クエスト設定,content= [{type=dd,label=クエストの種類,options= ["収集","討伐","探索","護衛"],default= 0,action=quest_type},{type=s,label=目標数,min= 1,max= 100,step= 1,default= 10,action=quest_target},{type=s,label=報酬額,min= 100,max= 10000,step= 100,default= 1000,action=quest_reward}]}
+/execute as @a run scriptevent capi:form {typ=modal,ttl=クエスト設定,cnt= [{typ=dd,lbl=クエストの種類,opt= ["収集","討伐","探索","護衛"],def= 0,act=quest_type},{typ=s,lbl=目標数,min= 1,max= 100,stp= 1,def= 10,act=quest_target},{typ=s,lbl=報酬額,min= 100,max= 10000,stp= 100,def= 1000,act=quest_reward}]}
 ```
 +++
 
@@ -360,42 +360,42 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "modal",
-    "title": "ショップ設定",
-    "content": [
+    "typ": "modal",
+    "ttl": "ショップ設定",
+    "cnt": [
         {
-            "type": "textField",
-            "label": "ショップ名",
-            "placeholder": "例: 冒険者の店",
-            "action": "shop_name"
+            "typ": "textField",
+            "lbl": "ショップ名",
+            "plh": "例: 冒険者の店",
+            "act": "shop_name"
         },
         {
-            "type": "dropdown",
-            "label": "ショップの種類",
-            "options": ["武器屋", "防具屋", "道具屋", "食料品店"],
-            "action": "shop_type"
+            "typ": "dropdown",
+            "lbl": "ショップの種類",
+            "opt": ["武器屋", "防具屋", "道具屋", "食料品店"],
+            "act": "shop_type"
         },
         {
-            "type": "slider",
-            "label": "割引率 (%)",
+            "typ": "slider",
+            "lbl": "割引率 (%)",
             "min": 0,
             "max": 50,
-            "step": 5,
-            "default": 0,
-            "action": "discount_rate"
+            "stp": 5,
+            "def": 0,
+            "act": "discount_rate"
         },
         {
-            "type": "toggle",
-            "label": "営業中",
-            "default": true,
-            "action": "shop_open"
+            "typ": "toggle",
+            "lbl": "営業中",
+            "def": true,
+            "act": "shop_open"
         }
     ]
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=modal,title=ショップ設定,content= [{type=textField,label=ショップ名,placeholder=例=冒険者の店,action=shop_name},{type=dropdown,label=ショップの種類,options= ["武器屋","防具屋","道具屋","食料品店"],action=shop_type},{type=slider,label=割引率 (%),min= 0,max= 50,step= 5,default= 0,action=discount_rate},{type=toggle,label=営業中,default= true,action=shop_open}]}
+/execute as @a run scriptevent capi:form {typ=modal,ttl=ショップ設定,cnt= [{typ=textField,lbl=ショップ名,plh=例=冒険者の店,act=shop_name},{typ=dropdown,lbl=ショップの種類,opt= ["武器屋","防具屋","道具屋","食料品店"],act=shop_type},{typ=slider,lbl=割引率 (%),min= 0,max= 50,stp= 5,def= 0,act=discount_rate},{typ=toggle,lbl=営業中,def= true,act=shop_open}]}
 ```
 +++
 
@@ -408,7 +408,7 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 # フォームを表示
-/execute as @a run scriptevent capi:form {"type":"modal","title":"設定","content":[{"type":"slider","label":"音量","min":0,"max":100,"step":10,"action":"volume"}]}
+/execute as @a run scriptevent capi:form {"typ":"modal","ttl":"設定","cnt":[{"typ":"slider","lbl":"音量","min":0,"max":100,"stp":10,"act":"volume"}]}
 
 # スコアを確認
 /execute as @a run say 音量: <!score=volume>
@@ -416,7 +416,7 @@ ON/OFF を切り替えます。
 +++ ESON
 ```mcfunction
 # フォームを表示
-/execute as @a run scriptevent capi:form {type=modal,title=設定,content=[{type=slider,label=音量,min=0,max=100,step=10,action=volume}]}
+/execute as @a run scriptevent capi:form {typ=modal,ttl=設定,cnt=[{typ=slider,lbl=音量,min=0,max=100,stp=10,act=volume}]}
 
 # スコアを確認
 /execute as @a run say 音量: <!score=volume>
@@ -432,7 +432,7 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 # フォームを表示
-/execute as @a run scriptevent capi:form {"type":"modal","title":"登録","content":[{"type":"textField","label":"名前","placeholder":"名前を入力","action":"player_name"}]}
+/execute as @a run scriptevent capi:form {"typ":"modal","ttl":"登録","cnt":[{"typ":"textField","lbl":"名前","plh":"名前を入力","act":"player_name"}]}
 
 # タグを確認（例: player_name:Notch というタグが付く）
 /execute as @a[tag=player_name:Notch] run say 名前はNotchです
@@ -440,7 +440,7 @@ ON/OFF を切り替えます。
 +++ ESON
 ```mcfunction
 # フォームを表示
-/execute as @a run scriptevent capi:form {type=modal,title=登録,content=[{type=textField,label=名前,placeholder=名前を入力,action=player_name}]}
+/execute as @a run scriptevent capi:form {typ=modal,ttl=登録,cnt=[{typ=textField,lbl=名前,plh=名前を入力,act=player_name}]}
 
 # タグを確認（例: player_name:Notch というタグが付く）
 /execute as @a[tag=player_name:Notch] run say 名前はNotchです
@@ -456,64 +456,64 @@ ON/OFF を切り替えます。
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "modal",
-    "title": "詳細設定",
-    "content": [
+    "typ": "modal",
+    "ttl": "詳細設定",
+    "cnt": [
         {
-            "type": "dropdown",
-            "label": "言語",
-            "options": ["日本語", "English", "中文", "한국어"],
-            "default": 0,
-            "action": "language"
+            "typ": "dropdown",
+            "lbl": "言語",
+            "opt": ["日本語", "English", "中文", "한국어"],
+            "def": 0,
+            "act": "language"
         },
         {
-            "type": "slider",
-            "label": "描画距離",
+            "typ": "slider",
+            "lbl": "描画距離",
             "min": 2,
             "max": 32,
-            "step": 2,
-            "default": 16,
-            "action": "render_distance"
+            "stp": 2,
+            "def": 16,
+            "act": "render_distance"
         },
         {
-            "type": "slider",
-            "label": "FPS上限",
+            "typ": "slider",
+            "lbl": "FPS上限",
             "min": 30,
             "max": 144,
-            "step": 6,
-            "default": 60,
-            "action": "max_fps"
+            "stp": 6,
+            "def": 60,
+            "act": "max_fps"
         },
         {
-            "type": "textField",
-            "label": "サーバーアドレス",
-            "placeholder": "例: mc.example.com",
-            "action": "server_address"
+            "typ": "textField",
+            "lbl": "サーバーアドレス",
+            "plh": "例: mc.example.com",
+            "act": "server_address"
         },
         {
-            "type": "toggle",
-            "label": "自動保存",
-            "default": true,
-            "action": "auto_save"
+            "typ": "toggle",
+            "lbl": "自動保存",
+            "def": true,
+            "act": "auto_save"
         },
         {
-            "type": "toggle",
-            "label": "雲を表示",
-            "default": true,
-            "action": "show_clouds"
+            "typ": "toggle",
+            "lbl": "雲を表示",
+            "def": true,
+            "act": "show_clouds"
         },
         {
-            "type": "toggle",
-            "label": "パーティクルを表示",
-            "default": true,
-            "action": "show_particles"
+            "typ": "toggle",
+            "lbl": "パーティクルを表示",
+            "def": true,
+            "act": "show_particles"
         }
     ]
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=modal,title=詳細設定,content= [{type=dropdown,label=言語,options= ["日本語","English","中文","한국어"],default= 0,action=language},{type=slider,label=描画距離,min= 2,max= 32,step= 2,default= 16,action=render_distance},{type=slider,label=FPS上限,min= 30,max= 144,step= 6,default= 60,action=max_fps},{type=textField,label=サーバーアドレス,placeholder=例=mc.example.com,action=server_address},{type=toggle,label=自動保存,default= true,action=auto_save},{type=toggle,label=雲を表示,default= true,action=show_clouds},{type=toggle,label=パーティクルを表示,default= true,action=show_particles}]}
+/execute as @a run scriptevent capi:form {typ=modal,ttl=詳細設定,cnt= [{typ=dropdown,lbl=言語,opt= ["日本語","English","中文","한국어"],def= 0,act=language},{typ=slider,lbl=描画距離,min= 2,max= 32,stp= 2,def= 16,act=render_distance},{typ=slider,lbl=FPS上限,min= 30,max= 144,stp= 6,def= 60,act=max_fps},{typ=textField,lbl=サーバーアドレス,plh=例=mc.example.com,act=server_address},{typ=toggle,lbl=自動保存,def= true,act=auto_save},{typ=toggle,lbl=雲を表示,def= true,act=show_clouds},{typ=toggle,lbl=パーティクルを表示,def= true,act=show_particles}]}
 ```
 +++
 

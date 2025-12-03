@@ -20,15 +20,15 @@ last_update:
 
 ```json
 {
-    "type": "message",
-    "title": "タイトル",
-    "body": "本文",
-    "btn1": {
+    "typ": "message",
+    "ttl": "タイトル",
+    "bdy": "本文",
+    "bt1": {
         "txt": "上ボタンのテキスト",
         "act": アクション
     },
-    "btn2": {
-        "text": "下ボタンのテキスト",
+    "bt2": {
+        "txt": "下ボタンのテキスト",
         "act": アクション
     }
 }
@@ -36,28 +36,23 @@ last_update:
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|
-| `type` | フォームの種類 (`"message"` または `"msg"`) | ✓ |
-| `title` | フォームのタイトル | ✓ |
-| `body` | フォームの本文 | ✓ |
-| `btn1` | 上ボタンの設定 | ✓ |
-| `btn2` | 下ボタンの設定 | ✓ |
+| `typ` | フォームの種類 (`"message"` または `"msg"`) | ✓ |
+| `ttl` | フォームのタイトル | ✓ |
+| `bdy` | フォームの本文 | ✓ |
+| `bt1` | 上ボタンの設定 | ✓ |
+| `bt2` | 下ボタンの設定 | ✓ |
 
-### type のエイリアス
+### typ のエイリアス
 
 - `"message"` (推奨)
 - `"msg"` (省略形)
 
 ### ボタン設定
 
-| プロパティ | 説明 | 必須 | 注意 |
-|---|---|---|---|
-| `txt` | ボタンのテキスト (btn1) | ✓ | btn1では `txt` |
-| `text` | ボタンのテキスト (btn2) | ✓ | btn2では `text` |
-| `act` | ボタンが押されたときのアクション | × | - |
-
-:::warning プロパティ名の違い
-btn1 では `txt`、btn2 では `text` と、プロパティ名が異なることに注意してください。
-:::
+| プロパティ | 説明 | 必須 |
+|---|---|---|
+| `txt` | ボタンのテキスト | ✓ |
+| `act` | ボタンが押されたときのアクション | × |
 
 ## アクションの種類
 
@@ -83,28 +78,28 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "確認",
-    "body": "本当に実行しますか？",
-    "btn1": {
+    "typ": "message",
+    "ttl": "確認",
+    "bdy": "本当に実行しますか？",
+    "bt1": {
         "txt": "はい",
         "act": {
-            "type": "run",
-            "value": "say 実行しました"
+            "typ": "run",
+            "val": "say 実行しました"
         }
     },
-    "btn2": {
-        "text": "いいえ",
+    "bt2": {
+        "txt": "いいえ",
         "act": {
-            "type": "run",
-            "value": "say キャンセルしました"
+            "typ": "run",
+            "val": "say キャンセルしました"
         }
     }
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=message,title=確認,body=本当に実行しますか？,btn1= {txt=はい,act= {type=run,value=say 実行しました}},btn2= {text=いいえ,act= {type=run,value=say キャンセルしました}}}
+/execute as @a run scriptevent capi:form {typ=message,ttl=確認,bdy=本当に実行しますか？,bt1= {txt=はい,act= {typ=run,val=say 実行しました}},bt2= {txt=いいえ,act= {typ=run,val=say キャンセルしました}}}
 ```
 +++
 
@@ -113,24 +108,24 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "msg",
-    "title": "警告",
-    "body": "このアイテムを削除しますか？\n§c※この操作は取り消せません",
-    "btn1": {
+    "typ": "msg",
+    "ttl": "警告",
+    "bdy": "このアイテムを削除しますか？\n§c※この操作は取り消せません",
+    "bt1": {
         "txt": "削除する",
         "act": {
-            "type": "run",
-            "value": "clear @s diamond"
+            "typ": "run",
+            "val": "clear @s diamond"
         }
     },
-    "btn2": {
-        "text": "キャンセル"
+    "bt2": {
+        "txt": "キャンセル"
     }
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=msg,title=警告,body=このアイテムを削除しますか？\n§c※この操作は取り消せません,btn1= {txt=削除する,act= {type=run,value=clear @s diamond}},btn2= {text=キャンセル}}
+/execute as @a run scriptevent capi:form {typ=msg,ttl=警告,bdy=このアイテムを削除しますか？\n§c※この操作は取り消せません,bt1= {txt=削除する,act= {typ=run,val=clear @s diamond}},bt2= {txt=キャンセル}}
 ```
 +++
 
@@ -139,28 +134,28 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "PvP設定",
-    "body": "PvPを有効にしますか？",
-    "btn1": {
+    "typ": "message",
+    "ttl": "PvP設定",
+    "bdy": "PvPを有効にしますか？",
+    "bt1": {
         "txt": "有効にする",
         "act": {
-            "type": "add_tag",
-            "value": "pvp_enabled"
+            "typ": "add_tag",
+            "val": "pvp_enabled"
         }
     },
-    "btn2": {
-        "text": "無効にする",
+    "bt2": {
+        "txt": "無効にする",
         "act": {
-            "type": "remove_tag",
-            "value": "pvp_enabled"
+            "typ": "remove_tag",
+            "val": "pvp_enabled"
         }
     }
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=message,title=PvP設定,body=PvPを有効にしますか？,btn1= {txt=有効にする,act= {type=add_tag,value=pvp_enabled}},btn2= {text=無効にする,act= {type=remove_tag,value=pvp_enabled}}}
+/execute as @a run scriptevent capi:form {typ=message,ttl=PvP設定,bdy=PvPを有効にしますか？,bt1= {txt=有効にする,act= {typ=add_tag,val=pvp_enabled}},bt2= {txt=無効にする,act= {typ=remove_tag,val=pvp_enabled}}}
 ```
 +++
 
@@ -169,26 +164,26 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "クエスト受注",
-    "body": "このクエストを受注しますか？",
-    "btn1": {
+    "typ": "message",
+    "ttl": "クエスト受注",
+    "bdy": "このクエストを受注しますか？",
+    "bt1": {
         "txt": "受注する",
         "act": {
-            "type": "set_score",
-            "value": {
-                "object": "quest_status",
-                "value": 1
+            "typ": "set_score",
+            "val": {
+                "obj": "quest_status",
+                "val": 1
             }
         }
     },
-    "btn2": {
-        "text": "断る",
+    "bt2": {
+        "txt": "断る",
         "act": {
-            "type": "ss",
-            "value": {
-                "object": "quest_status",
-                "value": 0
+            "typ": "ss",
+            "val": {
+                "obj": "quest_status",
+                "val": 0
             }
         }
     }
@@ -196,7 +191,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=message,title=クエスト受注,body=このクエストを受注しますか？,btn1= {txt=受注する,act= {type=set_score,value= {object=quest_status,value= 1}}},btn2= {text=断る,act= {type=ss,value= {object=quest_status,value= 0}}}}
+/execute as @a run scriptevent capi:form {typ=message,ttl=クエスト受注,bdy=このクエストを受注しますか？,bt1= {txt=受注する,act= {typ=set_score,val= {obj=quest_status,val= 1}}},bt2= {txt=断る,act= {typ=ss,val= {obj=quest_status,val= 0}}}}
 ```
 +++
 
@@ -205,24 +200,24 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "テレポート",
-    "body": "スポーン地点にテレポートしますか？",
-    "btn1": {
+    "typ": "message",
+    "ttl": "テレポート",
+    "bdy": "スポーン地点にテレポートしますか？",
+    "bt1": {
         "txt": "はい",
         "act": {
-            "type": "r",
-            "value": "tp @s 0 64 0"
+            "typ": "r",
+            "val": "tp @s 0 64 0"
         }
     },
-    "btn2": {
-        "text": "いいえ"
+    "bt2": {
+        "txt": "いいえ"
     }
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=message,title=テレポート,body=スポーン地点にテレポートしますか？,btn1= {txt=はい,act= {type=r,value=tp @s 0 64 0}},btn2= {text=いいえ}}
+/execute as @a run scriptevent capi:form {typ=message,ttl=テレポート,bdy=スポーン地点にテレポートしますか？,bt1= {txt=はい,act= {typ=r,val=tp @s 0 64 0}},bt2= {txt=いいえ}}
 ```
 +++
 
@@ -231,24 +226,24 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "message",
-    "title": "ログアウト",
-    "body": "<!name>さん、本当にログアウトしますか？",
-    "btn1": {
+    "typ": "message",
+    "ttl": "ログアウト",
+    "bdy": "<!name>さん、本当にログアウトしますか？",
+    "bt1": {
         "txt": "ログアウト",
         "act": {
-            "type": "run",
-            "value": "kick @s"
+            "typ": "run",
+            "val": "kick @s"
         }
     },
-    "btn2": {
-        "text": "キャンセル"
+    "bt2": {
+        "txt": "キャンセル"
     }
 }
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=message,title=ログアウト,body=<!name>さん、本当にログアウトしますか？,btn1= {txt=ログアウト,act= {type=run,value=kick @s}},btn2= {text=キャンセル}}
+/execute as @a run scriptevent capi:form {typ=message,ttl=ログアウト,bdy=<!name>さん、本当にログアウトしますか？,bt1= {txt=ログアウト,act= {typ=run,val=kick @s}},bt2= {txt=キャンセル}}
 ```
 +++
 
@@ -263,7 +258,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 +++ JSON
 ```mcfunction
 # フォームを表示
-/execute as @a run scriptevent capi:form {"type":"message","title":"選択","body":"選択してください","btn1":{"txt":"オプション1"},"btn2":{"text":"オプション2"}}
+/execute as @a run scriptevent capi:form {"typ":"message","ttl":"選択","bdy":"選択してください","bt1":{"txt":"オプション1"},"bt2":{"txt":"オプション2"}}
 
 # 選択結果を確認
 /execute as @a[scores={capi:msg_form=1}] run say オプション1を選択しました
@@ -272,7 +267,7 @@ btn1 では `txt`、btn2 では `text` と、プロパティ名が異なるこ�
 +++ ESON
 ```mcfunction
 # フォームを表示
-/execute as @a run scriptevent capi:form {type=message,title=選択,body=選択してください,btn1={txt=オプション1},btn2={text=オプション2}}
+/execute as @a run scriptevent capi:form {typ=message,ttl=選択,bdy=選択してください,bt1={txt=オプション1},bt2={txt=オプション2}}
 
 # 選択結果を確認
 /execute as @a[scores={capi:msg_form=1}] run say オプション1を選択しました

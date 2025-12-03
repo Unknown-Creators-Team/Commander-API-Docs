@@ -20,10 +20,10 @@ last_update:
 
 ```json
 {
-    "type": "action",
-    "title": "タイトル",
-    "body": "本文",
-    "btns": [
+    "typ": "action",
+    "ttl": "タイトル",
+    "bdy": "本文",
+    "btn": [
         {
             "txt": "ボタンテキスト",
             "img": "画像パス",
@@ -35,17 +35,17 @@ last_update:
 
 | パラメータ | 説明 | 必須 |
 |---|---|---|
-| `type` | フォームの種類 (`"action"` または `"act"`) | ✓ |
-| `title` | フォームのタイトル | ✓ |
-| `body` | フォームの本文 | × |
-| `btns` | ボタンの配列 | ✓ |
+| `typ` | フォームの種類 (`"action"` または `"act"`) | ✓ |
+| `ttl` | フォームのタイトル | ✓ |
+| `bdy` | フォームの本文 | × |
+| `btn` | ボタンの配列 | ✓ |
 
-### type のエイリアス
+### typ のエイリアス
 
 - `"action"` (推奨)
 - `"act"` (省略形)
 
-### btns 配列の要素
+### btn 配列の要素
 
 | プロパティ | 説明 | 必須 |
 |---|---|---|
@@ -75,22 +75,22 @@ last_update:
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "action",
-    "title": "メニュー",
-    "body": "操作を選択してください",
-    "btns": [
+    "typ": "action",
+    "ttl": "メニュー",
+    "bdy": "操作を選択してください",
+    "btn": [
         {
             "txt": "体力回復",
             "act": {
-                "type": "run",
-                "value": "effect @s regeneration 10 1"
+                "typ": "run",
+                "val": "effect @s regeneration 10 1"
             }
         },
         {
             "txt": "アイテム受取",
             "act": {
-                "type": "run",
-                "value": "give @s diamond 1"
+                "typ": "run",
+                "val": "give @s diamond 1"
             }
         }
     ]
@@ -98,7 +98,7 @@ last_update:
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=action,title=メニュー,body=操作を選択してください,btns= [{txt=体力回復,act= {type=run,value=effect @s regeneration 10 1}},{txt=アイテム受取,act= {type=run,value=give @s diamond 1}}]}
+/execute as @a run scriptevent capi:form {typ=action,ttl=メニュー,bdy=操作を選択してください,btn=[{txt=体力回復,act={typ=run,val=effect @s regeneration 10 1}},{txt=アイテム受取,act={typ=run,val=give @s diamond 1}}]}
 ```
 +++
 
@@ -107,24 +107,24 @@ last_update:
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "action",
-    "title": "ショップ",
-    "body": "購入する商品を選択してください",
-    "btns": [
+    "typ": "action",
+    "ttl": "ショップ",
+    "bdy": "購入する商品を選択してください",
+    "btn": [
         {
             "txt": "ダイヤモンドの剣",
             "img": "textures/items/diamond_sword",
             "act": {
-                "type": "run",
-                "value": "give @s diamond_sword"
+                "typ": "run",
+                "val": "give @s diamond_sword"
             }
         },
         {
             "txt": "金のリンゴ",
             "img": "textures/items/golden_apple",
             "act": {
-                "type": "run",
-                "value": "give @s golden_apple"
+                "typ": "run",
+                "val": "give @s golden_apple"
             }
         }
     ]
@@ -132,7 +132,7 @@ last_update:
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=action,title=ショップ,body=購入する商品を選択してください,btns= [{txt=ダイヤモンドの剣,img=textures/items/diamond_sword,act= {type=run,value=give @s diamond_sword}},{txt=金のリンゴ,img=textures/items/golden_apple,act= {type=run,value=give @s golden_apple}}]}
+/execute as @a run scriptevent capi:form {typ=action,ttl=ショップ,bdy=購入する商品を選択してください,btn=[{txt=ダイヤモンドの剣,img=textures/items/diamond_sword,act={typ=run,val=give @s diamond_sword}},{txt=金のリンゴ,img=textures/items/golden_apple,act={typ=run,val=give @s golden_apple}}]}
 ```
 +++
 
@@ -141,22 +141,22 @@ last_update:
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "act",
-    "title": "チーム選択",
-    "body": "参加するチームを選択してください",
-    "btns": [
+    "typ": "act",
+    "ttl": "チーム選択",
+    "bdy": "参加するチームを選択してください",
+    "btn": [
         {
             "txt": "レッドチーム",
             "act": {
-                "type": "add_tag",
-                "value": "team_red"
+                "typ": "add_tag",
+                "val": "team_red"
             }
         },
         {
             "txt": "ブルーチーム",
             "act": {
-                "type": "at",
-                "value": "team_blue"
+                "typ": "at",
+                "val": "team_blue"
             }
         }
     ]
@@ -164,7 +164,7 @@ last_update:
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=act,title=チーム選択,body=参加するチームを選択してください,btns= [{txt=レッドチーム,act= {type=add_tag,value=team_red}},{txt=ブルーチーム,act= {type=at,value=team_blue}}]}
+/execute as @a run scriptevent capi:form {typ=act,ttl=チーム選択,bdy=参加するチームを選択してください,btn=[{txt=レッドチーム,act={typ=add_tag,val=team_red}},{txt=ブルーチーム,act={typ=at,val=team_blue}}]}
 ```
 +++
 
@@ -173,37 +173,37 @@ last_update:
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "action",
-    "title": "難易度選択",
-    "body": "難易度を選択してください",
-    "btns": [
+    "typ": "action",
+    "ttl": "難易度選択",
+    "bdy": "難易度を選択してください",
+    "btn": [
         {
             "txt": "簡単",
             "act": {
-                "type": "set_score",
-                "value": {
-                    "object": "difficulty",
-                    "value": 1
+                "typ": "set_score",
+                "val": {
+                    "obj": "difficulty",
+                    "val": 1
                 }
             }
         },
         {
             "txt": "普通",
             "act": {
-                "type": "ss",
-                "value": {
-                    "object": "difficulty",
-                    "value": 2
+                "typ": "ss",
+                "val": {
+                    "obj": "difficulty",
+                    "val": 2
                 }
             }
         },
         {
             "txt": "難しい",
             "act": {
-                "type": "set_s",
-                "value": {
-                    "object": "difficulty",
-                    "value": 3
+                "typ": "set_s",
+                "val": {
+                    "obj": "difficulty",
+                    "val": 3
                 }
             }
         }
@@ -212,7 +212,7 @@ last_update:
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=action,title=難易度選択,body=難易度を選択してください,btns= [{txt=簡単,act= {type=set_score,value= {object=difficulty,value= 1}}},{txt=普通,act= {type=ss,value= {object=difficulty,value= 2}}},{txt=難しい,act= {type=set_s,value= {object=difficulty,value= 3}}}]}
+/execute as @a run scriptevent capi:form {typ=action,ttl=難易度選択,bdy=難易度を選択してください,btn=[{txt=簡単,act={typ=set_score,val={obj=difficulty,val=1}}},{txt=普通,act={typ=ss,val={obj=difficulty,val=2}}},{txt=難しい,act={typ=set_s,val={obj=difficulty,val=3}}}]}
 ```
 +++
 
@@ -223,15 +223,15 @@ last_update:
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:form {
-    "type": "action",
-    "title": "特典受取",
-    "body": "毎日の特典を受け取りますか？",
-    "btns": [
+    "typ": "action",
+    "ttl": "特典受取",
+    "bdy": "毎日の特典を受け取りますか？",
+    "btn": [
         {
             "txt": "受け取る",
             "act": {
-                "type": "run",
-                "value": "give @s diamond 10"
+                "typ": "run",
+                "val": "give @s diamond 10"
             }
         }
     ]
@@ -239,7 +239,7 @@ last_update:
 ```
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:form {type=action,title=特典受取,body=毎日の特典を受け取りますか？,btns= [{txt=受け取る,act= {type=run,value=give @s diamond 10}}]}
+/execute as @a run scriptevent capi:form {typ=action,ttl=特典受取,bdy=毎日の特典を受け取りますか？,btn=[{txt=受け取る,act={typ=run,val=give @s diamond 10}}]}
 ```
 +++
 
@@ -250,7 +250,7 @@ last_update:
 +++ JSON
 ```mcfunction
 # フォームを表示
-/execute as @a run scriptevent capi:form {"type":"action","title":"選択","body":"選択してください","btns":[{"txt":"オプション1"},{"txt":"オプション2"},{"txt":"オプション3"}]}
+/execute as @a run scriptevent capi:form {"typ":"action","ttl":"選択","bdy":"選択してください","btn":[{"txt":"オプション1"},{"txt":"オプション2"},{"txt":"オプション3"}]}
 
 # 選択結果を確認
 /execute as @a[scores={capi:act_form=1}] run say オプション1を選択しました
@@ -260,7 +260,7 @@ last_update:
 +++ ESON
 ```mcfunction
 # フォームを表示
-/execute as @a run scriptevent capi:form {type=action,title=選択,body=選択してください,btns=[{txt=オプション1},{txt=オプション2},{txt=オプション3}]}
+/execute as @a run scriptevent capi:form {typ=action,ttl=選択,bdy=選択してください,btn=[{txt=オプション1},{txt=オプション2},{txt=オプション3}]}
 
 # 選択結果を確認
 /execute as @a[scores={capi:act_form=1}] run say オプション1を選択しました
@@ -272,9 +272,9 @@ last_update:
 ## 注意事項
 
 - プレイヤーのみが実行できます
-- `type` は `"action"` または `"act"` を指定します
-- `title` と `btns` は必須です
-- `btns` 配列内の各ボタンには `txt` が必須です
+- `typ` は `"action"` または `"act"` を指定します
+- `ttl` と `btn` は必須です
+- `btn` 配列内の各ボタンには `txt` が必須です
 - ボタンは配列の順番で表示されます
 - フォームが完了すると `form:<タイトル>` タグが付与されます（自動削除）
 

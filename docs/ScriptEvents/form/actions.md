@@ -18,8 +18,8 @@ last_update:
 
 ```json
 {
-    "type": "add_tag",
-    "value": "タグ名"
+    "typ": "add_tag",
+    "val": "タグ名"
 }
 ```
 
@@ -28,8 +28,8 @@ last_update:
 **使用例**:
 ```json
 {
-    "type": "add_tag",
-    "value": "vip"
+    "typ": "add_tag",
+    "val": "vip"
 }
 ```
 
@@ -39,8 +39,8 @@ last_update:
 
 ```json
 {
-    "type": "remove_tag",
-    "value": "タグ名"
+    "typ": "remove_tag",
+    "val": "タグ名"
 }
 ```
 
@@ -49,8 +49,8 @@ last_update:
 **使用例**:
 ```json
 {
-    "type": "remove_tag",
-    "value": "temp"
+    "typ": "remove_tag",
+    "val": "temp"
 }
 ```
 
@@ -60,11 +60,11 @@ last_update:
 
 ```json
 {
-    "type": "set_score",
-    "value": {
-        "object": "スコアボード名",
-        "target": "ターゲット",
-        "value": 値
+    "typ": "set_score",
+    "val": {
+        "obj": "スコアボード名",
+        "tgt": "ターゲット",
+        "val": 値
     }
 }
 ```
@@ -79,10 +79,10 @@ last_update:
 **使用例**:
 ```json
 {
-    "type": "set_score",
-    "value": {
-        "object": "points",
-        "value": 100
+    "typ": "set_score",
+    "val": {
+        "obj": "points",
+        "val": 100
     }
 }
 ```
@@ -93,11 +93,11 @@ last_update:
 
 ```json
 {
-    "type": "add_score",
-    "value": {
-        "object": "スコアボード名",
-        "target": "ターゲット",
-        "value": 値
+    "typ": "add_score",
+    "val": {
+        "obj": "スコアボード名",
+        "tgt": "ターゲット",
+        "val": 値
     }
 }
 ```
@@ -112,10 +112,10 @@ last_update:
 **使用例**:
 ```json
 {
-    "type": "add_score",
-    "value": {
-        "object": "coins",
-        "value": 50
+    "typ": "add_score",
+    "val": {
+        "obj": "coins",
+        "val": 50
     }
 }
 ```
@@ -126,8 +126,8 @@ last_update:
 
 ```json
 {
-    "type": "run_command",
-    "value": "コマンド"
+    "typ": "run_command",
+    "val": "コマンド"
 }
 ```
 
@@ -136,8 +136,8 @@ last_update:
 **使用例**:
 ```json
 {
-    "type": "run",
-    "value": "give @s diamond 10"
+    "typ": "run",
+    "val": "give @s diamond 10"
 }
 ```
 
