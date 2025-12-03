@@ -46,3 +46,4 @@ last_update:
 - [action](./action.md) - アクションフォームの詳細
 - [message](./message.md) - メッセージフォームの詳細
 - [modal](./modal.md) - モーダルフォームの詳細
+- [actions](./actions.md) - フォームアクションの詳細

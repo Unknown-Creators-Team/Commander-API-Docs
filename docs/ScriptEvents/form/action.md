@@ -55,72 +55,18 @@ last_update:
 
 ## アクションの種類
 
-### タグを追加 (add_tag)
+ボタンが押されたときに実行されるアクションを指定できます。  
+利用可能なアクションの詳細については、[フォームアクション](./actions.md)を参照してください。
 
-```json
-{
-    "type": "add_tag",
-    "value": "タグ名"
-}
-```
+### 主なアクション
 
-**エイリアス**: `"add_tag"`, `"add_t"`, `"at"`
+- **add_tag** - タグを追加
+- **remove_tag** - タグを削除
+- **set_score** - スコアを設定
+- **add_score** - スコアを追加
+- **run_command** - コマンドを実行
 
-### タグを削除 (remove_tag)
-
-```json
-{
-    "type": "remove_tag",
-    "value": "タグ名"
-}
-```
-
-**エイリアス**: `"remove_tag"`, `"rem_t"`, `"rt"`
-
-### スコアを設定 (set_score)
-
-```json
-{
-    "type": "set_score",
-    "value": {
-        "object": "スコアボード名",
-        "target": "ターゲット",
-        "value": 値
-    }
-}
-```
-
-**エイリアス**: `"set_score"`, `"set_s"`, `"ss"`
-
-**注意**: `target` は省略可能で、省略時は実行者が対象になります。
-
-### スコアを追加 (add_score)
-
-```json
-{
-    "type": "add_score",
-    "value": {
-        "object": "スコアボード名",
-        "target": "ターゲット",
-        "value": 値
-    }
-}
-```
-
-**エイリアス**: `"add_score"`, `"add_s"`, `"as"`
-
-**注意**: `target` は省略可能で、省略時は実行者が対象になります。
-
-### コマンドを実行 (run_command)
-
-```json
-{
-    "type": "run_command",
-    "value": "コマンド"
-}
-```
-
-**エイリアス**: `"run_command"`, `"run_cmd"`, `"run"`, `"r"`
+詳細は [actions.md](./actions.md) を参照してください。
 
 ## 使用例
 
@@ -336,4 +282,5 @@ last_update:
 
 - [message](./message.md) - メッセージフォーム
 - [modal](./modal.md) - モーダルフォーム
-- [../form.md](./form.md) - フォームの概要
+- [actions](./actions.md) - フォームアクションの詳細
+- [form](./form.md) - フォームの概要
