@@ -12,8 +12,8 @@ title: "movementVector（移動入力）"
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:movement_vector_x` | 移動入力のX成分です。（×100）左右の入力を表します。 |
-| `capi:movement_vector_y` | 移動入力のY成分です。（×100）前後の入力を表します。 |
+| `capi:input_x` | 移動入力のX成分です。（×100）左右の入力を表します。 |
+| `capi:input_y` | 移動入力のY成分です。（×100）前後の入力を表します。 |
 
 ## 注意事項
 - 移動入力の値は100倍されて保存されます。
@@ -23,5 +23,5 @@ title: "movementVector（移動入力）"
 前進しているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:movement_vector_y=50..}] run say 前進しています！
+execute as @a[scores={capi:input_y=50..}] run say 前進しています！
 ```

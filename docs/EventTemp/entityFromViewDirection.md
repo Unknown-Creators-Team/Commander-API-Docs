@@ -12,10 +12,10 @@ title: "entityFromViewDirection（視線先のエンティティ）"
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:entity_from_view_direction_distance` | 視線先のエンティティまでの距離です。 |
-| `capi:entity_from_view_direction_x` | 視線先のエンティティのX座標です。 |
-| `capi:entity_from_view_direction_y` | 視線先のエンティティのY座標です。 |
-| `capi:entity_from_view_direction_z` | 視線先のエンティティのZ座標です。 |
+| `capi:view_distance` | 視線先のエンティティまでの距離です。 |
+| `capi:view_x` | 視線先のエンティティのX座標です。 |
+| `capi:view_y` | 視線先のエンティティのY座標です。 |
+| `capi:view_z` | 視線先のエンティティのZ座標です。 |
 
 ## 注意事項
 - 視線の先にエンティティがない場合、スコアはリセットされます。
@@ -24,5 +24,5 @@ title: "entityFromViewDirection（視線先のエンティティ）"
 近くのエンティティを見ているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:entity_from_view_direction_distance=..10}] run say 近くのエンティティを見ています！
+execute as @a[scores={capi:view_distance=..10}] run say 近くのエンティティを見ています！
 ```

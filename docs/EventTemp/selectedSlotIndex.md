@@ -12,11 +12,11 @@ title: "selectedSlotIndex（選択中のスロット）"
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:selected_slot_index` | 現在選択中のホットバースロット番号です。（0-8） |
+| `capi:slot` | 現在選択中のホットバースロット番号です。（0-8） |
 
 ## 使用例
 特定のスロットを選択しているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:selected_slot_index=0}] run say 1番目のスロットを選択しています！
+execute as @a[scores={capi:slot=0}] run say 1番目のスロットを選択しています！
 ```

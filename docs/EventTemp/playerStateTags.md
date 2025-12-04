@@ -12,127 +12,127 @@ title: "プレイヤー状態タグ（tags.ts）"
 ### isOp（オペレーター）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_op` | プレイヤーがオペレーター権限を持っている場合に付与されます。 |
+| `capi:op` | プレイヤーがオペレーター権限を持っている場合に付与されます。 |
 
 ## プレイヤーの移動状態
 
 ### isFlying（飛行中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_flying` | プレイヤーが飛行中の場合に付与されます。 |
+| `capi:fly` | プレイヤーが飛行中の場合に付与されます。 |
 
 ### isGliding（滑空中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_gliding` | プレイヤーが滑空中（エリトラ使用中）の場合に付与されます。 |
+| `capi:glide` | プレイヤーが滑空中（エリトラ使用中）の場合に付与されます。 |
 
 ### isJumping（ジャンプ中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_jumping` | プレイヤーがジャンプ中の場合に付与されます。 |
+| `capi:jump` | プレイヤーがジャンプ中の場合に付与されます。 |
 
 ### isClimbing（登攀中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_climbing` | プレイヤーがはしごやツタを登っている場合に付与されます。 |
+| `capi:climb` | プレイヤーがはしごやツタを登っている場合に付与されます。 |
 
 ### isFalling（落下中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_falling` | プレイヤーが落下中の場合に付与されます。 |
+| `capi:fall` | プレイヤーが落下中の場合に付与されます。 |
 
 ### isInWater（水中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_in_water` | プレイヤーが水中にいる場合に付与されます。 |
+| `capi:in_water` | プレイヤーが水中にいる場合に付与されます。 |
 
 ### isOnGround（地上）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_on_ground` | プレイヤーが地面の上にいる場合に付与されます。 |
+| `capi:on_ground` | プレイヤーが地面の上にいる場合に付与されます。 |
 
 ### isSneaking（スニーク中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_sneaking` | プレイヤーがスニーク（しゃがみ）中の場合に付与されます。 |
+| `capi:sneak` | プレイヤーがスニーク（しゃがみ）中の場合に付与されます。 |
 
 ### isSprinting（スプリント中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_sprinting` | プレイヤーがスプリント（走り）中の場合に付与されます。 |
+| `capi:sprint` | プレイヤーがスプリント（走り）中の場合に付与されます。 |
 
 ### isSwimming（泳ぎ中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_swimming` | プレイヤーが泳いでいる場合に付与されます。 |
+| `capi:swim` | プレイヤーが泳いでいる場合に付与されます。 |
 
 ### isSleeping（睡眠中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_sleeping` | プレイヤーがベッドで寝ている場合に付与されます。 |
+| `capi:sleep` | プレイヤーがベッドで寝ている場合に付与されます。 |
 
 ### isEmoting（エモート中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_emoting` | プレイヤーがエモートを実行中の場合に付与されます。 |
+| `capi:emote` | プレイヤーがエモートを実行中の場合に付与されます。 |
 
 ### isRiding（騎乗中）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_riding` | プレイヤーがエンティティに乗っている場合に付与されます。 |
+| `capi:ride` | プレイヤーがエンティティに乗っている場合に付与されます。 |
 
 ## プレイヤーのプラットフォーム
 
 ### isDesktop（デスクトップ）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_desktop` | プレイヤーがデスクトップ（PC）でプレイしている場合に付与されます。 |
+| `capi:desktop` | プレイヤーがデスクトップ（PC）でプレイしている場合に付与されます。 |
 
 ### isMobile（モバイル）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_mobile` | プレイヤーがモバイル（スマートフォン/タブレット）でプレイしている場合に付与されます。 |
+| `capi:mobile` | プレイヤーがモバイル（スマートフォン/タブレット）でプレイしている場合に付与されます。 |
 
 ### isConsole（コンソール）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_console` | プレイヤーがコンソール（PlayStation/Xbox/Switch）でプレイしている場合に付与されます。 |
+| `capi:console` | プレイヤーがコンソール（PlayStation/Xbox/Switch）でプレイしている場合に付与されます。 |
 
 ## グラフィック設定
 
 ### isGraphicsSimple（シンプル）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_graphics_simple` | プレイヤーのグラフィック設定が「シンプル」の場合に付与されます。 |
+| `capi:graphics_simple` | プレイヤーのグラフィック設定が「シンプル」の場合に付与されます。 |
 
 ### isGraphicsFancy（ファンシー）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_graphics_fancy` | プレイヤーのグラフィック設定が「ファンシー」の場合に付与されます。 |
+| `capi:graphics_fancy` | プレイヤーのグラフィック設定が「ファンシー」の場合に付与されます。 |
 
 ### isGraphicsDeferred（遅延）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_graphics_deferred` | プレイヤーのグラフィック設定が「遅延」の場合に付与されます。 |
+| `capi:graphics_deferred` | プレイヤーのグラフィック設定が「遅延」の場合に付与されます。 |
 
 ### isGraphicsRayTraced（レイトレーシング）
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:is_graphics_ray_traced` | プレイヤーのグラフィック設定が「レイトレーシング」の場合に付与されます。 |
+| `capi:graphics_ray_traced` | プレイヤーのグラフィック設定が「レイトレーシング」の場合に付与されます。 |
 
 ## 使用例
 
 飛行中のプレイヤーを検出する例：
 ```mcfunction
-execute as @a[tag=capi:is_flying] run say 飛行中です！
+execute as @a[tag=capi:fly] run say 飛行中です！
 ```
 
 モバイルプレイヤーを検出する例：
 ```mcfunction
-execute as @a[tag=capi:is_mobile] run say モバイルでプレイしています！
+execute as @a[tag=capi:mobile] run say モバイルでプレイしています！
 ```
 
 スニーク中のプレイヤーを検出する例：
 ```mcfunction
-execute as @a[tag=capi:is_sneaking] run say スニーク中です！
+execute as @a[tag=capi:sneak] run say スニーク中です！
 ```

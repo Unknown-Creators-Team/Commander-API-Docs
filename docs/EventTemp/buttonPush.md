@@ -12,7 +12,7 @@ title: "buttonPush"
 
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:pushed` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
+| `capi:button` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
 
 ## トリガースコア
 イベントがトリガーされたとき、自動で更新されるスコアボードです。
@@ -27,5 +27,5 @@ title: "buttonPush"
 ボタンを押したプレイヤーにメッセージを送信する例：
 
 ```mcfunction
-execute as @a[tag=capi:pushed] run say ボタンを押しました！
+execute as @a[tag=capi:button] run say ボタンを押しました！
 ```

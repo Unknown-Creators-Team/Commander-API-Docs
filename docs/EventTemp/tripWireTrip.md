@@ -12,20 +12,20 @@ title: "tripWireTrip"
 
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:trip_wire` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
+| `capi:trip_wire_trip` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
 
 ## トリガースコア
 イベントがトリガーされたとき、自動で更新されるスコアボードです。
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:trip_wire_x` | トリップワイヤーのX座標です。 |
-| `capi:trip_wire_y` | トリップワイヤーのY座標です。 |
-| `capi:trip_wire_z` | トリップワイヤーのZ座標です。 |
+| `capi:trip_wire_trip_x` | トリップワイヤーのX座標です。 |
+| `capi:trip_wire_trip_y` | トリップワイヤーのY座標です。 |
+| `capi:trip_wire_trip_z` | トリップワイヤーのZ座標です。 |
 
 ## 使用例
 トリップワイヤーを踏んだプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:trip_wire] run say トリップワイヤーを踏みました！
+execute as @a[tag=capi:trip_wire_trip] run say トリップワイヤーを踏みました！
 ```

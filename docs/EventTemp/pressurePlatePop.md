@@ -12,20 +12,20 @@ title: "pressurePlatePop"
 
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:pressure_pop` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
+| `capi:plate` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
 
 ## トリガースコア
 イベントがトリガーされたとき、自動で更新されるスコアボードです。
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:pressure_pop_x` | 感圧板のX座標です。 |
-| `capi:pressure_pop_y` | 感圧板のY座標です。 |
-| `capi:pressure_pop_z` | 感圧板のZ座標です。 |
+| `capi:plate_x` | 感圧板のX座標です。 |
+| `capi:plate_y` | 感圧板のY座標です。 |
+| `capi:plate_z` | 感圧板のZ座標です。 |
 
 ## 使用例
 感圧板から降りたプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:pressure_pop] run say 感圧板から降りました！
+execute as @a[tag=capi:plate] run say 感圧板から降りました！
 ```

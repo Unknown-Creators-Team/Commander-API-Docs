@@ -12,22 +12,22 @@ title: "entityHitEntity"
 
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:hit_entity` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
-| `hit_entity:{エンティティID}` | 攻撃したエンティティのIDがタグとして付与されます。 |
+| `capi:attack` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
+| `attack:{エンティティID}` | 攻撃したエンティティのIDがタグとして付与されます。 |
 
 ## トリガースコア
 イベントがトリガーされたとき、自動で更新されるスコアボードです。
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:hit_entity` | エンティティを攻撃した回数です。（累積） |
-| `capi:hit_entity_x` | 攻撃したエンティティのX座標です。 |
-| `capi:hit_entity_y` | 攻撃したエンティティのY座標です。 |
-| `capi:hit_entity_z` | 攻撃したエンティティのZ座標です。 |
+| `capi:attack` | エンティティを攻撃した回数です。（累積） |
+| `capi:attack_x` | 攻撃したエンティティのX座標です。 |
+| `capi:attack_y` | 攻撃したエンティティのY座標です。 |
+| `capi:attack_z` | 攻撃したエンティティのZ座標です。 |
 
 ## 使用例
 エンティティを攻撃したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:hit_entity] run say エンティティを攻撃しました！
+execute as @a[tag=capi:attack] run say エンティティを攻撃しました！
 ```

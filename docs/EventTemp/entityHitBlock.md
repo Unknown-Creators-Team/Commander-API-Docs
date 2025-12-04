@@ -12,22 +12,22 @@ title: "entityHitBlock"
 
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:hit_block` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
-| `hit_block:{ブロックID}` | 攻撃したブロックのIDがタグとして付与されます。 |
+| `capi:attack` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
+| `attack:{ブロックID}` | 攻撃したブロックのIDがタグとして付与されます。 |
 
 ## トリガースコア
 イベントがトリガーされたとき、自動で更新されるスコアボードです。
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:hit_block` | ブロックを攻撃した回数です。（累積） |
-| `capi:hit_block_x` | 攻撃したブロックのX座標です。 |
-| `capi:hit_block_y` | 攻撃したブロックのY座標です。 |
-| `capi:hit_block_z` | 攻撃したブロックのZ座標です。 |
+| `capi:attack` | ブロックを攻撃した回数です。（累積） |
+| `capi:attack_x` | 攻撃したブロックのX座標です。 |
+| `capi:attack_y` | 攻撃したブロックのY座標です。 |
+| `capi:attack_z` | 攻撃したブロックのZ座標です。 |
 
 ## 使用例
 特定のブロックを攻撃したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=hit_block:minecraft:stone] run say 石ブロックを攻撃しました！
+execute as @a[tag=attack:minecraft:stone] run say 石ブロックを攻撃しました！
 ```

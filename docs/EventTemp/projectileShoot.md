@@ -12,9 +12,9 @@ title: "projectileShoot"
 
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:projectile_shoot` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
-| `projectile_shoot.with:{飛び道具ID}` | 発射した飛び道具のIDがタグとして付与されます。 |
-| `projectile_shoot.from:{プレイヤー名}` | 発射したプレイヤーの名前がタグとして付与されます。 |
+| `capi:shot` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
+| `shot.with:{飛び道具ID}` | 発射した飛び道具のIDがタグとして付与されます。 |
+| `shot.from:{プレイヤー名}` | 発射したプレイヤーの名前がタグとして付与されます。 |
 
 ## 対応アイテム
 - 弓（minecraft:bow）
@@ -24,5 +24,5 @@ title: "projectileShoot"
 矢を発射したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:projectile_shoot] run say 矢を発射しました！
+execute as @a[tag=capi:shot] run say 矢を発射しました！
 ```

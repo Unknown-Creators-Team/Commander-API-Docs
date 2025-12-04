@@ -12,21 +12,21 @@ title: "playerBreakBlock"
 
 | タグ名 | 説明 |
 | ----- | ----- |
-| `capi:break_block` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
-| `break_block:{ブロックID}` | 破壊したブロックのIDがタグとして付与されます。 |
+| `capi:break` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
+| `break:{ブロックID}` | 破壊したブロックのIDがタグとして付与されます。 |
 
 ## トリガースコア
 イベントがトリガーされたとき、自動で更新されるスコアボードです。
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:break_block_x` | 破壊したブロックのX座標です。 |
-| `capi:break_block_y` | 破壊したブロックのY座標です。 |
-| `capi:break_block_z` | 破壊したブロックのZ座標です。 |
+| `capi:break_x` | 破壊したブロックのX座標です。 |
+| `capi:break_y` | 破壊したブロックのY座標です。 |
+| `capi:break_z` | 破壊したブロックのZ座標です。 |
 
 ## 使用例
 特定のブロックを破壊したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=break_block:minecraft:diamond_ore] run say ダイヤモンド鉱石を破壊しました！
+execute as @a[tag=break:minecraft:diamond_ore] run say ダイヤモンド鉱石を破壊しました！
 ```

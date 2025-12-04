@@ -12,10 +12,10 @@ title: "blockFromViewDirection（視線先のブロック）"
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:block_from_view_direction_distance` | 視線先のブロックまでの距離です。 |
-| `capi:block_from_view_direction_x` | 視線先のブロックのX座標です。 |
-| `capi:block_from_view_direction_y` | 視線先のブロックのY座標です。 |
-| `capi:block_from_view_direction_z` | 視線先のブロックのZ座標です。 |
+| `capi:view_distance` | 視線先のブロックまでの距離です。 |
+| `capi:view_x` | 視線先のブロックのX座標です。 |
+| `capi:view_y` | 視線先のブロックのY座標です。 |
+| `capi:view_z` | 視線先のブロックのZ座標です。 |
 
 ## 注意事項
 - 視線の先にブロックがない場合、スコアはリセットされます。
@@ -24,5 +24,5 @@ title: "blockFromViewDirection（視線先のブロック）"
 近くのブロックを見ているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:block_from_view_direction_distance=..5}] run say 近くのブロックを見ています！
+execute as @a[scores={capi:view_distance=..5}] run say 近くのブロックを見ています！
 ```
