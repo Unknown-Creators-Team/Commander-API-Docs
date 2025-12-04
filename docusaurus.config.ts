@@ -5,6 +5,7 @@ import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import remarkDirective from "remark-directive";
 import remarkLinkCard from "./src/remark/linkCard.js";
+import remarkEasyTabs from "./src/remark/easyTabs.js";
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -56,7 +57,8 @@ const config: Config = {
                     remarkPlugins: [
                         remarkMath,
                         remarkDirective,
-                        remarkLinkCard
+                        remarkLinkCard,
+                        remarkEasyTabs
                     ],
                     rehypePlugins: [[rehypeKatex, { strict: false, output: 'mathml' }]],
                     // Please change this to your repo.
