@@ -164,6 +164,7 @@ last_update:
 /scriptevent capi:explosion {radius=6,location=[0,100,0],dimension=overworld,options={breaks_blocks=true,causes_fire=true,allow_under_water=false}}
 ```
 +++ JSON
+```mcfunction
 /scriptevent capi:explosion {
     "radius": 10,
     "location": [100, 64, 100],

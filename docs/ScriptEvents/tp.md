@@ -95,6 +95,7 @@ last_update:
 異なるディメンションにテレポートします。
 
 +++ JSON
+```mcfunction
 /execute as @a run scriptevent capi:tp {"location": [0, 64, 0], "dimension": "nether"}
 ```
 
