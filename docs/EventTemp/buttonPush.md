@@ -56,8 +56,8 @@ title: "buttonPush"
 /execute as @a[tag=capi:button,scores={capi:button_x=10,capi:button_y=64,capi:button_z=10}] run tellraw @s "§aドアを開きました"
 /execute as @a[tag=capi:button,scores={capi:button_x=10,capi:button_y=64,capi:button_z=10}] run playsound block.iron_door.open @s
 
-# 5秒後にドアを閉じる
-/execute as @a[tag=capi:button,scores={capi:button_x=10,capi:button_y=64,capi:button_z=10}] run schedule function close_door 5s
+# 5秒後にドアを閉じる（100ティック = 5秒）
+/execute as @a[tag=capi:button,scores={capi:button_x=10,capi:button_y=64,capi:button_z=10}] run scriptevent capi:delay {ticks=100,command=fill 10 64 11 10 66 11 stone}
 ```
 
 ### ミニゲーム開始ボタン
