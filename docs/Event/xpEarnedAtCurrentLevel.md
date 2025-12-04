@@ -1,5 +1,8 @@
 ---
-title: "xpEarnedAtCurrentLevel（現在レベルで獲得した経験値）"
+title: "xpEarnedAtCurrentLevel"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明

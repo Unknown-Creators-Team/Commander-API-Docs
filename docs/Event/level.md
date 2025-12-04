@@ -1,5 +1,8 @@
 ---
-title: "level（レベル）"
+title: "level"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明

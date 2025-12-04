@@ -1,5 +1,8 @@
 ---
-title: "イベント一覧（EventTemp）"
+title: "Event"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 # Commander-API イベント一覧

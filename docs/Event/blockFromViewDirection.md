@@ -1,5 +1,8 @@
 ---
-title: "blockFromViewDirection（視線先のブロック）"
+title: "blockFromViewDirection"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明

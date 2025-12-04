@@ -1,5 +1,8 @@
 ---
-title: "viewDirection（視線方向）"
+title: "viewDirection"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明

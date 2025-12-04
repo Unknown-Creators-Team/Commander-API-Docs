@@ -1,5 +1,8 @@
 ---
-title: "maxRenderDistance（最大描画距離）"
+title: "maxRenderDistance"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明

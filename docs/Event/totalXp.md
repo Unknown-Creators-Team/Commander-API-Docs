@@ -1,5 +1,8 @@
 ---
-title: "totalXp（総経験値）"
+title: "totalXp"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明

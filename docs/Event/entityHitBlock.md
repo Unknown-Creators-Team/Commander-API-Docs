@@ -1,5 +1,8 @@
 ---
 title: "entityHitBlock"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明

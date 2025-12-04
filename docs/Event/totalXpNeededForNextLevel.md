@@ -1,5 +1,8 @@
 ---
-title: "totalXpNeededForNextLevel（次のレベルまでの必要経験値）"
+title: "totalXpNeededForNextLevel"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明

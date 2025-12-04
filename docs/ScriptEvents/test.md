@@ -81,28 +81,28 @@ Commander-APIが正しく動作していることを確認するためのコマ�
 
 | テスト名 | 説明 |
 |---|---|
-|`actionbar`|アクションバーを表示するテストです|
-|`call`|コマンド呼び出しのテストです|
-|`explosion`|爆発を生成するテストです|
-|`form`|フォームを表示するテストです|
-|`get_item`|アイテムを取得するテストです|
-|`impulse`|インパルスコマンドのテストです|
-|`kick`|プレイヤーをキックするテストです|
-|`kill`|エンティティを消滅させるテストです|
-|`knockback`|ノックバック効果のテストです|
-|`rename`|エンティティ名を変更するテストです|
-|`reset_name`|エンティティ名をリセットするテストです|
-|`run`|コマンド実行のテストです|
-|`say`|チャットメッセージを送信するテストです|
-|`screen`|スクリーン表示のテストです|
-|`set_item`|アイテムを設定するテストです|
-|`set_slot`|スロットを設定するテストです|
-|`shoot`|発射物を生成するテストです|
-|`spawn_entity`|エンティティをスポーンするテストです|
-|`spawn_item`|アイテムをスポーンするテストです|
-|`team`|チーム操作のテストです|
-|`tell`|プレイヤーにメッセージを送信するテストです|
-|`tp`|テレポートコマンドのテストです|
+|`scriptevent_actionbar`|アクションバーを表示するテストです|
+|`scriptevent_call`|コマンド呼び出しのテストです|
+|`scriptevent_explosion`|爆発を生成するテストです|
+|`scriptevent_form`|フォームを表示するテストです|
+|`scriptevent_get_item`|アイテムを取得するテストです|
+|`scriptevent_impulse`|インパルスコマンドのテストです|
+|`scriptevent_kick`|プレイヤーをキックするテストです|
+|`scriptevent_kill`|エンティティを消滅させるテストです|
+|`scriptevent_knockback`|ノックバック効果のテストです|
+|`scriptevent_rename`|エンティティ名を変更するテストです|
+|`scriptevent_reset_name`|エンティティ名をリセットするテストです|
+|`scriptevent_run`|コマンド実行のテストです|
+|`scriptevent_say`|チャットメッセージを送信するテストです|
+|`scriptevent_screen`|スクリーン表示のテストです|
+|`scriptevent_set_item`|アイテムを設定するテストです|
+|`scriptevent_set_slot`|スロットを設定するテストです|
+|`scriptevent_shoot`|発射物を生成するテストです|
+|`scriptevent_spawn_entity`|エンティティをスポーンするテストです|
+|`scriptevent_spawn_item`|アイテムをスポーンするテストです|
+|`scriptevent_team`|チーム操作のテストです|
+|`scriptevent_tell`|プレイヤーにメッセージを送信するテストです|
+|`scriptevent_tp`|テレポートコマンドのテストです|
 
 +++
 

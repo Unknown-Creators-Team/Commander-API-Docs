@@ -1,5 +1,8 @@
 ---
-title: "entityFromViewDirection（視線先のエンティティ）"
+title: "entityFromViewDirection"
+last_update:
+  date: 2025-12-04
+  author: Copilot
 ---
 
 ## 説明
