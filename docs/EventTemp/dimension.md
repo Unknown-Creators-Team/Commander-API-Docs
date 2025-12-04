@@ -23,5 +23,5 @@ title: "dimension（ディメンション）"
 ネザーにいるプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:dimension=-1}] run say ネザーにいます！
+/execute as @a[scores={capi:dimension=-1}] run say ネザーにいます！
 ```

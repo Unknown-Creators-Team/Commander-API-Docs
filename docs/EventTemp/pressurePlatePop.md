@@ -27,5 +27,5 @@ title: "pressurePlatePop"
 感圧板から降りたプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:plate] run say 感圧板から降りました！
+/execute as @a[tag=capi:plate] run say 感圧板から降りました！
 ```

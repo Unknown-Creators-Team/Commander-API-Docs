@@ -31,7 +31,7 @@ title: "playerBreakBlock"
 特定のブロックを破壊したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=break:minecraft:diamond_ore] run say ダイヤモンド鉱石を破壊しました！
+/execute as @a[tag=break:minecraft:diamond_ore] run say ダイヤモンド鉱石を破壊しました！
 ```
 
 ### 複数のブロックタイプの検出
@@ -39,17 +39,18 @@ execute as @a[tag=break:minecraft:diamond_ore] run say ダイヤモンド鉱石�
 貴重な鉱石を破壊したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=break:minecraft:diamond_ore] run tellraw @s {"text":"ダイヤモンド鉱石を発見！","color":"aqua"}
-execute as @a[tag=break:minecraft:emerald_ore] run tellraw @s {"text":"エメラルド鉱石を発見！","color":"green"}
-execute as @a[tag=break:minecraft:ancient_debris] run tellraw @s {"text":"古代の残骸を発見！","color":"gold"}
+/execute as @a[tag=break:minecraft:diamond_ore] run tellraw @s "§bダイヤモンド鉱石を発見！"
+/execute as @a[tag=break:minecraft:emerald_ore] run tellraw @s "§aエメラルド鉱石を発見！"
+/execute as @a[tag=break:minecraft:ancient_debris] run tellraw @s "§6古代の残骸を発見！"
 ```
 
 ### 座標情報の利用
 
-破壊したブロックの座標を表示する例：
+破壊したブロックの座標を記録する例：
 
 ```mcfunction
-execute as @a[tag=capi:break] run tellraw @s [{"text":"ブロックを破壊: "},{"score":{"name":"@s","objective":"capi:break_x"}},{"text":", "},{"score":{"name":"@s","objective":"capi:break_y"}},{"text":", "},{"score":{"name":"@s","objective":"capi:break_z"}}]
+# 座標を記録（スコアボードで管理）
+/execute as @a[tag=capi:break] run tellraw @s "§eブロック破壊位置を記録しました"
 ```
 
 ### 特定エリアでの破壊を検出
@@ -58,10 +59,10 @@ Y座標を使って地下での採掘を検出する例：
 
 ```mcfunction
 # 深い場所での採掘
-execute as @a[tag=capi:break,scores={capi:break_y=..16}] run title @s actionbar {"text":"深層採掘中...","color":"dark_purple"}
+/execute as @a[tag=capi:break,scores={capi:break_y=..16}] run title @s actionbar "§5深層採掘中..."
 
 # 地表での作業
-execute as @a[tag=capi:break,scores={capi:break_y=60..}] run title @s actionbar {"text":"地表作業中","color":"green"}
+/execute as @a[tag=capi:break,scores={capi:break_y=60..}] run title @s actionbar "§a地表作業中"
 ```
 
 ### ブロック破壊カウンター
@@ -70,13 +71,13 @@ execute as @a[tag=capi:break,scores={capi:break_y=60..}] run title @s actionbar 
 
 ```mcfunction
 # 石ブロック破壊カウント
-execute as @a[tag=break:minecraft:stone] run scoreboard players add @s stone_broken 1
-execute as @a[tag=break:minecraft:stone,scores={stone_broken=1000..}] run tellraw @s {"text":"石ブロック1000個破壊達成！","color":"gold"}
+/execute as @a[tag=break:minecraft:stone] run scoreboard players add @s stone_broken 1
+/execute as @a[tag=break:minecraft:stone,scores={stone_broken=1000..}] run tellraw @s "§6石ブロック1000個破壊達成！"
 
 # 原木破壊カウント
-execute as @a[tag=break:minecraft:oak_log] run scoreboard players add @s wood_broken 1
-execute as @a[tag=break:minecraft:birch_log] run scoreboard players add @s wood_broken 1
-execute as @a[tag=break:minecraft:spruce_log] run scoreboard players add @s wood_broken 1
+/execute as @a[tag=break:minecraft:oak_log] run scoreboard players add @s wood_broken 1
+/execute as @a[tag=break:minecraft:birch_log] run scoreboard players add @s wood_broken 1
+/execute as @a[tag=break:minecraft:spruce_log] run scoreboard players add @s wood_broken 1
 ```
 
 ### 禁止ブロックの破壊検出
@@ -85,11 +86,11 @@ execute as @a[tag=break:minecraft:spruce_log] run scoreboard players add @s wood
 
 ```mcfunction
 # スポーナーの破壊を検出
-execute as @a[tag=break:minecraft:spawner] run tellraw @s {"text":"警告：スポーナーを破壊しました！","color":"red"}
-execute as @a[tag=break:minecraft:spawner] run scoreboard players add @s warning 1
+/execute as @a[tag=break:minecraft:spawner] run tellraw @s "§c警告：スポーナーを破壊しました！"
+/execute as @a[tag=break:minecraft:spawner] run scoreboard players add @s warning 1
 
 # 重要な建築物の保護
-execute as @a[tag=break:minecraft:bedrock] run tellraw @a [{"selector":"@s"},{"text":" が岩盤を破壊しようとしました！","color":"red"}]
+/execute as @a[tag=break:minecraft:bedrock] run tellraw @a [{"selector":"@s"},"§c が岩盤を破壊しようとしました！"]
 ```
 
 ### 実績システムとの連携
@@ -98,11 +99,11 @@ execute as @a[tag=break:minecraft:bedrock] run tellraw @a [{"selector":"@s"},{"t
 
 ```mcfunction
 # 初めてのダイヤモンド
-execute as @a[tag=break:minecraft:diamond_ore,scores={diamond_found=0}] run tellraw @s {"text":"実績解除：最初のダイヤモンド！","color":"aqua","bold":true}
-execute as @a[tag=break:minecraft:diamond_ore] run scoreboard players add @s diamond_found 1
+/execute as @a[tag=break:minecraft:diamond_ore,scores={diamond_found=0}] run tellraw @s "§b§l実績解除：最初のダイヤモンド！"
+/execute as @a[tag=break:minecraft:diamond_ore] run scoreboard players add @s diamond_found 1
 
 # マスターマイナー
-execute as @a[tag=capi:break,scores={total_blocks_broken=10000}] run tellraw @s {"text":"実績解除：マスターマイナー（10000ブロック破壊）","color":"gold","bold":true}
+/execute as @a[tag=capi:break,scores={total_blocks_broken=10000}] run tellraw @s "§6§l実績解除：マスターマイナー（10000ブロック破壊）"
 ```
 
 ### 時間帯による制限
@@ -111,8 +112,8 @@ execute as @a[tag=capi:break,scores={total_blocks_broken=10000}] run tellraw @s 
 
 ```mcfunction
 # 夜間のみ特殊鉱石を破壊可能
-execute as @a[tag=break:minecraft:diamond_ore] if predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run give @s diamond 1
-execute as @a[tag=break:minecraft:diamond_ore] unless predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run tellraw @s {"text":"この鉱石は夜間のみ採掘できます","color":"red"}
+/execute as @a[tag=break:minecraft:diamond_ore] if predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run give @s diamond 1
+/execute as @a[tag=break:minecraft:diamond_ore] unless predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run tellraw @s "§cこの鉱石は夜間のみ採掘できます"
 ```
 
 ### ツールの使用状況を記録
@@ -121,8 +122,8 @@ execute as @a[tag=break:minecraft:diamond_ore] unless predicate {"condition":"mi
 
 ```mcfunction
 # ダイヤモンドのピッケルで破壊
-execute as @a[tag=capi:break,nbt={SelectedItem:{id:"minecraft:diamond_pickaxe"}}] run scoreboard players add @s diamond_tool_use 1
+/execute as @a[tag=capi:break,nbt={SelectedItem:{id:"minecraft:diamond_pickaxe"}}] run scoreboard players add @s diamond_tool_use 1
 
 # 素手で破壊
-execute as @a[tag=capi:break,nbt=!{SelectedItem:{}}] run tellraw @s {"text":"素手での破壊は効率が悪いです！","color":"yellow"}
+/execute as @a[tag=capi:break,nbt=!{SelectedItem:{}}] run tellraw @s "§e素手での破壊は効率が悪いです！"
 ```

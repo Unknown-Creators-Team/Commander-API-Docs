@@ -45,5 +45,5 @@ title: "entityHurt"
 大ダメージを与えたプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:damage,scores={capi:damage=10..}] run say 大ダメージを与えました！
+/execute as @a[tag=capi:damage,scores={capi:damage=10..}] run say 大ダメージを与えました！
 ```

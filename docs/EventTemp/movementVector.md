@@ -23,5 +23,5 @@ title: "movementVector（移動入力）"
 前進しているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:input_y=50..}] run say 前進しています！
+/execute as @a[scores={capi:input_y=50..}] run say 前進しています！
 ```

@@ -123,11 +123,11 @@ Commander-APIのイベントは、大きく以下の3つのカテゴリに分類
 
 ```mcfunction
 # 飛行中のプレイヤーが高い場所にいる場合
-execute as @a[tag=capi:fly,scores={capi:location_y=200..}] run say 空高く飛んでいます！
+/execute as @a[tag=capi:fly,scores={capi:location_y=200..}] run say 空高く飛んでいます！
 
 # スニーク中で移動していないプレイヤー
-execute as @a[tag=capi:sneak,scores={capi:velocity_xz=..10}] run say こっそり隠れています
+/execute as @a[tag=capi:sneak,scores={capi:velocity_xz=..10}] run say こっそり隠れています
 
 # モバイルでプレイしているプレイヤーがブロックを破壊
-execute as @a[tag=capi:mobile,tag=capi:break] run say モバイルでブロックを破壊しました！
+/execute as @a[tag=capi:mobile,tag=capi:break] run say モバイルでブロックを破壊しました！
 ```

@@ -28,5 +28,5 @@ title: "playerInteractWithEntity"
 村人をインタラクトしたプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=interact:minecraft:villager] run say 村人と取引しました！
+/execute as @a[tag=interact:minecraft:villager] run say 村人と取引しました！
 ```

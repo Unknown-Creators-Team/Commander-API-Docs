@@ -24,5 +24,5 @@ title: "projectileShoot"
 矢を発射したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:shot] run say 矢を発射しました！
+/execute as @a[tag=capi:shot] run say 矢を発射しました！
 ```

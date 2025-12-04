@@ -29,5 +29,5 @@ title: "entityHitEntity"
 エンティティを攻撃したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:attack] run say エンティティを攻撃しました！
+/execute as @a[tag=capi:attack] run say エンティティを攻撃しました！
 ```

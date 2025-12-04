@@ -24,5 +24,5 @@ title: "viewDirection（視線方向）"
 上を向いているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:direction_y=50..}] run say 上を向いています！
+/execute as @a[scores={capi:direction_y=50..}] run say 上を向いています！
 ```

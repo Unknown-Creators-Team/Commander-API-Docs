@@ -18,5 +18,5 @@ title: "health（体力）"
 体力が少ないプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:health=..5}] run say 体力が少ない！
+/execute as @a[scores={capi:health=..5}] run say 体力が少ない！
 ```

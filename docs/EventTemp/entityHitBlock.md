@@ -29,5 +29,5 @@ title: "entityHitBlock"
 特定のブロックを攻撃したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=attack:minecraft:stone] run say 石ブロックを攻撃しました！
+/execute as @a[tag=attack:minecraft:stone] run say 石ブロックを攻撃しました！
 ```

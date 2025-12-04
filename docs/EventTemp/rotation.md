@@ -19,5 +19,5 @@ title: "rotation（回転）"
 特定の方向を向いているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:rotation_y=0..90}] run say 東を向いています！
+/execute as @a[scores={capi:rotation_y=0..90}] run say 東を向いています！
 ```

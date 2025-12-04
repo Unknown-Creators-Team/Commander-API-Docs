@@ -46,7 +46,7 @@ title: "entityDie"
 プレイヤーをキルしたプレイヤーにメッセージを送信する例：
 
 ```mcfunction
-execute as @a[tag=capi:kill_player] run say プレイヤーを倒しました！
+/execute as @a[tag=capi:kill_player] run say プレイヤーを倒しました！
 ```
 
 ### PvP統計の記録
@@ -55,12 +55,12 @@ execute as @a[tag=capi:kill_player] run say プレイヤーを倒しました！
 
 ```mcfunction
 # キル数を記録
-execute as @a[tag=capi:kill_player] run scoreboard players add @s pvp_kills 1
-execute as @a[tag=capi:kill_player] run tellraw @s [{"text":"PvPキル数: ","color":"gold"},{"score":{"name":"@s","objective":"pvp_kills"},"color":"yellow"}]
+/execute as @a[tag=capi:kill_player] run scoreboard players add @s pvp_kills 1
+/execute as @a[tag=capi:kill_player] run tellraw @s "§6PvPキルを記録しました"
 
 # デス数を記録
-execute as @a[tag=capi:death_player] run scoreboard players add @s pvp_deaths 1
-execute as @a[tag=capi:death_player] run tellraw @s [{"text":"デス数: ","color":"gray"},{"score":{"name":"@s","objective":"pvp_deaths"},"color":"white"}]
+/execute as @a[tag=capi:death_player] run scoreboard players add @s pvp_deaths 1
+/execute as @a[tag=capi:death_player] run tellraw @s "§7デスを記録しました"
 ```
 
 ### キルストリークシステム
@@ -69,15 +69,15 @@ execute as @a[tag=capi:death_player] run tellraw @s [{"text":"デス数: ","colo
 
 ```mcfunction
 # キルストリークをカウント
-execute as @a[tag=capi:kill_player] run scoreboard players add @s killstreak 1
+/execute as @a[tag=capi:kill_player] run scoreboard players add @s killstreak 1
 
 # ストリークボーナス
-execute as @a[tag=capi:kill_player,scores={killstreak=3}] run tellraw @s {"text":"トリプルキル！","color":"gold","bold":true}
-execute as @a[tag=capi:kill_player,scores={killstreak=5}] run tellraw @s {"text":"キリングスプリー！","color":"red","bold":true}
-execute as @a[tag=capi:kill_player,scores={killstreak=10}] run tellraw @s {"text":"アンストッパブル！","color":"dark_red","bold":true}
+/execute as @a[tag=capi:kill_player,scores={killstreak=3}] run tellraw @s "§6§lトリプルキル！"
+/execute as @a[tag=capi:kill_player,scores={killstreak=5}] run tellraw @s "§c§lキリングスプリー！"
+/execute as @a[tag=capi:kill_player,scores={killstreak=10}] run tellraw @s "§4§lアンストッパブル！"
 
 # 死亡時にストリークをリセット
-execute as @a[tag=capi:death_player] run scoreboard players set @s killstreak 0
+/execute as @a[tag=capi:death_player] run scoreboard players set @s killstreak 0
 ```
 
 ### モブキル統計
@@ -86,11 +86,11 @@ execute as @a[tag=capi:death_player] run scoreboard players set @s killstreak 0
 
 ```mcfunction
 # エンティティキルをカウント
-execute as @a[tag=capi:kill] run scoreboard players add @s total_kills 1
+/execute as @a[tag=capi:kill] run scoreboard players add @s total_kills 1
 
 # マイルストーン達成
-execute as @a[tag=capi:kill,scores={total_kills=100}] run tellraw @s {"text":"100体のエンティティを倒しました！","color":"green"}
-execute as @a[tag=capi:kill,scores={total_kills=1000}] run tellraw @s {"text":"1000体のエンティティを倒しました！","color":"gold"}
+/execute as @a[tag=capi:kill,scores={total_kills=100}] run tellraw @s "§a100体のエンティティを倒しました！"
+/execute as @a[tag=capi:kill,scores={total_kills=1000}] run tellraw @s "§61000体のエンティティを倒しました！"
 ```
 
 ### 死亡原因の分析
@@ -99,16 +99,16 @@ execute as @a[tag=capi:kill,scores={total_kills=1000}] run tellraw @s {"text":"1
 
 ```mcfunction
 # 落下死
-execute as @a[tag=die_cause:fall] run tellraw @s {"text":"落下に注意しましょう！","color":"yellow"}
+/execute as @a[tag=die_cause:fall] run tellraw @s "§e落下に注意しましょう！"
 
 # 溶岩死
-execute as @a[tag=die_cause:lava] run tellraw @s {"text":"溶岩は危険です！水バケツを持ち歩きましょう。","color":"red"}
+/execute as @a[tag=die_cause:lava] run tellraw @s "§c溶岩は危険です！水バケツを持ち歩きましょう。"
 
 # 爆発死
-execute as @a[tag=die_cause:explosion] run tellraw @s {"text":"クリーパーに注意！","color":"green"}
+/execute as @a[tag=die_cause:explosion] run tellraw @s "§aクリーパーに注意！"
 
 # 窒息死
-execute as @a[tag=die_cause:suffocation] run tellraw @s {"text":"ブロックに埋まらないように注意！","color":"gray"}
+/execute as @a[tag=die_cause:suffocation] run tellraw @s "§7ブロックに埋まらないように注意！"
 ```
 
 ### デスペナルティシステム
@@ -117,11 +117,11 @@ execute as @a[tag=die_cause:suffocation] run tellraw @s {"text":"ブロックに
 
 ```mcfunction
 # 死亡時にスコアを減少
-execute as @a[tag=capi:death] run scoreboard players remove @s points 10
-execute as @a[tag=capi:death] run tellraw @s {"text":"-10 ポイント（死亡ペナルティ）","color":"red"}
+/execute as @a[tag=capi:death] run scoreboard players remove @s points 10
+/execute as @a[tag=capi:death] run tellraw @s "§c-10 ポイント（死亡ペナルティ）"
 
 # PvP死のみペナルティ
-execute as @a[tag=capi:death_player] run scoreboard players remove @s pvp_rating 5
+/execute as @a[tag=capi:death_player] run scoreboard players remove @s pvp_rating 5
 ```
 
 ### リスポーン地点の記録
@@ -130,12 +130,12 @@ execute as @a[tag=capi:death_player] run scoreboard players remove @s pvp_rating
 
 ```mcfunction
 # 死亡位置を記録
-execute as @a[tag=capi:death] run scoreboard players operation @s last_death_x = @s capi:death_x
-execute as @a[tag=capi:death] run scoreboard players operation @s last_death_y = @s capi:death_y
-execute as @a[tag=capi:death] run scoreboard players operation @s last_death_z = @s capi:death_z
+/execute as @a[tag=capi:death] run scoreboard players operation @s last_death_x = @s capi:death_x
+/execute as @a[tag=capi:death] run scoreboard players operation @s last_death_y = @s capi:death_y
+/execute as @a[tag=capi:death] run scoreboard players operation @s last_death_z = @s capi:death_z
 
-# 死亡位置を表示
-execute as @a[tag=capi:death] run tellraw @s [{"text":"死亡位置: ","color":"gray"},{"score":{"name":"@s","objective":"last_death_x"}},{"text":", "},{"score":{"name":"@s","objective":"last_death_y"}},{"text":", "},{"score":{"name":"@s","objective":"last_death_z"}}]
+# 死亡位置を通知
+/execute as @a[tag=capi:death] run tellraw @s "§7死亡位置が記録されました"
 ```
 
 ### アリーナPvPシステム
@@ -144,11 +144,11 @@ execute as @a[tag=capi:death] run tellraw @s [{"text":"死亡位置: ","color":"
 
 ```mcfunction
 # アリーナ内でのキル
-execute as @a[tag=capi:kill_player,scores={capi:kill_x=-100..100,capi:kill_y=60..70,capi:kill_z=-100..100}] run scoreboard players add @s arena_wins 1
-execute as @a[tag=capi:kill_player,scores={arena_wins=10}] run tellraw @s {"text":"アリーナマスター達成！","color":"gold","bold":true}
+/execute as @a[tag=capi:kill_player,scores={capi:kill_x=-100..100,capi:kill_y=60..70,capi:kill_z=-100..100}] run scoreboard players add @s arena_wins 1
+/execute as @a[tag=capi:kill_player,scores={arena_wins=10}] run tellraw @s "§6§lアリーナマスター達成！"
 
 # アリーナでの死亡
-execute as @a[tag=capi:death_player,scores={capi:death_x=-100..100,capi:death_y=60..70,capi:death_z=-100..100}] run tp @s 0 65 0
+/execute as @a[tag=capi:death_player,scores={capi:death_x=-100..100,capi:death_y=60..70,capi:death_z=-100..100}] run tp @s 0 65 0
 ```
 
 ### ボスキル報酬
@@ -157,8 +157,8 @@ execute as @a[tag=capi:death_player,scores={capi:death_x=-100..100,capi:death_y=
 
 ```mcfunction
 # キル位置が特定エリア（ボス部屋）の場合
-execute as @a[tag=capi:kill,scores={capi:kill_x=100..200,capi:kill_y=50..60,capi:kill_z=100..200}] run give @s diamond 5
-execute as @a[tag=capi:kill,scores={capi:kill_x=100..200,capi:kill_y=50..60,capi:kill_z=100..200}] run tellraw @s {"text":"ボス討伐報酬：ダイヤモンド×5","color":"gold"}
+/execute as @a[tag=capi:kill,scores={capi:kill_x=100..200,capi:kill_y=50..60,capi:kill_z=100..200}] run give @s diamond 5
+/execute as @a[tag=capi:kill,scores={capi:kill_x=100..200,capi:kill_y=50..60,capi:kill_z=100..200}] run tellraw @s "§6ボス討伐報酬：ダイヤモンド×5"
 ```
 
 ### チーム戦統計
@@ -167,11 +167,11 @@ execute as @a[tag=capi:kill,scores={capi:kill_x=100..200,capi:kill_y=50..60,capi
 
 ```mcfunction
 # 赤チームのキル
-execute as @a[tag=capi:kill_player,team=red] run scoreboard players add red_team kills 1
+/execute as @a[tag=capi:kill_player,team=red] run scoreboard players add red_team kills 1
 
 # 青チームのキル
-execute as @a[tag=capi:kill_player,team=blue] run scoreboard players add blue_team kills 1
+/execute as @a[tag=capi:kill_player,team=blue] run scoreboard players add blue_team kills 1
 
-# チームスコアを表示
-execute as @a[tag=capi:kill_player] run title @a actionbar [{"text":"赤: ","color":"red"},{"score":{"name":"red_team","objective":"kills"}},{"text":" vs 青: ","color":"white"},{"score":{"name":"blue_team","objective":"kills"},"color":"blue"}]
+# チームスコアを表示（サイドバーに表示）
+/execute as @a[tag=capi:kill_player] run scoreboard objectives setdisplay sidebar kills
 ```

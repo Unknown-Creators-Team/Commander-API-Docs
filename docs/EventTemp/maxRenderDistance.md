@@ -18,5 +18,5 @@ title: "maxRenderDistance（最大描画距離）"
 描画距離が長いプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:max_render_distance=16..}] run say 描画距離が長いです！
+/execute as @a[scores={capi:max_render_distance=16..}] run say 描画距離が長いです！
 ```

@@ -18,5 +18,5 @@ title: "memoryTier（メモリティア）"
 メモリティアに基づいて処理を最適化する例：
 
 ```mcfunction
-execute as @a[scores={capi:memory_tier=..1}] run say 低メモリデバイスです
+/execute as @a[scores={capi:memory_tier=..1}] run say 低メモリデバイスです
 ```

@@ -26,5 +26,5 @@ title: "velocity（速度）"
 高速で移動しているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:velocity_xz=100..}] run say 速く移動しています！
+/execute as @a[scores={capi:velocity_xz=100..}] run say 速く移動しています！
 ```

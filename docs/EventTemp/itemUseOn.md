@@ -31,5 +31,5 @@ title: "itemUseOn"
 ブロックに対してアイテムを使用したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:item_use_on] run say ブロックにアイテムを使用しました！
+/execute as @a[tag=capi:item_use_on] run say ブロックにアイテムを使用しました！
 ```

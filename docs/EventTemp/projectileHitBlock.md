@@ -30,5 +30,5 @@ title: "projectileHitBlock"
 矢がブロックに当たったプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=hit.with:minecraft:arrow] run say 矢がブロックに当たりました！
+/execute as @a[tag=hit.with:minecraft:arrow] run say 矢がブロックに当たりました！
 ```

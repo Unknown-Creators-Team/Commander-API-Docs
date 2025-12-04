@@ -18,5 +18,5 @@ title: "totalXpNeededForNextLevel（次のレベルまでの必要経験値）"
 レベルアップ直前のプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:xp_needed_for_next_level=..10}] run say もう少しでレベルアップ！
+/execute as @a[scores={capi:xp_needed_for_next_level=..10}] run say もう少しでレベルアップ！
 ```

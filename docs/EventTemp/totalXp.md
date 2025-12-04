@@ -18,5 +18,5 @@ title: "totalXp（総経験値）"
 総経験値が多いプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:total_xp=1000..}] run say 総経験値1000以上です！
+/execute as @a[scores={capi:total_xp=1000..}] run say 総経験値1000以上です！
 ```

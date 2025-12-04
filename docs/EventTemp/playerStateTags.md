@@ -124,15 +124,15 @@ title: "プレイヤー状態タグ（tags.ts）"
 
 飛行中のプレイヤーを検出する例：
 ```mcfunction
-execute as @a[tag=capi:fly] run say 飛行中です！
+/execute as @a[tag=capi:fly] run say 飛行中です！
 ```
 
 モバイルプレイヤーを検出する例：
 ```mcfunction
-execute as @a[tag=capi:mobile] run say モバイルでプレイしています！
+/execute as @a[tag=capi:mobile] run say モバイルでプレイしています！
 ```
 
 スニーク中のプレイヤーを検出する例：
 ```mcfunction
-execute as @a[tag=capi:sneak] run say スニーク中です！
+/execute as @a[tag=capi:sneak] run say スニーク中です！
 ```

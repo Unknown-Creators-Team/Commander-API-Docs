@@ -18,5 +18,5 @@ title: "selectedSlotIndex（選択中のスロット）"
 特定のスロットを選択しているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:slot=0}] run say 1番目のスロットを選択しています！
+/execute as @a[scores={capi:slot=0}] run say 1番目のスロットを選択しています！
 ```

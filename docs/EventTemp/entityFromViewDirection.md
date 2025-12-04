@@ -24,5 +24,5 @@ title: "entityFromViewDirection（視線先のエンティティ）"
 近くのエンティティを見ているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:view_distance=..10}] run say 近くのエンティティを見ています！
+/execute as @a[scores={capi:view_distance=..10}] run say 近くのエンティティを見ています！
 ```

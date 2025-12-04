@@ -18,5 +18,5 @@ title: "level（レベル）"
 高レベルのプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:level=30..}] run say レベル30以上です！
+/execute as @a[scores={capi:level=30..}] run say レベル30以上です！
 ```

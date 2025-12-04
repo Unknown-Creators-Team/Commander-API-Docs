@@ -28,5 +28,5 @@ title: "playerInteractWithBlock"
 特定のブロックをインタラクトしたプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=interact:minecraft:chest] run say チェストを開きました！
+/execute as @a[tag=interact:minecraft:chest] run say チェストを開きました！
 ```

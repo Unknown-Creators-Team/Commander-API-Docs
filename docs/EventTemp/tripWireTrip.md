@@ -27,5 +27,5 @@ title: "tripWireTrip"
 トリップワイヤーを踏んだプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:trip_wire_trip] run say トリップワイヤーを踏みました！
+/execute as @a[tag=capi:trip_wire_trip] run say トリップワイヤーを踏みました！
 ```

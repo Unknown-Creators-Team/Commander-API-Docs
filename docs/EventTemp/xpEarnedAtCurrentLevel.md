@@ -18,5 +18,5 @@ title: "xpEarnedAtCurrentLevel（現在レベルで獲得した経験値）"
 現在レベルで多くの経験値を獲得したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:xp_earned_at_current_level=50..}] run say 現在レベルで多くの経験値を獲得しました！
+/execute as @a[scores={capi:xp_earned_at_current_level=50..}] run say 現在レベルで多くの経験値を獲得しました！
 ```

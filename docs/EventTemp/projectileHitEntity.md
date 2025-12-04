@@ -30,5 +30,5 @@ title: "projectileHitEntity"
 矢がエンティティに当たったプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=hit.with:minecraft:arrow] run say 矢がエンティティに当たりました！
+/execute as @a[tag=hit.with:minecraft:arrow] run say 矢がエンティティに当たりました！
 ```

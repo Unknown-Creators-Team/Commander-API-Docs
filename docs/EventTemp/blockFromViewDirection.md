@@ -24,5 +24,5 @@ title: "blockFromViewDirection（視線先のブロック）"
 近くのブロックを見ているプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:view_distance=..5}] run say 近くのブロックを見ています！
+/execute as @a[scores={capi:view_distance=..5}] run say 近くのブロックを見ています！
 ```

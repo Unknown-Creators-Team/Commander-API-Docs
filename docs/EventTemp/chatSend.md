@@ -35,7 +35,7 @@ title: "chatSend"
 長いメッセージを送信したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:chat,scores={capi:chat_len=50..}] run say 長いメッセージを送信しました！
+/execute as @a[tag=capi:chat,scores={capi:chat_len=50..}] run say 長いメッセージを送信しました！
 ```
 
 ### 短いメッセージの検出
@@ -43,7 +43,7 @@ execute as @a[tag=capi:chat,scores={capi:chat_len=50..}] run say 長いメッセ
 短いメッセージを送信したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:chat,scores={capi:chat_len=..5}] run tellraw @s {"text":"メッセージが短すぎます！","color":"red"}
+/execute as @a[tag=capi:chat,scores={capi:chat_len=..5}] run tellraw @s "§cメッセージが短すぎます！"
 ```
 
 ### チャット回数のカウント
@@ -51,7 +51,7 @@ execute as @a[tag=capi:chat,scores={capi:chat_len=..5}] run tellraw @s {"text":"
 多くのメッセージを送信したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:chat,scores={capi:chat_cnt=100..}] run title @s actionbar {"text":"チャット100回達成！","color":"gold"}
+/execute as @a[tag=capi:chat,scores={capi:chat_cnt=100..}] run title @s actionbar "§6チャット100回達成！"
 ```
 
 ### 特定のメッセージの検出
@@ -59,8 +59,8 @@ execute as @a[tag=capi:chat,scores={capi:chat_cnt=100..}] run title @s actionbar
 特定のメッセージを送信したプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=chat:help] run tellraw @s {"text":"ヘルプコマンド: /help","color":"aqua"}
-execute as @a[tag=chat:hello] run say こんにちは！
+/execute as @a[tag=chat:help] run tellraw @s "§bヘルプコマンド: /help"
+/execute as @a[tag=chat:hello] run say こんにちは！
 ```
 
 ### プレイヤーのミュート
@@ -93,10 +93,10 @@ scoreboard players reset @a[name="PlayerName"] capi:chat_cnt
 
 ```mcfunction
 # 非常に長いメッセージ
-execute as @a[tag=capi:chat,scores={capi:chat_len=100..}] run tellraw @s {"text":"メッセージが長すぎます！","color":"red"}
+/execute as @a[tag=capi:chat,scores={capi:chat_len=100..}] run tellraw @s "§cメッセージが長すぎます！"
 
 # 適切な長さのメッセージ
-execute as @a[tag=capi:chat,scores={capi:chat_len=10..50}] run scoreboard players add @s good_message 1
+/execute as @a[tag=capi:chat,scores={capi:chat_len=10..50}] run scoreboard players add @s good_message 1
 ```
 
 ### チャットイベントを使った報酬システム
@@ -105,9 +105,9 @@ execute as @a[tag=capi:chat,scores={capi:chat_len=10..50}] run scoreboard player
 
 ```mcfunction
 # 10回チャットごとにポイント付与
-execute as @a[tag=capi:chat,scores={capi:chat_cnt=10}] run scoreboard players add @s points 1
-execute as @a[tag=capi:chat,scores={capi:chat_cnt=10}] run scoreboard players set @s capi:chat_cnt 0
+/execute as @a[tag=capi:chat,scores={capi:chat_cnt=10}] run scoreboard players add @s points 1
+/execute as @a[tag=capi:chat,scores={capi:chat_cnt=10}] run scoreboard players set @s capi:chat_cnt 0
 
 # 初回チャットボーナス
-execute as @a[tag=capi:chat,scores={capi:chat_cnt=1}] run give @s diamond 1
+/execute as @a[tag=capi:chat,scores={capi:chat_cnt=1}] run give @s diamond 1
 ```

@@ -27,5 +27,5 @@ title: "pressurePlatePush"
 感圧板を踏んだプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[tag=capi:plate] run say 感圧板を踏みました！
+/execute as @a[tag=capi:plate] run say 感圧板を踏みました！
 ```

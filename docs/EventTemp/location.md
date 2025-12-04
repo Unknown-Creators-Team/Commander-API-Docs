@@ -20,5 +20,5 @@ title: "location（座標）"
 特定の高さにいるプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:location_y=100..}] run say 高いところにいます！
+/execute as @a[scores={capi:location_y=100..}] run say 高いところにいます！
 ```
