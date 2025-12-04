@@ -43,127 +43,52 @@ last_update:
 
 ### シンプルなノックバック
 
-エンティティを後ろに押し飛ばします。
+Xプラス、Zプラスの方向へ押し飛ばします。
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=zombie] run scriptevent capi:knockback {horizontal_force= [1,0],vertical_strength= 0.5}
+scriptevent capi:knockback {horizontal_force=[1, 1],vertical_strength=0.5}
 ```
 +++ JSON
 ```mcfunction
-/execute as @e[type=zombie] run scriptevent capi:knockback {
-    "horizontal_force": [1, 0],
+scriptevent capi:knockback {
+    "horizontal_force": [1, 1],
     "vertical_strength": 0.5
 }
 ```
 +++
 
-### 強いノックバック
+### 向いてる方向へノックバック
 
-エンティティを強く押し飛ばします。
+プレイヤーを向いている方向へ押し飛ばします。
+※めっちゃ押されるから気をつけて！
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=creeper] run scriptevent capi:knockback {horizontal_force= [2,2],vertical_strength= 1}
+scriptevent capi:knockback {horizontal_force=[<!calc=<!score=capi:direction_x>>,<!calc=<!score=capi:direction_z>>],vertical_strength=0.5}
 ```
 +++ JSON
 ```mcfunction
-/execute as @e[type=creeper] run scriptevent capi:knockback {
-    "horizontal_force": [2, 2],
-    "vertical_strength": 1
+scriptevent capi:knockback {
+    "horizontal_force": [<!calc=<!score=capi:direction_x>/10>, <!calc=<!score=capi:direction_z>>],
+    "vertical_strength": 0.5
 }
 ```
 +++
 
 ### 上方向のノックバック
 
-主に上方向に押し飛ばします。
+上方向に押し飛ばします。
 
 +++ ESON
 ```mcfunction
-/execute as @e[type=skeleton] run scriptevent capi:knockback {horizontal_force= [0,0],vertical_strength= 2}
+scriptevent capi:knockback {horizontal_force= [0,0],vertical_strength= 2}
 ```
 +++ JSON
 ```mcfunction
-/execute as @e[type=skeleton] run scriptevent capi:knockback {
+scriptevent capi:knockback {
     "horizontal_force": [0, 0],
     "vertical_strength": 2
-}
-```
-+++
-
-### プレイヤーへのノックバック
-
-プレイヤーを押し飛ばします。
-
-+++ ESON
-```mcfunction
-/execute as @a run scriptevent capi:knockback {horizontal_force= [0,1],vertical_strength= 0.5}
-```
-+++ JSON
-```mcfunction
-/execute as @a run scriptevent capi:knockback {
-    "horizontal_force": [0, 1],
-    "vertical_strength": 0.5
-}
-```
-+++
-
-### ダメージと組み合わせる
-
-ダメージを与えながらノックバックします。
-
-+++ ESON
-```mcfunction
-/execute as @e[type=zombie] run damage @s 5 /execute as @e[type=zombie] run scriptevent capi:knockback {horizontal_force= [1,1],vertical_strength= 1}
-```
-+++ JSON
-```mcfunction
-/execute as @e[type=zombie] run damage @s 5
-/execute as @e[type=zombie] run scriptevent capi:knockback {
-    "horizontal_force": [1, 1],
-    "vertical_strength": 1
-}
-```
-+++
-
-### 方向を指定したノックバック
-
-特定の方向に押し飛ばします。
-
-+++ ESON
-```mcfunction
-# 東方向 /execute as @e[type=pig] run scriptevent capi:knockback {horizontal_force= [1,0],vertical_strength= 0.3} # 北方向 /execute as @e[type=cow] run scriptevent capi:knockback {horizontal_force= [0,-1],vertical_strength= 0.3}
-```
-+++ JSON
-```mcfunction
-# 東方向
-/execute as @e[type=pig] run scriptevent capi:knockback {
-    "horizontal_force": [1, 0],
-    "vertical_strength": 0.3
-}
-
-# 北方向
-/execute as @e[type=cow] run scriptevent capi:knockback {
-    "horizontal_force": [0, -1],
-    "vertical_strength": 0.3
-}
-```
-+++
-
-### 爆発風のノックバック
-
-中心から外側に押し飛ばすようなノックバックを実行します。
-
-+++ ESON
-```mcfunction
-/execute at @e[type=tnt] as @e[type=!tnt,distance=..5] run scriptevent capi:knockback {horizontal_force= [2,2],vertical_strength= 1.5}
-```
-+++ JSON
-```mcfunction
-/execute at @e[type=tnt] as @e[type=!tnt,distance=..5] run scriptevent capi:knockback {
-    "horizontal_force": [2, 2],
-    "vertical_strength": 1.5
 }
 ```
 +++
@@ -190,7 +115,6 @@ last_update:
 - `horizontal_force` は2つの数値の配列である必要があります
 - `vertical_strength` は単一の数値です
 - 値が大きいほど、ノックバックが強くなります
-- プレイヤーにも使用できますが、効果が異なる場合があります
 
 ## 関連項目
 

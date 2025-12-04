@@ -105,29 +105,33 @@ capi:get_item.<プロパティ名>:<値>
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:get_item {"slot": 0, "minimize": false}
+/execute as @a[tag=capi:get_item] run scriptevent capi:tell あなたは <!tag=get_item.type_id> を持っています
 ```
 +++
 
 ### 取得した情報を使用
 
-取得したアイテム情報をタグから読み取ります。
+スロット0にあるアイテムを取得し、アイテム情報をタグから読み取ります。
 
 +++ ESON
 ```mcfunction
 # アイテム情報を取得
-/execute as @a run scriptevent capi:get_item {}
+/execute as @a run scriptevent capi:get_item {slot=0}
+
+# 遅延3tick
 
 # タグが付いているかチェック
-/execute as @a[tag=capi:get_item] run say アイテム情報を取得しました
+/execute as @a[tag=capi:get_item] run scriptevent capi:tell あなたは <!tag=get_item.type_id> を持っています
 ```
 +++ JSON
 ```mcfunction
 # アイテム情報を取得
-/execute as @a run scriptevent capi:get_item {}
+/execute as @a run scriptevent capi:get_item {"slot": 0}
+
+# 遅延3tick
 
 # タグが付いているかチェック
-/execute as @a[tag=capi:get_item] run say アイテム情報を取得しました
+/execute as @a[tag=capi:get_item] run scriptevent capi:tell あなたは <!tag=get_item.type_id> を持っています
 ```
 +++
 

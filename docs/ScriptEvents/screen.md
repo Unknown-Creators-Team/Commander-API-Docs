@@ -179,7 +179,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {title=§6レベルアップ!,subtitle=レベル <!score=player_level>}
+/execute as @a run scriptevent capi:screen {title=§6レベルアップ!,subtitle=レベル <!score=capi:level>}
 ```
 +++ JSON
 ```mcfunction
@@ -224,7 +224,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {title=§6ゲーム終了,subtitle=§7お疲れ様でした,options= {in= 20,out= 40,stay= 60}}
+/execute as @a run scriptevent capi:screen {title=§6ゲーム終了,subtitle=§7お疲れ様でした,options={in=20,out=40,stay=60}}
 ```
 +++ JSON
 ```mcfunction
@@ -246,7 +246,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:screen {title=§6§l勝利!,subtitle=<!name>の勝利です！,options= {in= 10,out= 20,stay= 80}}
+/execute as @a run scriptevent capi:screen {title=§6§l勝利!,subtitle=<!name>の勝利です！,options={in=10,out=20,stay=80}}
 ```
 +++ JSON
 ```mcfunction
@@ -263,33 +263,6 @@ last_update:
 +++
 
 ::: !ref ../Macro/Name.md
-
-## 色とフォーマット
-
-Minecraft のカラーコードを使用できます：
-
-| コード | 色/効果 |
-|---|---|
-| §0 | 黒 |
-| §1 | 濃い青 |
-| §2 | 濃い緑 |
-| §3 | 濃い水色 |
-| §4 | 濃い赤 |
-| §5 | 濃い紫 |
-| §6 | 金色 |
-| §7 | 灰色 |
-| §8 | 濃い灰色 |
-| §9 | 青 |
-| §a | 緑 |
-| §b | 水色 |
-| §c | 赤 |
-| §d | 紫 |
-| §e | 黄色 |
-| §f | 白 |
-| §l | 太字 |
-| §o | 斜体 |
-| §n | 下線 |
-| §r | リセット |
 
 ## 注意事項
 

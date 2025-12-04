@@ -68,21 +68,6 @@ last_update:
 
 ::: !ref ../Macro/Score.md
 
-### 条件付きメッセージ
-
-特定の条件でメッセージを送信します。
-
-```mcfunction
-/execute as @a run scriptevent capi:tell <!if=score:capi:health<10>§c警告: 体力が低下しています！<!endif>
-```
-
-**表示例** (体力が10未満の場合):
-```
-警告: 体力が低下しています！
-```
-
-::: !ref ../Macro/If.md
-
 ### 計算結果の表示
 
 計算結果を含むメッセージを送信します。

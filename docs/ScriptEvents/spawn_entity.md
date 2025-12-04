@@ -22,7 +22,7 @@ last_update:
 
 +++ ESON
 ```plaintext
-{id=エンティティID,name=名前,location=[x,y,z],dimension=ディメンション名,set_on_fire=秒数}
+{id=エンティティID,name=名前,location=[x,y,z],dimension=ディメンション名,fire=秒数}
 ```
 +++ JSON
 ```json
@@ -31,7 +31,7 @@ last_update:
     "name": "名前",
     "location": [x, y, z],
     "dimension": "ディメンション名",
-    "set_on_fire": 秒数
+    "fire": 秒数
 }
 ```
 +++
@@ -39,10 +39,10 @@ last_update:
 | パラメータ | 説明 | 必須 |
 |---|---|---|
 | `id` | エンティティID | ✓ |
+| `location` | スポーン座標 [x, y, z] | ✓ |
 | `name` | エンティティの名前 | × |
-| `location` | スポーン座標 [x, y, z] | × |
 | `dimension` | ディメンション名 | × |
-| `set_on_fire` | 炎上させる秒数 | × |
+| `fire` | 炎上させる秒数 | × |
 
 
 ## 使用例
@@ -109,11 +109,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {id=minecraft:zombie,set_on_fire=10}
+/scriptevent capi:spawn_entity {id=minecraft:zombie,fire=10}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_entity {"id": "minecraft:zombie", "set_on_fire": 10}
+/scriptevent capi:spawn_entity {"id": "minecraft:zombie", "fire": 10}
 ```
 +++
 
@@ -137,7 +137,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {id=minecraft:wither_skeleton,name=§4炎の戦士,location= [100,64,100],dimension=overworld,set_on_fire= 999}
+/scriptevent capi:spawn_entity {id=minecraft:wither_skeleton,name=§4炎の戦士,location= [100,64,100],dimension=overworld,fire= 999}
 ```
 +++ JSON
 ```mcfunction
@@ -146,7 +146,7 @@ last_update:
     "name": "§4炎の戦士",
     "location": [100, 64, 100],
     "dimension": "overworld",
-    "set_on_fire": 999
+    "fire": 999
 }
 ```
 +++
@@ -181,36 +181,11 @@ last_update:
 ```
 +++
 
-## よく使われるエンティティID
-
-| エンティティ | ID |
-|---|---|
-| クリーパー | `minecraft:creeper` |
-| ゾンビ | `minecraft:zombie` |
-| スケルトン | `minecraft:skeleton` |
-| エンダーマン | `minecraft:enderman` |
-| ウィザースケルトン | `minecraft:wither_skeleton` |
-| ブレイズ | `minecraft:blaze` |
-| ガスト | `minecraft:ghast` |
-| ファントム | `minecraft:phantom` |
-| ウィザー | `minecraft:wither` |
-| エンダードラゴン | `minecraft:ender_dragon` |
-| 牛 | `minecraft:cow` |
-| 豚 | `minecraft:pig` |
-| 羊 | `minecraft:sheep` |
-| 鶏 | `minecraft:chicken` |
-| 馬 | `minecraft:horse` |
-| オウム | `minecraft:parrot` |
-| 村人 | `minecraft:villager` |
-| アイアンゴーレム | `minecraft:iron_golem` |
-
 ## 注意事項
 
-- `id` パラメータは必須です
-- `location` を省略した場合、実行者の位置が使用されます
-- 実行者がいない場合、`location` の省略時は [0, 0, 0] が使用されます
+- `id`、`location` は必須です
 - `dimension` を省略した場合、実行者のディメンションが使用されます
-- `set_on_fire` は秒数で指定します（1秒 = 20tick）
+- `fire` は**tickではなく**秒数で指定します
 - 無効なエンティティIDを指定するとエラーが発生します
 
 ## 関連項目

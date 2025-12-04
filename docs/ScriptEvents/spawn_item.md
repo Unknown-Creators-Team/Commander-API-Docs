@@ -28,6 +28,7 @@ last_update:
 ```json
 {
     "item": "アイテムID",
+    "location": [x, y, z],
     "name": "アイテム名",
     "amount": 数量,
     "lore": ["説明文1", "説明文2"],
@@ -36,7 +37,6 @@ last_update:
     "can_destroy": ["ブロックID"],
     "lock": "ロックモード",
     "keep_on_death": true/false,
-    "location": [x, y, z],
     "dimension": "ディメンション名",
     "clear_velocity": true/false
 }
@@ -46,6 +46,7 @@ last_update:
 | パラメータ | 説明 | 必須 |
 |---|---|---|
 | `item` | アイテムID | ✓ |
+| `location` | スポーン座標 [x, y, z] | ✓ |
 | `name` | アイテムの表示名 | × |
 | `amount` | 数量 | × |
 | `lore` | 説明文の配列 | × |
@@ -54,7 +55,6 @@ last_update:
 | `can_destroy` | 破壊可能なブロック | × |
 | `lock` | アイテムロックモード | × |
 | `keep_on_death` | 死亡時に保持 | × |
-| `location` | スポーン座標 [x, y, z] | × |
 | `dimension` | ディメンション名 | × |
 | `clear_velocity` | 速度をクリア | × |
 
@@ -63,105 +63,93 @@ last_update:
 
 ### シンプルなアイテムスポーン
 
-ダイヤモンドをスポーンします。
+0, 0, 0にダイヤモンドをスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond}
+/scriptevent capi:spawn_item {item=minecraft:diamond,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:diamond"}
+/scriptevent capi:spawn_item {"item": "minecraft:diamond", "location": [0, 0, 0]}
 ```
 +++
 
 ### 数量を指定してスポーン
 
-64個の土ブロックをスポーンします。
+0, 0, 0に64個の土ブロックをスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:dirt,amount=64}
+/scriptevent capi:spawn_item {item=minecraft:dirt,amount=64,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:dirt", "amount": 64}
+/scriptevent capi:spawn_item {"item": "minecraft:dirt", "amount": 64, "location": [0, 0, 0]}
 ```
 +++
 
 ### 名前付きアイテム
 
-カスタム名を付けたダイヤモンドの剣をスポーンします。
+0, 0, 0にカスタム名を付けたダイヤモンドの剣をスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§6伝説の剣}
+/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§6伝説の剣,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:diamond_sword", "name": "§6伝説の剣"}
+/scriptevent capi:spawn_item {"item": "minecraft:diamond_sword", "name": "§6伝説の剣", "location": [0, 0, 0]}
 ```
 +++
 
 ### 説明文付きアイテム
 
-説明文を付けたアイテムをスポーンします。
+0, 0, 0に説明文を付けたアイテムをスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§6勇者の剣,lore= ["§7伝説の武器","§7攻撃力 +10"]}
+/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§6勇者の剣,lore=["§7伝説の武器","§7攻撃力 +10"],location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
     "item": "minecraft:diamond_sword",
     "name": "§6勇者の剣",
-    "lore": ["§7伝説の武器", "§7攻撃力 +10"]
+    "lore": ["§7伝説の武器", "§7攻撃力 +10"],
+    "location": [0, 0, 0]
 }
 ```
 +++
 
 ### エンチャント付きアイテム
 
-エンチャントを付けたダイヤモンドの剣をスポーンします。
+0, 0, 0にエンチャントを付けたダイヤモンドの剣をスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond_sword,enchants= [{name=sharpness,level= 5},{name=fire_aspect,level= 2}]}
+/scriptevent capi:spawn_item {item=minecraft:diamond_sword,enchants=[{name=sharpness,level=5},{name=fire_aspect,level=2}],location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-    "item": "minecraft:diamond_sword",
-    "enchants": [
-        {"name": "sharpness", "level": 5},
-        {"name": "fire_aspect", "level": 2}
-    ]
+        "item": "minecraft:diamond_sword",
+        "enchants": [
+                {"name": "sharpness", "level": 5},
+                {"name": "fire_aspect", "level": 2}
+        ],
+        "location": [0, 0, 0]
 }
-```
-+++
-
-### 座標を指定してスポーン
-
-特定の座標にアイテムをスポーンします。
-
-+++ ESON
-```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond,location=[100,64,100]}
-```
-+++ JSON
-```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:diamond", "location": [100, 64, 100]}
 ```
 +++
 
 ### 相対座標でスポーン
 
-プレイヤーの前方にアイテムをスポーンします。
+0, 0, 0にプレイヤーの前方にアイテムをスポーンします。
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_item {item=minecraft:apple,location=["~","~1","~2"]}
+/execute as @a run scriptevent capi:spawn_item {item=minecraft:apple,location=[~,~1,~2]}
 ```
 +++ JSON
 ```mcfunction
@@ -171,160 +159,132 @@ last_update:
 
 ### 速度なしでスポーン
 
-その場に静止した状態でアイテムをスポーンします。
+0, 0, 0にその場に静止した状態でアイテムをスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond,clear_velocity=true}
+/scriptevent capi:spawn_item {item=minecraft:diamond,clear_velocity=true,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:diamond", "clear_velocity": true}
+/scriptevent capi:spawn_item {"item": "minecraft:diamond", "clear_velocity": true, "location": [0, 0, 0]}
 ```
 +++
 
 ### 死亡時に保持するアイテム
 
-死亡時に失わないアイテムをスポーンします。
+0, 0, 0に死亡時に失わないアイテムをスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:totem_of_undying,keep_on_death= true}
+/scriptevent capi:spawn_item {item=minecraft:totem_of_undying,keep_on_death=true,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-    "item": "minecraft:totem_of_undying",
-    "keep_on_death": true
+        "item": "minecraft:totem_of_undying",
+        "keep_on_death": true,
+        "location": [0, 0, 0]
 }
 ```
 +++
 
 ### 特定のブロックにのみ設置可能
 
-特定のブロックにのみ設置できるアイテムをスポーンします。
+0, 0, 0に特定のブロックにのみ設置できるアイテムをスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:stone,can_place_on= ["minecraft:dirt","minecraft:grass_block"]}
+/scriptevent capi:spawn_item {item=minecraft:stone,can_place_on=["minecraft:dirt","minecraft:grass_block"],location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-    "item": "minecraft:stone",
-    "can_place_on": ["minecraft:dirt", "minecraft:grass_block"]
-}
+        "item": "minecraft:stone",
+        "can_place_on": ["minecraft:dirt", "minecraft:grass_block"],
+        "location": [0, 0, 0]
+    }
 ```
 +++
 
+
 ### 特定のブロックのみ破壊可能
 
-特定のブロックのみ破壊できるツールをスポーンします。
+0, 0, 0に特定のブロックのみ破壊できるツールをスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:wooden_pickaxe,can_destroy= ["minecraft:stone","minecraft:cobblestone"]}
+/scriptevent capi:spawn_item {item=minecraft:wooden_pickaxe,can_destroy=["minecraft:stone","minecraft:cobblestone"],location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
     "item": "minecraft:wooden_pickaxe",
-    "can_destroy": ["minecraft:stone", "minecraft:cobblestone"]
-}
+        "can_destroy": ["minecraft:stone", "minecraft:cobblestone"]
+        "location": [0, 0, 0]
+    }
 ```
 +++
 
+
 ### 完全にカスタマイズされたアイテム
 
-全ての設定を行ったアイテムをスポーンします。
+0, 0, 0に全ての設定を行ったアイテムをスポーンします。
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§c§l最強の剣,amount= 1,lore= ["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants= [{name=sharpness,level= 10},{name=fire_aspect,level= 5},{name=looting,level= 3}],keep_on_death= true,location= [100,64,100],dimension=overworld,clear_velocity= true}
+/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§c§l最強の剣,amount=1,lore=["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants=[{name=sharpness,level=10},{name=fire_aspect,level=5},{name=looting,level=3}],keep_on_death=true,location=[100,64,100],dimension=overworld,clear_velocity=true,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
     "item": "minecraft:diamond_sword",
     "name": "§c§l最強の剣",
-    "amount": 1,
-    "lore": [
-        "§7伝説の武器",
-        "§7攻撃力 +100",
-        "§7クリティカル率 +50%"
-    ],
-    "enchants": [
-        {"name": "sharpness", "level": 10},
-        {"name": "fire_aspect", "level": 5},
-        {"name": "looting", "level": 3}
-    ],
-    "keep_on_death": true,
-    "location": [100, 64, 100],
-    "dimension": "overworld",
-    "clear_velocity": true
+        "amount": 1,
+        "lore": [
+            "§7伝説の武器",
+            "§7攻撃力 +100",
+                "§7クリティカル率 +50%"
+            ],
+            "enchants": [
+            {"name": "sharpness", "level": 10},
+            {"name": "fire_aspect", "level": 5},
+                {"name": "looting", "level": 3}
+            ],
+            "keep_on_death": true,
+        "location": [100, 64, 100],
+        "dimension": "overworld",
+        "clear_velocity": true,
+        "location": [0, 0, 0]
 }
 ```
 +++
 
 ### マクロを使用したアイテム
 
-プレイヤー名を含む名前のアイテムをスポーンします。
+0, 0, 0にプレイヤー名を含む名前のアイテムをスポーンします。
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_item {item=minecraft:diamond,name=<!name>のダイヤモンド}
+/execute as @a run scriptevent capi:spawn_item {item=minecraft:diamond,name=<!name>のダイヤモンド,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:spawn_item {
     "item": "minecraft:diamond",
-    "name": "<!name>のダイヤモンド"
+    "name": "<!name>のダイヤモンド",
+    "location": [0, 0, 0]
 }
 ```
 +++
 
-::: !ref ../Macro/Name.md
-
-## よく使われるアイテムID
-
-| アイテム | ID |
-|---|---|
-| ダイヤモンド | `minecraft:diamond` |
-| エメラルド | `minecraft:emerald` |
-| 金インゴット | `minecraft:gold_ingot` |
-| 鉄インゴット | `minecraft:iron_ingot` |
-| ダイヤモンドの剣 | `minecraft:diamond_sword` |
-| ダイヤモンドのツルハシ | `minecraft:diamond_pickaxe` |
-| ダイヤモンドの斧 | `minecraft:diamond_axe` |
-| ダイヤモンドのシャベル | `minecraft:diamond_shovel` |
-| エンチャントの本 | `minecraft:enchanted_book` |
-| 不死のトーテム | `minecraft:totem_of_undying` |
-| ネザライトインゴット | `minecraft:netherite_ingot` |
-
-## エンチャント名
-
-| エンチャント | 名前 |
-|---|---|
-| 鋭さ | `sharpness` |
-| アンデッド特効 | `smite` |
-| 虫特効 | `bane_of_arthropods` |
-| ノックバック | `knockback` |
-| 火属性 | `fire_aspect` |
-| ドロップ増加 | `looting` |
-| 効率強化 | `efficiency` |
-| シルクタッチ | `silk_touch` |
-| 耐久力 | `unbreaking` |
-| 修繕 | `mending` |
-
 ## 注意事項
 
-- `item` パラメータは必須です
+- `item`、`location` は必須です
 - `amount` のデフォルト値は 1 です
-- `location` を省略した場合、実行者の位置が使用されます
 - `dimension` を省略した場合、実行者のディメンションが使用されます
 - `clear_velocity` を true にすると、アイテムが静止した状態でスポーンします
 - 無効なアイテムIDを指定するとエラーが発生します
-- エンチャントレベルは通常の上限を超えることができます
 
 ## 関連項目
 

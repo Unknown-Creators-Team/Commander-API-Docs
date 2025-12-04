@@ -94,10 +94,15 @@ last_update:
 
 異なるディメンションにテレポートします。
 
++++ ESON
+```mcfunction
+/execute as @a run scriptevent capi:tp {location=[0,64,0],dimension="nether"}
+```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:tp {"location": [0, 64, 0], "dimension": "nether"}
 ```
++++
 
 **利用可能なディメンション**:
 - `overworld` - オーバーワールド
@@ -150,12 +155,11 @@ last_update:
 
 ## 注意事項
 
-- エンティティに対して実行できます（プレイヤーに限りません）
+- エンティティに対して実行できます（ただし、エンティティはC-APIによるタグ情報やスコア情報を持っていません）
 - `location` パラメータは必須です
 - 座標は配列として正確に3つの値を指定する必要があります
 - `rotation` を省略した場合、現在の向きが維持されます
 - `dimension` を省略した場合、現在のディメンションが使用されます
-- 相対座標とローカル座標を混在させることはできません
 
 ## 関連項目
 

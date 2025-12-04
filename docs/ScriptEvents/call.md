@@ -120,16 +120,12 @@ last_update:
 
 ::: !ref ../Macro/Score.md
 
-## コマンドセットの登録方法
-
-コマンドセットは `CAPI_CALLS` というスコアボードデータベースに保存されます。
-
 ### UI での登録
 
 コマンド登録画面を表示するには：
 
 ```mcfunction
-/scriptevent capi:call
+/scriptevent capi:calls
 ```
 
 このコマンドを実行すると、コマンドセットの登録・編集・削除ができるUIが表示されます。

@@ -122,7 +122,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,name=§6勇者の剣,lore= ["§7伝説の武器","§7攻撃力 +10"]}
+/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,name=§6勇者の剣,lore=["§7伝説の武器","§7攻撃力 +10"]}
 ```
 +++ JSON
 ```mcfunction
@@ -140,7 +140,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,enchants= [{name=sharpness,level= 5},{name=fire_aspect,level= 2}]}
+/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,enchants=[{name=sharpness,level=5},{name=fire_aspect,level=2}]}
 ```
 +++ JSON
 ```mcfunction
@@ -160,7 +160,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:totem_of_undying,keep_on_death= true,slot= 0}
+/execute as @a run scriptevent capi:set_item {id=minecraft:totem_of_undying,keep_on_death=true,slot=0}
 ```
 +++ JSON
 ```mcfunction
@@ -178,7 +178,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,name=§c§l最強の剣,amount= 1,slot= 0,lore= ["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants= [{name=sharpness,level= 10},{name=fire_aspect,level= 5},{name=looting,level= 3}],keep_on_death= true}
+/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,name=§c§l最強の剣,amount=1,slot=0,lore=["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants=[{name=sharpness,level=10},{name=fire_aspect,level=5},{name=looting,level=3}],keep_on_death=true}
 ```
 +++ JSON
 ```mcfunction
@@ -227,7 +227,7 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:stone,can_place_on= ["minecraft:dirt","minecraft:grass_block"]}
+/execute as @a run scriptevent capi:set_item {id=minecraft:stone,can_place_on=["minecraft:dirt","minecraft:grass_block"]}
 ```
 +++ JSON
 ```mcfunction
@@ -253,7 +253,6 @@ last_update:
 - `slot` を指定しない場合（-1）、空いているスロットに追加されます
 - `slot` を指定した場合、そのスロットの既存アイテムは上書きされます
 - 無効なアイテムIDを指定するとエラーが発生します
-- エンチャントレベルは通常の上限を超えることができます
 
 ## 関連項目
 
