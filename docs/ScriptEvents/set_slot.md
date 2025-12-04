@@ -73,7 +73,7 @@ last_update:
 
 ```mcfunction
 # スロット0に剣を配置
-/execute as @a run scriptevent capi:set_item {"id": "minecraft:diamond_sword", "slot": 0}
+/execute as @a run scriptevent capi:set_item {"id": "diamond_sword", "slot": 0}
 
 # スロット0を選択
 /execute as @a run scriptevent capi:set_slot 0

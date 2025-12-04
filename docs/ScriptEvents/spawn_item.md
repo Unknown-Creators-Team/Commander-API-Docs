@@ -67,11 +67,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond,location=[0,0,0]}
+/scriptevent capi:spawn_item {item=diamond,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:diamond", "location": [0, 0, 0]}
+/scriptevent capi:spawn_item {"item": "diamond", "location": [0, 0, 0]}
 ```
 +++
 
@@ -81,11 +81,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:dirt,amount=64,location=[0,0,0]}
+/scriptevent capi:spawn_item {item=dirt,amount=64,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:dirt", "amount": 64, "location": [0, 0, 0]}
+/scriptevent capi:spawn_item {"item": "dirt", "amount": 64, "location": [0, 0, 0]}
 ```
 +++
 
@@ -95,11 +95,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§6伝説の剣,location=[0,0,0]}
+/scriptevent capi:spawn_item {item=diamond_sword,name=§6伝説の剣,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:diamond_sword", "name": "§6伝説の剣", "location": [0, 0, 0]}
+/scriptevent capi:spawn_item {"item": "diamond_sword", "name": "§6伝説の剣", "location": [0, 0, 0]}
 ```
 +++
 
@@ -109,12 +109,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§6勇者の剣,lore=["§7伝説の武器","§7攻撃力 +10"],location=[0,0,0]}
+/scriptevent capi:spawn_item {item=diamond_sword,name=§6勇者の剣,lore=["§7伝説の武器","§7攻撃力 +10"],location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-    "item": "minecraft:diamond_sword",
+    "item": "diamond_sword",
     "name": "§6勇者の剣",
     "lore": ["§7伝説の武器", "§7攻撃力 +10"],
     "location": [0, 0, 0]
@@ -128,12 +128,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond_sword,enchants=[{name=sharpness,level=5},{name=fire_aspect,level=2}],location=[0,0,0]}
+/scriptevent capi:spawn_item {item=diamond_sword,enchants=[{name=sharpness,level=5},{name=fire_aspect,level=2}],location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-        "item": "minecraft:diamond_sword",
+        "item": "diamond_sword",
         "enchants": [
                 {"name": "sharpness", "level": 5},
                 {"name": "fire_aspect", "level": 2}
@@ -149,11 +149,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_item {item=minecraft:apple,location=[~,~1,~2]}
+/execute as @a run scriptevent capi:spawn_item {item=apple,location=[~,~1,~2]}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_item {"item": "minecraft:apple", "location": ["~", "~1", "~2"]}
+/execute as @a run scriptevent capi:spawn_item {"item": "apple", "location": ["~", "~1", "~2"]}
 ```
 +++
 
@@ -163,11 +163,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond,clear_velocity=true,location=[0,0,0]}
+/scriptevent capi:spawn_item {item=diamond,clear_velocity=true,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_item {"item": "minecraft:diamond", "clear_velocity": true, "location": [0, 0, 0]}
+/scriptevent capi:spawn_item {"item": "diamond", "clear_velocity": true, "location": [0, 0, 0]}
 ```
 +++
 
@@ -177,12 +177,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:totem_of_undying,keep_on_death=true,location=[0,0,0]}
+/scriptevent capi:spawn_item {item=totem_of_undying,keep_on_death=true,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-        "item": "minecraft:totem_of_undying",
+        "item": "totem_of_undying",
         "keep_on_death": true,
         "location": [0, 0, 0]
 }
@@ -195,13 +195,13 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:stone,can_place_on=["minecraft:dirt","minecraft:grass_block"],location=[0,0,0]}
+/scriptevent capi:spawn_item {item=stone,can_place_on=["dirt","grass_block"],location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-        "item": "minecraft:stone",
-        "can_place_on": ["minecraft:dirt", "minecraft:grass_block"],
+        "item": "stone",
+        "can_place_on": ["dirt", "grass_block"],
         "location": [0, 0, 0]
     }
 ```
@@ -214,13 +214,13 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:wooden_pickaxe,can_destroy=["minecraft:stone","minecraft:cobblestone"],location=[0,0,0]}
+/scriptevent capi:spawn_item {item=wooden_pickaxe,can_destroy=["stone","cobblestone"],location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-    "item": "minecraft:wooden_pickaxe",
-        "can_destroy": ["minecraft:stone", "minecraft:cobblestone"]
+    "item": "wooden_pickaxe",
+        "can_destroy": ["stone", "cobblestone"]
         "location": [0, 0, 0]
     }
 ```
@@ -233,12 +233,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_item {item=minecraft:diamond_sword,name=§c§l最強の剣,amount=1,lore=["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants=[{name=sharpness,level=10},{name=fire_aspect,level=5},{name=looting,level=3}],keep_on_death=true,location=[100,64,100],dimension=overworld,clear_velocity=true,location=[0,0,0]}
+/scriptevent capi:spawn_item {item=diamond_sword,name=§c§l最強の剣,amount=1,lore=["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants=[{name=sharpness,level=10},{name=fire_aspect,level=5},{name=looting,level=3}],keep_on_death=true,location=[100,64,100],dimension=overworld,clear_velocity=true,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_item {
-    "item": "minecraft:diamond_sword",
+    "item": "diamond_sword",
     "name": "§c§l最強の剣",
         "amount": 1,
         "lore": [
@@ -266,12 +266,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_item {item=minecraft:diamond,name=<!name>のダイヤモンド,location=[0,0,0]}
+/execute as @a run scriptevent capi:spawn_item {item=diamond,name=<!name>のダイヤモンド,location=[0,0,0]}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:spawn_item {
-    "item": "minecraft:diamond",
+    "item": "diamond",
     "name": "<!name>のダイヤモンド",
     "location": [0, 0, 0]
 }

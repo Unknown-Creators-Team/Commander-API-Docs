@@ -53,11 +53,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {id=minecraft:creeper}
+/scriptevent capi:spawn_entity {id=creeper}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_entity {"id": "minecraft:creeper"}
+/scriptevent capi:spawn_entity {"id": "creeper"}
 ```
 +++
 
@@ -67,11 +67,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {id=minecraft:zombie,name=ボスゾンビ}
+/scriptevent capi:spawn_entity {id=zombie,name=ボスゾンビ}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_entity {"id": "minecraft:zombie", "name": "ボスゾンビ"}
+/scriptevent capi:spawn_entity {"id": "zombie", "name": "ボスゾンビ"}
 ```
 +++
 
@@ -81,11 +81,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {id=minecraft:skeleton,location=[100,64,100]}
+/scriptevent capi:spawn_entity {id=skeleton,location=[100,64,100]}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_entity {"id": "minecraft:skeleton", "location": [100, 64, 100]}
+/scriptevent capi:spawn_entity {"id": "skeleton", "location": [100, 64, 100]}
 ```
 +++
 
@@ -95,11 +95,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_entity {id=minecraft:enderman,location=["~","~","~5"]}
+/execute as @a run scriptevent capi:spawn_entity {id=enderman,location=["~","~","~5"]}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_entity {"id": "minecraft:enderman", "location": ["~", "~", "~5"]}
+/execute as @a run scriptevent capi:spawn_entity {"id": "enderman", "location": ["~", "~", "~5"]}
 ```
 +++
 
@@ -109,11 +109,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {id=minecraft:zombie,fire=10}
+/scriptevent capi:spawn_entity {id=zombie,fire=10}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_entity {"id": "minecraft:zombie", "fire": 10}
+/scriptevent capi:spawn_entity {"id": "zombie", "fire": 10}
 ```
 +++
 
@@ -123,11 +123,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {id=minecraft:blaze,location=[0,64,0],dimension=nether}
+/scriptevent capi:spawn_entity {id=blaze,location=[0,64,0],dimension=nether}
 ```
 +++ JSON
 ```mcfunction
-/scriptevent capi:spawn_entity {"id": "minecraft:blaze", "location": [0, 64, 0], "dimension": "nether"}
+/scriptevent capi:spawn_entity {"id": "blaze", "location": [0, 64, 0], "dimension": "nether"}
 ```
 +++
 
@@ -137,12 +137,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/scriptevent capi:spawn_entity {id=minecraft:wither_skeleton,name=§4炎の戦士,location= [100,64,100],dimension=overworld,fire= 999}
+/scriptevent capi:spawn_entity {id=wither_skeleton,name=§4炎の戦士,location= [100,64,100],dimension=overworld,fire= 999}
 ```
 +++ JSON
 ```mcfunction
 /scriptevent capi:spawn_entity {
-    "id": "minecraft:wither_skeleton",
+    "id": "wither_skeleton",
     "name": "§4炎の戦士",
     "location": [100, 64, 100],
     "dimension": "overworld",
@@ -157,11 +157,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_entity {id=minecraft:zombie,name=<!name>のゾンビ}
+/execute as @a run scriptevent capi:spawn_entity {id=zombie,name=<!name>のゾンビ}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_entity {"id": "minecraft:zombie", "name": "<!name>のゾンビ"}
+/execute as @a run scriptevent capi:spawn_entity {"id": "zombie", "name": "<!name>のゾンビ"}
 ```
 +++
 
@@ -173,11 +173,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_entity {id=minecraft:chicken,location=["~","~","~"]}
+/execute as @a run scriptevent capi:spawn_entity {id=chicken,location=["~","~","~"]}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:spawn_entity {"id": "minecraft:chicken", "location": ["~", "~", "~"]}
+/execute as @a run scriptevent capi:spawn_entity {"id": "chicken", "location": ["~", "~", "~"]}
 ```
 +++
 

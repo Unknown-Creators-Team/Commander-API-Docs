@@ -1,8 +1,8 @@
 ---
 title: "actionbar"
 last_update:
-  date: 2025-12-02
-  author: Nano191225
+  date: 2025-12-04
+  author: arutaka1220
 ---
 
 ## 概要

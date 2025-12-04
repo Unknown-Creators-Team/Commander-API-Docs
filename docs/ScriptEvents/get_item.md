@@ -52,7 +52,7 @@ capi:get_item.<プロパティ名>:<値>
 
 | タグ | 説明 | 例 |
 |---|---|---|
-| `capi:get_item.id:<アイテムID>` | アイテムのID | `capi:get_item.id:minecraft:diamond_sword` |
+| `capi:get_item.id:<アイテムID>` | アイテムのID | `capi:get_item.id:diamond_sword` |
 | `capi:get_item.amount:<個数>` | アイテムの個数 | `capi:get_item.amount:5` |
 | `capi:get_item.data:<データ値>` | アイテムのデータ値 | `capi:get_item.data:0` |
 | `capi:get_item.nameTag:<名前>` | アイテムの名前（カスタム名） | `capi:get_item.nameTag:§l最強の剣` |

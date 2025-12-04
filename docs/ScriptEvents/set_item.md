@@ -63,11 +63,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond}
+/execute as @a run scriptevent capi:set_item {id=diamond}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {"id": "minecraft:diamond"}
+/execute as @a run scriptevent capi:set_item {"id": "diamond"}
 ```
 +++
 
@@ -77,11 +77,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:dirt,amount=64}
+/execute as @a run scriptevent capi:set_item {id=dirt,amount=64}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {"id": "minecraft:dirt", "amount": 64}
+/execute as @a run scriptevent capi:set_item {"id": "dirt", "amount": 64}
 ```
 +++
 
@@ -91,11 +91,11 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,slot=0}
+/execute as @a run scriptevent capi:set_item {id=diamond_sword,slot=0}
 ```
 +++ JSON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {"id": "minecraft:diamond_sword", "slot": 0}
+/execute as @a run scriptevent capi:set_item {"id": "diamond_sword", "slot": 0}
 ```
 +++
 
@@ -105,12 +105,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,name=§6伝説の剣}
+/execute as @a run scriptevent capi:set_item {id=diamond_sword,name=§6伝説の剣}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:set_item {
-    "id": "minecraft:diamond_sword",
+    "id": "diamond_sword",
     "name": "§6伝説の剣"
 }
 ```
@@ -122,12 +122,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,name=§6勇者の剣,lore=["§7伝説の武器","§7攻撃力 +10"]}
+/execute as @a run scriptevent capi:set_item {id=diamond_sword,name=§6勇者の剣,lore=["§7伝説の武器","§7攻撃力 +10"]}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:set_item {
-    "id": "minecraft:diamond_sword",
+    "id": "diamond_sword",
     "name": "§6勇者の剣",
     "lore": ["§7伝説の武器", "§7攻撃力 +10"]
 }
@@ -140,12 +140,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,enchants=[{name=sharpness,level=5},{name=fire_aspect,level=2}]}
+/execute as @a run scriptevent capi:set_item {id=diamond_sword,enchants=[{name=sharpness,level=5},{name=fire_aspect,level=2}]}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:set_item {
-    "id": "minecraft:diamond_sword",
+    "id": "diamond_sword",
     "enchants": [
         {"name": "sharpness", "level": 5},
         {"name": "fire_aspect", "level": 2}
@@ -160,12 +160,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:totem_of_undying,keep_on_death=true,slot=0}
+/execute as @a run scriptevent capi:set_item {id=totem_of_undying,keep_on_death=true,slot=0}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:set_item {
-    "id": "minecraft:totem_of_undying",
+    "id": "totem_of_undying",
     "keep_on_death": true,
     "slot": 0
 }
@@ -178,12 +178,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond_sword,name=§c§l最強の剣,amount=1,slot=0,lore=["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants=[{name=sharpness,level=10},{name=fire_aspect,level=5},{name=looting,level=3}],keep_on_death=true}
+/execute as @a run scriptevent capi:set_item {id=diamond_sword,name=§c§l最強の剣,amount=1,slot=0,lore=["§7伝説の武器","§7攻撃力 +100","§7クリティカル率 +50%"],enchants=[{name=sharpness,level=10},{name=fire_aspect,level=5},{name=looting,level=3}],keep_on_death=true}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:set_item {
-    "id": "minecraft:diamond_sword",
+    "id": "diamond_sword",
     "name": "§c§l最強の剣",
     "amount": 1,
     "slot": 0,
@@ -208,12 +208,12 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:diamond,name=<!name>のダイヤモンド}
+/execute as @a run scriptevent capi:set_item {id=diamond,name=<!name>のダイヤモンド}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:set_item {
-    "id": "minecraft:diamond",
+    "id": "diamond",
     "name": "<!name>のダイヤモンド"
 }
 ```
@@ -227,13 +227,13 @@ last_update:
 
 +++ ESON
 ```mcfunction
-/execute as @a run scriptevent capi:set_item {id=minecraft:stone,can_place_on=["minecraft:dirt","minecraft:grass_block"]}
+/execute as @a run scriptevent capi:set_item {id=stone,can_place_on=["dirt","grass_block"]}
 ```
 +++ JSON
 ```mcfunction
 /execute as @a run scriptevent capi:set_item {
-    "id": "minecraft:stone",
-    "can_place_on": ["minecraft:dirt", "minecraft:grass_block"]
+    "id": "stone",
+    "can_place_on": ["dirt", "grass_block"]
 }
 ```
 +++
