@@ -12,16 +12,16 @@ title: "dimension（ディメンション）"
 
 | スコアボード名 | 説明 |
 | ----- | ----- |
-| `capi:dimension` | 現在のディメンションです。（-2: ネザー、-1: オーバーワールド、0: エンド） |
+| `capi:dimension` | 現在のディメンションです。（-1: ネザー、0: オーバーワールド、1: エンド） |
 
 ## ディメンション値
-- `-2`: ネザー（minecraft:nether）
-- `-1`: オーバーワールド（minecraft:overworld）
-- `0`: エンド（minecraft:the_end）
+- `-1`: ネザー（minecraft:nether）
+- `0`: オーバーワールド（minecraft:overworld）
+- `1`: エンド（minecraft:the_end）
 
 ## 使用例
 ネザーにいるプレイヤーを検出する例：
 
 ```mcfunction
-execute as @a[scores={capi:dimension=-2}] run say ネザーにいます！
+execute as @a[scores={capi:dimension=-1}] run say ネザーにいます！
 ```
