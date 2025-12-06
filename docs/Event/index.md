@@ -1,13 +1,9 @@
 ---
-title: "Event"
+title: "イベント / Event"
 last_update:
   date: 2025-12-04
   author: Copilot
 ---
-
-# Commander-API イベント一覧
-
-このドキュメントは、Commander-APIのalphaブランチの`/src/events/`にあるすべてのイベントのドキュメントです。
 
 ## イベントの種類
 
@@ -90,7 +86,7 @@ Commander-APIのイベントは、大きく以下の3つのカテゴリに分類
 
 - [プレイヤー状態タグ](./playerStateTags.md) - プレイヤーの様々な状態を監視してタグを付与/削除
 
-  - 権限: isOp
+  - 権限: isOp, isMember, isVisitor
   - 移動: isFlying, isGliding, isJumping, isClimbing, isFalling, isInWater, isOnGround, isSneaking, isSprinting, isSwimming, isSleeping, isEmoting, isRiding
   - プラットフォーム: isDesktop, isMobile, isConsole
   - グラフィック: isGraphicsSimple, isGraphicsFancy, isGraphicsDeferred, isGraphicsRayTraced
@@ -102,7 +98,7 @@ Commander-APIのイベントは、大きく以下の3つのカテゴリに分類
 ### タグ
 - トリガータグ: `capi:{イベント名}` - イベントがトリガーされたときに付与
 - 詳細タグ: `{イベント名}:{詳細情報}` - イベントの詳細情報を含むタグ
-- 状態タグ: `capi:is_{状態名}` - 状態が真の間付与され続けるタグ
+- 状態タグ: `capi:{状態名}` - 状態が真の間付与され続けるタグ
 
 ### スコアボード
 - 基本スコア: `capi:{イベント名}` - イベントのメイン情報

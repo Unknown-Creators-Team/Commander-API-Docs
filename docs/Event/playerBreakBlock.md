@@ -42,9 +42,9 @@ last_update:
 貴重な鉱石を破壊したプレイヤーを検出する例：
 
 ```mcfunction
-/execute as @a[tag=break:minecraft:diamond_ore] run tellraw @s "§bダイヤモンド鉱石を発見！"
-/execute as @a[tag=break:minecraft:emerald_ore] run tellraw @s "§aエメラルド鉱石を発見！"
-/execute as @a[tag=break:minecraft:ancient_debris] run tellraw @s "§6古代の残骸を発見！"
+/execute as @a[tag=break:minecraft:diamond_ore] run tellraw @s {"rawtext":[{"text":"§bダイヤモンド鉱石を発見！"}]}
+/execute as @a[tag=break:minecraft:emerald_ore] run tellraw @s {"rawtext":[{"text":"§aエメラルド鉱石を発見！"}]}
+/execute as @a[tag=break:minecraft:ancient_debris] run tellraw @s {"rawtext":[{"text":"§6古代の残骨を発見！"}]}
 ```
 
 ### 座標情報の利用
@@ -53,7 +53,7 @@ last_update:
 
 ```mcfunction
 # 座標を記録（スコアボードで管理）
-/execute as @a[tag=capi:break] run tellraw @s "§eブロック破壊位置を記録しました"
+/execute as @a[tag=capi:break] run tellraw @s {"rawtext":[{"text":"§eブロック破壊位置を記録しました"}]}
 ```
 
 ### 特定エリアでの破壊を検出
@@ -75,7 +75,7 @@ Y座標を使って地下での採掘を検出する例：
 ```mcfunction
 # 石ブロック破壊カウント
 /execute as @a[tag=break:minecraft:stone] run scoreboard players add @s stone_broken 1
-/execute as @a[tag=break:minecraft:stone,scores={stone_broken=1000..}] run tellraw @s "§6石ブロック1000個破壊達成！"
+/execute as @a[tag=break:minecraft:stone,scores={stone_broken=1000..}] run tellraw @s {"rawtext":[{"text":"§6石ブロック1000個破壊達成！"}]}
 
 # 原木破壊カウント
 /execute as @a[tag=break:minecraft:oak_log] run scoreboard players add @s wood_broken 1
@@ -89,7 +89,7 @@ Y座標を使って地下での採掘を検出する例：
 
 ```mcfunction
 # スポーナーの破壊を検出
-/execute as @a[tag=break:minecraft:spawner] run tellraw @s "§c警告：スポーナーを破壊しました！"
+/execute as @a[tag=break:minecraft:spawner] run tellraw @s {"rawtext":[{"text":"§c警告：スポーナーを破壊しました！"}]}
 /execute as @a[tag=break:minecraft:spawner] run scoreboard players add @s warning 1
 
 # 重要な建築物の保護
@@ -102,11 +102,11 @@ Y座標を使って地下での採掘を検出する例：
 
 ```mcfunction
 # 初めてのダイヤモンド
-/execute as @a[tag=break:minecraft:diamond_ore,scores={diamond_found=0}] run tellraw @s "§b§l実績解除：最初のダイヤモンド！"
+/execute as @a[tag=break:minecraft:diamond_ore,scores={diamond_found=0}] run tellraw @s {"rawtext":[{"text":"§b§l実績解除：最初のダイヤモンド！"}]}
 /execute as @a[tag=break:minecraft:diamond_ore] run scoreboard players add @s diamond_found 1
 
 # マスターマイナー
-/execute as @a[tag=capi:break,scores={total_blocks_broken=10000}] run tellraw @s "§6§l実績解除：マスターマイナー（10000ブロック破壊）"
+/execute as @a[tag=capi:break,scores={total_blocks_broken=10000}] run tellraw @s {"rawtext":[{"text":"§6§l実績解除：マスターマイナー（10000ブロック破壊）"}]}
 ```
 
 ### 時間帯による制限
@@ -116,7 +116,7 @@ Y座標を使って地下での採掘を検出する例：
 ```mcfunction
 # 夜間のみ特殊鉱石を破壊可能
 /execute as @a[tag=break:minecraft:diamond_ore] if predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run give @s diamond 1
-/execute as @a[tag=break:minecraft:diamond_ore] unless predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run tellraw @s "§cこの鉱石は夜間のみ採掘できます"
+/execute as @a[tag=break:minecraft:diamond_ore] unless predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run tellraw @s {"rawtext":[{"text":"§cこの鉱石は夜間のみ採掘できます"}]}
 ```
 
 ### ツールの使用状況を記録
@@ -128,5 +128,5 @@ Y座標を使って地下での採掘を検出する例：
 /execute as @a[tag=capi:break,nbt={SelectedItem:{id:"minecraft:diamond_pickaxe"}}] run scoreboard players add @s diamond_tool_use 1
 
 # 素手で破壊
-/execute as @a[tag=capi:break,nbt=!{SelectedItem:{}}] run tellraw @s "§e素手での破壊は効率が悪いです！"
+/execute as @a[tag=capi:break,nbt=!{SelectedItem:{}}] run tellraw @s {"rawtext":[{"text":"§e素手での破壊は効率が悪いです！"}]}
 ```

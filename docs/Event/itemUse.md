@@ -37,10 +37,10 @@ last_update:
 
 ```mcfunction
 # エンダーパールの使用
-/execute as @a[tag=item_use.id:minecraft:ender_pearl] run tellraw @s "§5エンダーパールでテレポート！"
+/execute as @a[tag=item_use.id:minecraft:ender_pearl] run tellraw @s {"rawtext":[{"text":"§5エンダーパールでテレポート！"}]}
 
 # ポーションの使用
-/execute as @a[tag=item_use.id:minecraft:potion] run tellraw @s "§dポーションを飲みました"
+/execute as @a[tag=item_use.id:minecraft:potion] run tellraw @s {"rawtext":[{"text":"§dポーションを飲みました"}]}
 
 # 盾の使用
 /execute as @a[tag=item_use.id:minecraft:shield] run scoreboard players add @s shield_uses 1
@@ -53,7 +53,7 @@ last_update:
 ```mcfunction
 # 「魔法の杖」という名前のアイテム
 /execute as @a[tag=item_use.name:魔法の杖] run summon lightning_bolt ~ ~ ~
-/execute as @a[tag=item_use.name:魔法の杖] run tellraw @s "§6§l魔法の杖の力を解放した！"
+/execute as @a[tag=item_use.name:魔法の杖] run tellraw @s {"rawtext":[{"text":"§6§l魔法の杖の力を解放した！"}]}
 
 # 「回復の薬」という名前のアイテム
 /execute as @a[tag=item_use.name:回復の薬] run effect give @s instant_health 1 2
@@ -67,11 +67,11 @@ last_update:
 ```mcfunction
 # エンダーパール使用回数
 /execute as @a[tag=item_use.id:minecraft:ender_pearl] run scoreboard players add @s ender_pearl_uses 1
-/execute as @a[tag=item_use.id:minecraft:ender_pearl,scores={ender_pearl_uses=100}] run tellraw @s "§5エンダーパール使用100回達成！"
+/execute as @a[tag=item_use.id:minecraft:ender_pearl,scores={ender_pearl_uses=100}] run tellraw @s {"rawtext":[{"text":"§5エンダーパール使用100回達成！"}]}
 
 # トーテム使用回数
 /execute as @a[tag=item_use.id:minecraft:totem_of_undying] run scoreboard players add @s totem_uses 1
-/execute as @a[tag=item_use.id:minecraft:totem_of_undying] run tellraw @a [{"selector":"@s"},"§6 がトーテムを使用しました！"]
+/execute as @a[tag=item_use.id:minecraft:totem_of_undying] run tellraw @a {"rawtext":[{"selector":"@s"},{"text":"§6 がトーテムを使用しました！"}]}
 ```
 
 ### クールダウンシステム
@@ -81,7 +81,7 @@ last_update:
 ```mcfunction
 # エンダーパールのクールダウン（10秒）
 /execute as @a[tag=item_use.id:minecraft:ender_pearl,scores={pearl_cooldown=0}] run scoreboard players set @s pearl_cooldown 200
-/execute as @a[tag=item_use.id:minecraft:ender_pearl,scores={pearl_cooldown=1..}] run tellraw @s "§cエンダーパールはクールダウン中です"
+/execute as @a[tag=item_use.id:minecraft:ender_pearl,scores={pearl_cooldown=1..}] run tellraw @s {"rawtext":[{"text":"§cエンダーパールはクールダウン中です"}]}
 /execute as @a[tag=item_use.id:minecraft:ender_pearl,scores={pearl_cooldown=1..}] run give @s ender_pearl 1
 
 # クールダウンを減らす（毎ティック実行）
@@ -95,13 +95,13 @@ scoreboard players remove @a[scores={pearl_cooldown=1..}] pearl_cooldown 1
 ```mcfunction
 # ファイアボール（火薬使用）
 /execute as @a[tag=item_use.id:minecraft:gunpowder] run summon fireball ^ ^1 ^3 {direction:[0.0,-0.1,0.0],power:[0.0,0.0,0.1]}
-/execute as @a[tag=item_use.id:minecraft:gunpowder] run playsound entity.blaze.shoot @s
-/execute as @a[tag=item_use.id:minecraft:gunpowder] run tellraw @s "§c§lファイアボール！"
+/execute as @a[tag=item_use.id:minecraft:gunpowder] run playsound random.explode @s
+/execute as @a[tag=item_use.id:minecraft:gunpowder] run tellraw @s {"rawtext":[{"text":"§c§lファイアボール！"}]}
 
 # テレポート（エンダーアイ使用）
 /execute as @a[tag=item_use.id:minecraft:ender_eye] run tp @s ^ ^ ^10
 /execute as @a[tag=item_use.id:minecraft:ender_eye] run particle portal ~ ~ ~ 1 1 1 1 100
-/execute as @a[tag=item_use.id:minecraft:ender_eye] run playsound entity.enderman.teleport @s
+/execute as @a[tag=item_use.id:minecraft:ender_eye] run playsound mob.endermen.portal @s
 ```
 
 ### Lore（説明文）を使った特殊効果
@@ -112,11 +112,11 @@ scoreboard players remove @a[scores={pearl_cooldown=1..}] pearl_cooldown 1
 # 「レジェンダリー」と説明に書かれたアイテム
 /execute as @a[tag=item_use.lore:レジェンダリー] run effect give @s strength 60 1
 /execute as @a[tag=item_use.lore:レジェンダリー] run effect give @s speed 60 1
-/execute as @a[tag=item_use.lore:レジェンダリー] run tellraw @s "§6§lレジェンダリーアイテムの力を得た！"
+/execute as @a[tag=item_use.lore:レジェンダリー] run tellraw @s {"rawtext":[{"text":"§6§lレジェンダリーアイテムの力を得た！"}]}
 
 # 「呪われた」と説明に書かれたアイテム
 /execute as @a[tag=item_use.lore:呪われた] run effect give @s wither 10 1
-/execute as @a[tag=item_use.lore:呪われた] run tellraw @s "§8呪いを受けた..."
+/execute as @a[tag=item_use.lore:呪われた] run tellraw @s {"rawtext":[{"text":"§4§l呪われたアイテムの呪いが発動した！"}]}
 ```
 
 ### アイテム個数の検出
@@ -125,10 +125,10 @@ scoreboard players remove @a[scores={pearl_cooldown=1..}] pearl_cooldown 1
 
 ```mcfunction
 # 64個スタックのアイテムを使用
-/execute as @a[tag=item_use.amount:64] run tellraw @s "§eフルスタックのアイテムを使用しました"
+/execute as @a[tag=item_use.amount:64] run tellraw @s {"rawtext":[{"text":"§eフルスタックのアイテムを使用しました"}]}
 
 # 1個のアイテムを使用
-/execute as @a[tag=item_use.amount:1] run tellraw @s "§c最後のアイテムを使用しました"
+/execute as @a[tag=item_use.amount:1] run tellraw @s {"rawtext":[{"text":"§c最後のアイテムを使用しました"}]}
 ```
 
 ### 食べ物の消費統計
@@ -138,11 +138,11 @@ scoreboard players remove @a[scores={pearl_cooldown=1..}] pearl_cooldown 1
 ```mcfunction
 # りんごを食べた
 /execute as @a[tag=item_use.id:minecraft:apple] run scoreboard players add @s food_eaten 1
-/execute as @a[tag=item_use.id:minecraft:apple] run tellraw @s "§e食べ物を食べました"
+/execute as @a[tag=item_use.id:minecraft:apple] run tellraw @s {"rawtext":[{"text":"§e食べ物を食べました"}]}
 
 # 金のりんごを食べた
 /execute as @a[tag=item_use.id:minecraft:golden_apple] run scoreboard players add @s golden_apples 1
-/execute as @a[tag=item_use.id:minecraft:golden_apple] run tellraw @s "§6金のりんごを消費！"
+/execute as @a[tag=item_use.id:minecraft:golden_apple] run tellraw @s {"rawtext":[{"text":"§6金のりんごを消費！"}]}
 ```
 
 ### 使い捨てアイテムシステム
@@ -153,8 +153,8 @@ scoreboard players remove @a[scores={pearl_cooldown=1..}] pearl_cooldown 1
 # 「瞬間移動の巻物」
 /execute as @a[tag=item_use.name:瞬間移動の巻物] run tp @s 0 100 0
 /execute as @a[tag=item_use.name:瞬間移動の巻物] run particle portal ~ ~ ~ 1 2 1 1 200
-/execute as @a[tag=item_use.name:瞬間移動の巻物] run playsound entity.enderman.teleport @s
-/execute as @a[tag=item_use.name:瞬間移動の巻物] run tellraw @s "§dスポーンにテレポートしました！"
+/execute as @a[tag=item_use.name:瞬間移動の巻物] run playsound mob.endermen.portal @s
+/execute as @a[tag=item_use.name:瞬間移動の巻物] run tellraw @s {"rawtext":[{"text":"§dスポーンにテレポートしました！"}]}
 ```
 
 ### アイテム使用制限
@@ -163,11 +163,11 @@ scoreboard players remove @a[scores={pearl_cooldown=1..}] pearl_cooldown 1
 
 ```mcfunction
 # VIP専用アイテム
-/execute as @a[tag=item_use.name:VIP特典,tag=!vip] run tellraw @s "§cこのアイテムはVIP専用です"
+/execute as @a[tag=item_use.name:VIP特典,tag=!vip] run tellraw @s {"rawtext":[{"text":"§cこのアイテムはVIP専用です"}]}
 /execute as @a[tag=item_use.name:VIP特典,tag=!vip] run give @s paper{display:{Name:'"VIP特典"'}} 1
 
 # 特定エリアでのみ使用可能
-/execute as @a[tag=item_use.name:エリア限定アイテム,scores={capi:location_x=100..200}] run tellraw @s "§aアイテムを使用しました"
-/execute as @a[tag=item_use.name:エリア限定アイテム,scores={capi:location_x=..99}] run tellraw @s "§cこのエリアでは使用できません"
+/execute as @a[tag=item_use.name:エリア限定アイテム,scores={capi:location_x=100..200}] run tellraw @s {"rawtext":[{"text":"§aアイテムを使用しました"}]}
+/execute as @a[tag=item_use.name:エリア限定アイテム,scores={capi:location_x=..99}] run tellraw @s {"rawtext":[{"text":"§cこのエリアでは使用できません"}]}
 /execute as @a[tag=item_use.name:エリア限定アイテム,scores={capi:location_x=..99}] run give @s paper{display:{Name:'"エリア限定アイテム"'}} 1
 ```

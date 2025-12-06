@@ -46,7 +46,7 @@ last_update:
 短いメッセージを送信したプレイヤーを検出する例：
 
 ```mcfunction
-/execute as @a[tag=capi:chat,scores={capi:chat_len=..5}] run tellraw @s "§cメッセージが短すぎます！"
+/execute as @a[tag=capi:chat,scores={capi:chat_len=..5}] run tellraw @s {"rawtext":[{"text":"§cメッセージが短すぎます！"}]}
 ```
 
 ### チャット回数のカウント
@@ -62,7 +62,7 @@ last_update:
 特定のメッセージを送信したプレイヤーを検出する例：
 
 ```mcfunction
-/execute as @a[tag=chat:help] run tellraw @s "§bヘルプコマンド: /help"
+/execute as @a[tag=chat:help] run tellraw @s {"rawtext":[{"text":"§bヘルプコマンド: /help"}]}
 /execute as @a[tag=chat:hello] run say こんにちは！
 ```
 
@@ -96,7 +96,7 @@ scoreboard players reset @a[name="PlayerName"] capi:chat_cnt
 
 ```mcfunction
 # 非常に長いメッセージ
-/execute as @a[tag=capi:chat,scores={capi:chat_len=100..}] run tellraw @s "§cメッセージが長すぎます！"
+/execute as @a[tag=capi:chat,scores={capi:chat_len=100..}] run tellraw @s {"rawtext":[{"text":"§cメッセージが長すぎます！"}]}
 
 # 適切な長さのメッセージ
 /execute as @a[tag=capi:chat,scores={capi:chat_len=10..50}] run scoreboard players add @s good_message 1

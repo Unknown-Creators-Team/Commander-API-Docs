@@ -46,11 +46,11 @@ last_update:
 /execute as @a[tag=capi:spawn_initial] run give @s bread 10
 /execute as @a[tag=capi:spawn_initial] run give @s wooden_pickaxe 1
 /execute as @a[tag=capi:spawn_initial] run give @s wooden_axe 1
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§aスターターキットを受け取りました！"
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§aスターターキットを受け取りました！"}]}
 
 # 初回参加記念品
 /execute as @a[tag=capi:spawn_initial] run give @s diamond 1
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§b初回参加特典：ダイヤモンド×1"
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§b初回参加特典：ダイヤモンド×1"}]}
 ```
 
 ### スポーン位置の記録
@@ -64,7 +64,7 @@ last_update:
 /execute as @a[tag=capi:spawn] run scoreboard players operation @s last_spawn_z = @s capi:spawn_z
 
 # スポーン通知
-/execute as @a[tag=capi:spawn] run tellraw @s "§7スポーン位置を記録しました"
+/execute as @a[tag=capi:spawn] run tellraw @s {"rawtext":[{"text":"§7スポーン位置を記録しました"}]}
 ```
 
 ### リスポーン時の効果付与
@@ -86,9 +86,9 @@ last_update:
 ```mcfunction
 # チュートリアル開始
 /execute as @a[tag=capi:spawn_initial] run tp @s 0 100 0
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§6§l===== チュートリアル ====="
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§eサーバーへようこそ！"
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§e基本的な操作を学びましょう。"
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§6§l===== チュートリアル ====="}]}
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§eサーバーへようこそ！"}]}
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§e基本的な操作を学びましょう。"}]}
 /execute as @a[tag=capi:spawn_initial] run tag @s add tutorial_mode
 
 # チュートリアルフラグを設定
@@ -104,8 +104,8 @@ last_update:
 /execute as @a[tag=capi:spawn] run scoreboard players add @s spawn_count 1
 
 # マイルストーン
-/execute as @a[tag=capi:spawn,scores={spawn_count=10}] run tellraw @s "§a10回目のスポーン！"
-/execute as @a[tag=capi:spawn,scores={spawn_count=100}] run tellraw @s "§6100回目のスポーン達成！"
+/execute as @a[tag=capi:spawn,scores={spawn_count=10}] run tellraw @s {"rawtext":[{"text":"§a10回目のスポーン！"}]}
+/execute as @a[tag=capi:spawn,scores={spawn_count=100}] run tellraw @s {"rawtext":[{"text":"§6100回目のスポーン達成！"}]}
 ```
 
 ### 初回参加時のルール表示
@@ -113,11 +113,11 @@ last_update:
 サーバールールを表示する例：
 
 ```mcfunction
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§c§l===== サーバールール ====="
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§f1. 他のプレイヤーを尊重しましょう"
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§f2. グリーフィング禁止"
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§f3. チート・改造クライアント禁止"
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§a4. 楽しくプレイしましょう！"
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§c§l===== サーバールール ====="}]}
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§f1. 他のプレイヤーを尊重しましょう"}]}
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§f2. グリーフィング禁止"}]}
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§f3. チート・改造クライアント禁止"}]}
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§a4. 楽しくプレイしましょう！"}]}
 
 # ルール確認フラグ
 /execute as @a[tag=capi:spawn_initial] run tag @s add rules_shown
@@ -130,7 +130,7 @@ last_update:
 ```mcfunction
 # ランダムスポーン（複数の地点から選択）
 /execute as @a[tag=capi:spawn_initial] run spreadplayers 0 0 100 500 false @s
-/execute as @a[tag=capi:spawn_initial] run tellraw @s "§eランダムな場所にスポーンしました！"
+/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§eランダムな場所にスポーンしました！"}]}
 
 # または特定の複数地点から選択
 /execute as @a[tag=capi:spawn_initial] if predicate {"condition":"minecraft:random_chance","chance":0.25} run tp @s 100 64 100
@@ -167,5 +167,5 @@ last_update:
 /execute as @a[tag=capi:spawn,scores={capi:spawn_x=-100..100,capi:spawn_z=-100..100}] run give @s iron_sword 1
 /execute as @a[tag=capi:spawn,scores={capi:spawn_x=-100..100,capi:spawn_z=-100..100}] run give @s bow 1
 /execute as @a[tag=capi:spawn,scores={capi:spawn_x=-100..100,capi:spawn_z=-100..100}] run give @s arrow 32
-/execute as @a[tag=capi:spawn,scores={capi:spawn_x=-100..100,capi:spawn_z=-100..100}] run tellraw @s "§c§lアリーナバトルスタート！"
+/execute as @a[tag=capi:spawn,scores={capi:spawn_x=-100..100,capi:spawn_z=-100..100}] run tellraw @s {"rawtext":[{"text":"§c§lアリーナバトルスタート！"}]}
 ```
