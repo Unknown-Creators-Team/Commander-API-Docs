@@ -1,8 +1,8 @@
 ---
 title: "playerPlaceBlock"
 last_update:
-  date: 2025-12-04
-  author: Copilot
+  date: 2025-12-07
+  author: Nano191225
 ---
 
 ## 説明
@@ -35,6 +35,7 @@ last_update:
 
 ```mcfunction
 /execute as @a[tag=place:minecraft:tnt] run say TNTを設置しました！
+/tag @a remove place:minecraft:tnt
 ```
 
 ### 危険ブロックの監視
@@ -43,16 +44,19 @@ last_update:
 
 ```mcfunction
 # TNTの設置を警告
-/execute as @a[tag=place:minecraft:tnt] run tellraw @a [{"selector":"@s"},"§c がTNTを設置しました！"]
+/execute as @a[tag=place:minecraft:tnt] run scriptevent capi:say <!name>§c がTNTを設置しました！
 /execute as @a[tag=place:minecraft:tnt] run playsound random.pop @a ~ ~ ~ 1 0.5
+/tag @a remove place:minecraft:tnt
 
 # 溶岩の設置を記録
 /execute as @a[tag=place:minecraft:lava] run scoreboard players add @s lava_placed 1
 /execute as @a[tag=place:minecraft:lava] run tellraw @s {"rawtext":[{"text":"§6溶岩設置注意！周囲に注意してください"}]}
+/tag @a remove place:minecraft:lava
 
-# 火の設置を制限
-/execute as @a[tag=place:minecraft:fire] run tellraw @s {"rawtext":[{"text":"§c火の設置は禁止されています"}]}
-/execute as @a[tag=place:minecraft:fire] run fill ~ ~ ~ ~ ~ ~ air replace fire
+# TNTの設置を制限
+/execute as @a[tag=place:minecraft:tnt] run tellraw @s {"rawtext":[{"text":"§cTNTの設置は禁止されています"}]}
+/execute as @a[tag=place:minecraft:tnt] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
+/tag @a remove place:minecraft:tnt
 ```
 
 ### 建築統計の記録
@@ -78,11 +82,11 @@ last_update:
 
 ```mcfunction
 # スポーンエリアでの設置を禁止（座標: -50~50, Y: 60~100, -50~50）
-/execute as @a[tag=capi:place,scores={capi:place_x=-50..50,capi:place_y=60..100,capi:place_z=-50..50}] run fill ~ ~ ~ ~ ~ ~ air
-/execute as @a[tag=capi:place,scores={capi:place_x=-50..50,capi:place_y=60..100,capi:place_z=-50..50}] run tellraw @s {"rawtext":[{"text":"§cスポーンエリアでは建築できません"}]}
+/execute as @a[tag=capi:place,scores={capi:place_x=-50..50,capi:place_z=-50..50}] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
+/execute as @a[tag=capi:place,scores={capi:place_x=-50..50,capi:place_z=-50..50}] run tellraw @s {"rawtext":[{"text":"§cスポーンエリアでは建築できません"}]}
 
 # VIPエリアでの設置許可
-/execute as @a[tag=capi:place,tag=!vip,scores={capi:place_x=100..200,capi:place_z=100..200}] run fill ~ ~ ~ ~ ~ ~ air
+/execute as @a[tag=capi:place,tag=!vip,scores={capi:place_x=100..200,capi:place_z=100..200}] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
 /execute as @a[tag=capi:place,tag=!vip,scores={capi:place_x=100..200,capi:place_z=100..200}] run tellraw @s {"rawtext":[{"text":"§cこのエリアはVIP専用です"}]}
 ```
 
@@ -92,12 +96,11 @@ last_update:
 
 ```mcfunction
 # 松明を設置したら周囲も明るくする
-/execute as @a[tag=place:minecraft:torch] run fill ~-2 ~ ~-2 ~2 ~ ~2 torch replace air
+/execute as @a[tag=place:minecraft:torch] run scriptevent capi:run execute positioned <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> run fill ~-2 ~ ~-2 ~2 ~ ~2 torch replace air
 /execute as @a[tag=place:minecraft:torch] run tellraw @s {"rawtext":[{"text":"§e周囲に松明を自動設置しました"}]}
 
 # ガラスを設置すると自動的に窓枠を作る
-/execute as @a[tag=place:minecraft:glass] run fill ~-1 ~ ~ ~1 ~ ~ oak_planks
-/execute as @a[tag=place:minecraft:glass] run fill ~ ~-1 ~ ~ ~1 ~ oak_planks
+/execute as @a[tag=place:minecraft:glass] run scriptevent capi:run execute positioned <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> run fill ~-1 ~-1 ~ ~1 ~1 ~ oak_planks keep
 ```
 
 ### 建築コンテストシステム
@@ -107,11 +110,11 @@ last_update:
 ```mcfunction
 # コンテスト中のブロック設置をカウント
 /execute as @a[tag=capi:place,tag=contest_participant] run scoreboard players add @s contest_blocks 1
-/execute as @a[tag=capi:place,tag=contest_participant] run title @s actionbar §6設置ブロック数をカウント中
+/execute as @a[tag=capi:place,tag=contest_participant] run title @s actionbar "§6設置ブロック数をカウント中"
 
 # 使用可能なブロック制限
 /execute as @a[tag=capi:place,tag=contest_participant,scores={contest_blocks=1000..}] run tellraw @s {"rawtext":[{"text":"§cブロック設置上限に達しました"}]}
-/execute as @a[tag=capi:place,tag=contest_participant,scores={contest_blocks=1000..}] run fill ~ ~ ~ ~ ~ ~ air
+/execute as @a[tag=capi:place,tag=contest_participant,scores={contest_blocks=1000..}] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
 ```
 
 ### クリエイティブモード制限
@@ -120,11 +123,11 @@ last_update:
 
 ```mcfunction
 # クリエイティブ限定ブロック
-/execute as @a[tag=place:minecraft:bedrock,gamemode=!creative] run fill ~ ~ ~ ~ ~ ~ air
-/execute as @a[tag=place:minecraft:bedrock,gamemode=!creative] run tellraw @s {"rawtext":[{"text":"§c岩盤はクリエイティブモードでのみ設置できます"}]}
+/execute as @a[tag=place:minecraft:bedrock,m=!c] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
+/execute as @a[tag=place:minecraft:bedrock,m=!c] run tellraw @s {"rawtext":[{"text":"§c岩盤はクリエイティブモードでのみ設置できます"}]}
 
-/execute as @a[tag=place:minecraft:barrier,gamemode=!creative] run fill ~ ~ ~ ~ ~ ~ air
-/execute as @a[tag=place:minecraft:barrier,gamemode=!creative] run tellraw @s {"rawtext":[{"text":"§cバリアブロックはクリエイティブモードでのみ設置できます"}]}
+/execute as @a[tag=place:minecraft:barrier,m=!c] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
+/execute as @a[tag=place:minecraft:barrier,m=!c] run tellraw @s {"rawtext":[{"text":"§cバリアブロックはクリエイティブモードでのみ設置できます"}]}
 ```
 
 ### 設置位置の記録
@@ -146,7 +149,7 @@ last_update:
 
 ```mcfunction
 # クリスマスイベント期間のみ設置可能
-/execute as @a[tag=place:minecraft:snow_block,scores={event_christmas=0}] run fill ~ ~ ~ ~ ~ ~ air
+/execute as @a[tag=place:minecraft:snow_block,scores={event_christmas=0}] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
 /execute as @a[tag=place:minecraft:snow_block,scores={event_christmas=0}] run tellraw @s {"rawtext":[{"text":"§c雪ブロックはクリスマスイベント期間のみ設置できます"}]}
 
 # イベント期間中
@@ -159,10 +162,10 @@ last_update:
 
 ```mcfunction
 # 設置禁止ブロック
-/execute as @a[tag=place:minecraft:tnt] run fill ~ ~ ~ ~ ~ ~ air
-/execute as @a[tag=place:minecraft:obsidian] run fill ~ ~ ~ ~ ~ ~ air
-/execute as @a[tag=place:minecraft:water] run fill ~ ~ ~ ~ ~ ~ air
-/execute as @a[tag=place:minecraft:lava] run fill ~ ~ ~ ~ ~ ~ air
+/execute as @a[tag=place:minecraft:tnt] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
+/execute as @a[tag=place:minecraft:obsidian] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
+/execute as @a[tag=place:minecraft:water] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
+/execute as @a[tag=place:minecraft:lava] run scriptevent capi:run setblock <!score=capi:place_x> <!score=capi:place_y> <!score=capi:place_z> air
 
 # 違反を記録
 /execute as @a[tag=place:minecraft:tnt] run scoreboard players add @s violations 1
@@ -183,15 +186,4 @@ last_update:
 
 # エメラルドブロックの設置
 /execute as @a[tag=place:minecraft:emerald_block] run scoreboard players add @s wealth 2000
-```
-
-### 自動アイテム返却
-
-誤設置時に自動でアイテムを返却する例：
-
-```mcfunction
-# 水中での松明設置を防止してアイテムを返却
-/execute as @a[tag=place:minecraft:torch] if block ~ ~ ~ water run give @s torch 1
-/execute as @a[tag=place:minecraft:torch] if block ~ ~ ~ water run fill ~ ~ ~ ~ ~ ~ air replace torch
-/execute as @a[tag=place:minecraft:torch] if block ~ ~ ~ water run tellraw @s {"rawtext":[{"text":"§e水中に松明は設置できません"}]}
 ```

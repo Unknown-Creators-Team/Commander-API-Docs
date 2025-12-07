@@ -1,8 +1,8 @@
 ---
 title: "playerSpawn"
 last_update:
-  date: 2025-12-04
-  author: Copilot
+  date: 2025-12-07
+  author: Nano191225
 ---
 
 ## 説明
@@ -17,6 +17,10 @@ last_update:
 | ----- | ----- |
 | `capi:spawn` | このイベントがトリガーされたとき、プレイヤーに自動付与されます。 |
 | `capi:spawn_initial` | プレイヤーが初回スポーンしたときのみ付与されます。 |
+
+:::info
+`capi:spawn_initial`タグは、ワールドに参加するたびに付与されます。
+:::
 
 ## トリガースコア
 イベントがトリガーされたとき、自動で更新されるスコアボードです。
@@ -35,6 +39,7 @@ last_update:
 
 ```mcfunction
 /execute as @a[tag=capi:spawn_initial] run say ようこそ！
+/tag @a remove capi:spawn_initial
 ```
 
 ### 初回参加特典
@@ -43,14 +48,17 @@ last_update:
 
 ```mcfunction
 # スターターキットを配布
-/execute as @a[tag=capi:spawn_initial] run give @s bread 10
-/execute as @a[tag=capi:spawn_initial] run give @s wooden_pickaxe 1
-/execute as @a[tag=capi:spawn_initial] run give @s wooden_axe 1
-/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§aスターターキットを受け取りました！"}]}
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run give @s bread 10
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run give @s wooden_pickaxe 1
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run give @s wooden_axe 1
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run tellraw @s {"rawtext":[{"text":"§aスターターキットを受け取りました！"}]}
 
 # 初回参加記念品
-/execute as @a[tag=capi:spawn_initial] run give @s diamond 1
-/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§b初回参加特典：ダイヤモンド×1"}]}
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run give @s diamond 1
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run tellraw @s {"rawtext":[{"text":"§b初回参加特典：ダイヤモンド×1"}]}
+
+/tag @a[tag=capi:spawn_initial,tag=!welcome] add welcome
+/tag @a remove capi:spawn_initial
 ```
 
 ### スポーン位置の記録
@@ -65,6 +73,8 @@ last_update:
 
 # スポーン通知
 /execute as @a[tag=capi:spawn] run tellraw @s {"rawtext":[{"text":"§7スポーン位置を記録しました"}]}
+
+/tag @a remove capi:spawn
 ```
 
 ### リスポーン時の効果付与
@@ -85,14 +95,16 @@ last_update:
 
 ```mcfunction
 # チュートリアル開始
-/execute as @a[tag=capi:spawn_initial] run tp @s 0 100 0
-/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§6§l===== チュートリアル ====="}]}
-/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§eサーバーへようこそ！"}]}
-/execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§e基本的な操作を学びましょう。"}]}
-/execute as @a[tag=capi:spawn_initial] run tag @s add tutorial_mode
-
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run tp @s 0 100 0
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run tellraw @s {"rawtext":[{"text":"§6§l===== チュートリアル ====="}]}
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run tellraw @s {"rawtext":[{"text":"§eサーバーへようこそ！"}]}
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run tellraw @s {"rawtext":[{"text":"§e基本的な操作を学びましょう。"}]}
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run tag @s add tutorial_mode
 # チュートリアルフラグを設定
-/execute as @a[tag=capi:spawn_initial] run scoreboard players set @s tutorial_step 1
+/execute as @a[tag=capi:spawn_initial,tag=!welcome] run scoreboard players set @s tutorial_step 1
+
+/tag @a[tag=capi:spawn_initial,tag=!welcome] add welcome
+/tag @a remove capi:spawn_initial
 ```
 
 ### スポーン回数のカウント
@@ -128,16 +140,19 @@ last_update:
 初回スポーン時にランダムな場所にテレポートする例：
 
 ```mcfunction
-# ランダムスポーン（複数の地点から選択）
-/execute as @a[tag=capi:spawn_initial] run spreadplayers 0 0 100 500 false @s
+# ランダムスポーン（spreadplayersコマンドを使用）
+/execute as @a[tag=capi:spawn_initial] run spreadplayers 0 0 100 500 @s
 /execute as @a[tag=capi:spawn_initial] run tellraw @s {"rawtext":[{"text":"§eランダムな場所にスポーンしました！"}]}
 
 # または特定の複数地点から選択
-/execute as @a[tag=capi:spawn_initial] if predicate {"condition":"minecraft:random_chance","chance":0.25} run tp @s 100 64 100
-/execute as @a[tag=capi:spawn_initial] if predicate {"condition":"minecraft:random_chance","chance":0.25} run tp @s -100 64 100
-/execute as @a[tag=capi:spawn_initial] if predicate {"condition":"minecraft:random_chance","chance":0.25} run tp @s 100 64 -100
-/execute as @a[tag=capi:spawn_initial] if predicate {"condition":"minecraft:random_chance","chance":0.25} run tp @s -100 64 -100
+/execute as @a[tag=capi:spawn_initial] run scriptevent capi:run tp @s <!match=[<!calc=floor(rand() * 4)>, 100 64 100, -100 64 100, 100 64 -100, -100 64 -100]>
 ```
+
+:::tip
+`<!calc=floor(rand() * 4)>` は0から3のランダムな整数を生成します。
+:::
+
+::: !ref ../Macro/Match
 
 ### スポーン時の状態リセット
 

@@ -1,7 +1,7 @@
 ---
 title: "イベント / Event"
 last_update:
-  date: 2025-12-04
+  date: 2025-12-07
   author: Copilot
 ---
 
@@ -74,11 +74,12 @@ Commander-APIのイベントは、大きく以下の3つのカテゴリに分類
 - [blockFromViewDirection](./blockFromViewDirection.md) - 視線先のブロック
 - [entityFromViewDirection](./entityFromViewDirection.md) - 視線先のエンティティ
 
-### システム情報
+### ワールド・システム情報
+- [worldInfo](./worldInfo.md) - ワールドおよびシステム情報（時刻、難易度、ティックなど）
 - [dimension](./dimension.md) - 現在のディメンション
 - [timestamp](./timestamp.md) - タイムスタンプ
 - [maxRenderDistance](./maxRenderDistance.md) - 最大描画距離
-- [memoryTier](./memoryTier.md) - メモリティア
+- [memoryTier](./memoryTier.md) - クライアントメモリティア
 
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: "chatSend"
 last_update:
-  date: 2025-12-04
-  author: Copilot
+  date: 2025-12-06
+  author: Nano191225
 ---
 
 ## 説明
@@ -39,6 +39,7 @@ last_update:
 
 ```mcfunction
 /execute as @a[tag=capi:chat,scores={capi:chat_len=50..}] run say 長いメッセージを送信しました！
+/tag @a remove capi:chat
 ```
 
 ### 短いメッセージの検出
@@ -47,6 +48,7 @@ last_update:
 
 ```mcfunction
 /execute as @a[tag=capi:chat,scores={capi:chat_len=..5}] run tellraw @s {"rawtext":[{"text":"§cメッセージが短すぎます！"}]}
+/tag @a remove capi:chat
 ```
 
 ### チャット回数のカウント
@@ -55,6 +57,7 @@ last_update:
 
 ```mcfunction
 /execute as @a[tag=capi:chat,scores={capi:chat_cnt=100..}] run title @s actionbar "§6チャット100回達成！"
+/tag @a remove capi:chat
 ```
 
 ### 特定のメッセージの検出
@@ -72,10 +75,11 @@ last_update:
 
 ```mcfunction
 # ミュートを設定
-tag @a[name="PlayerName"] add mute
-
+/tag @a[name="PlayerName"] add mute
+```
+```mcfunction
 # カスタムメッセージ付きミュート
-tag @a[name="PlayerName"] add mute:§cあなたは5分間ミュートされています。
+/tag @a[name="PlayerName"] add mute:§cあなたは5分間ミュートされています。
 ```
 
 ### チャット統計の管理
@@ -85,7 +89,8 @@ tag @a[name="PlayerName"] add mute:§cあなたは5分間ミュートされて�
 ```mcfunction
 # 全プレイヤーのチャット回数をリセット
 scoreboard players reset @a capi:chat_cnt
-
+```
+```mcfunction
 # 特定のプレイヤーのみリセット
 scoreboard players reset @a[name="PlayerName"] capi:chat_cnt
 ```
@@ -110,7 +115,8 @@ scoreboard players reset @a[name="PlayerName"] capi:chat_cnt
 # 10回チャットごとにポイント付与
 /execute as @a[tag=capi:chat,scores={capi:chat_cnt=10}] run scoreboard players add @s points 1
 /execute as @a[tag=capi:chat,scores={capi:chat_cnt=10}] run scoreboard players set @s capi:chat_cnt 0
-
+```
+```mcfunction
 # 初回チャットボーナス
 /execute as @a[tag=capi:chat,scores={capi:chat_cnt=1}] run give @s diamond 1
 ```

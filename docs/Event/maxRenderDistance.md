@@ -1,8 +1,8 @@
 ---
 title: "maxRenderDistance"
 last_update:
-  date: 2025-12-04
-  author: Copilot
+  date: 2025-12-07
+  author: Nano191225
 ---
 
 ## 説明
@@ -16,6 +16,10 @@ last_update:
 | スコアボード名 | 説明 |
 | ----- | ----- |
 | `capi:max_render_distance` | プレイヤーの最大描画距離（チャンク単位）です。 |
+
+:::info
+プレイヤーの最大描画距離を取得します。現在の描画距離ではありません。  
+:::
 
 ## 使用例
 描画距離が長いプレイヤーを検出する例：

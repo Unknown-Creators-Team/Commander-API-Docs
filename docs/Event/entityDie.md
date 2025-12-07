@@ -1,8 +1,8 @@
 ---
 title: "entityDie"
 last_update:
-  date: 2025-12-04
-  author: Copilot
+  date: 2025-12-06
+  author: Nano191225
 ---
 
 ## 説明
@@ -50,6 +50,7 @@ last_update:
 
 ```mcfunction
 /execute as @a[tag=capi:kill_player] run say プレイヤーを倒しました！
+/tag @a remove capi:kill_player
 ```
 
 ### PvP統計の記録
@@ -60,10 +61,12 @@ last_update:
 # キル数を記録
 /execute as @a[tag=capi:kill_player] run scoreboard players add @s pvp_kills 1
 /execute as @a[tag=capi:kill_player] run tellraw @s {"rawtext":[{"text":"§6PvPキルを記録しました"}]}
+/tag @a remove capi:kill_player
 
 # デス数を記録
 /execute as @a[tag=capi:death_player] run scoreboard players add @s pvp_deaths 1
 /execute as @a[tag=capi:death_player] run tellraw @s {"rawtext":[{"text":"§7デスを記録しました"}]}
+/tag @a remove capi:death_player
 ```
 
 ### キルストリークシステム
@@ -81,6 +84,9 @@ last_update:
 
 # 死亡時にストリークをリセット
 /execute as @a[tag=capi:death_player] run scoreboard players set @s killstreak 0
+
+/tag @a remove capi:kill_player
+/tag @a remove capi:death_player
 ```
 
 ### モブキル統計
@@ -108,11 +114,15 @@ last_update:
 /execute as @a[tag=die_cause:lava] run tellraw @s {"rawtext":[{"text":"§c溶岩は危険です！水バケツを持ち歩きましょう。"}]}
 
 # 爆発死
-/execute as @a[tag=die_cause:explosion] run tellraw @s {"rawtext":[{"text":"§aクリーパーに注意！"}]}
+/execute as @a[tag=die_cause:entityExplosion] run tellraw @s {"rawtext":[{"text":"§aクリーパーに注意！"}]}
 
 # 窒息死
 /execute as @a[tag=die_cause:suffocation] run tellraw @s {"rawtext":[{"text":"§7ブロックに埋まらないように注意！"}]}
 ```
+
+:::tip 死亡原因
+die_cause のすべてのリストは Microsoft Learn の [EntityDamageCause Enumeration](https://learn.microsoft.com/ja-jp/minecraft/creator/scriptapi/minecraft/server/entitydamagecause) を参照してください。
+:::
 
 ### デスペナルティシステム
 
@@ -137,8 +147,8 @@ last_update:
 /execute as @a[tag=capi:death] run scoreboard players operation @s last_death_y = @s capi:death_y
 /execute as @a[tag=capi:death] run scoreboard players operation @s last_death_z = @s capi:death_z
 
-# 死亂位置を通知
-/execute as @a[tag=capi:death] run tellraw @s {"rawtext":[{"text":"§7死亂位置が記録されました"}]}
+# 死亡位置を通知
+/execute as @a[tag=capi:death] run tellraw @s {"rawtext":[{"text":"§7死亡位置が記録されました"}]}
 ```
 
 ### アリーナPvPシステム
@@ -161,7 +171,7 @@ last_update:
 ```mcfunction
 # キル位置が特定エリア（ボス部屋）の場合
 /execute as @a[tag=capi:kill,scores={capi:kill_x=100..200,capi:kill_y=50..60,capi:kill_z=100..200}] run give @s diamond 5
-/execute as @a[tag=capi:kill,scores={capi:kill_x=100..200,capi:kill_y=50..60,capi:kill_z=100..200}] run tellraw @s {"rawtext":[{"text":"§6ボス謎夺報酬：ダイヤモンド×5"}]}
+/execute as @a[tag=capi:kill,scores={capi:kill_x=100..200,capi:kill_y=50..60,capi:kill_z=100..200}] run tellraw @s {"rawtext":[{"text":"§6ボス討伐報酬：ダイヤモンド×5"}]}
 ```
 
 ### チーム戦統計
@@ -174,7 +184,4 @@ last_update:
 
 # 青チームのキル
 /execute as @a[tag=capi:kill_player,team=blue] run scoreboard players add blue_team kills 1
-
-# チームスコアを表示（サイドバーに表示）
-/execute as @a[tag=capi:kill_player] run scoreboard objectives setdisplay sidebar kills
 ```

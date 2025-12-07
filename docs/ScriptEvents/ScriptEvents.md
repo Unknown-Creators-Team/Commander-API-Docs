@@ -1,5 +1,5 @@
 ---
-title: "ScriptEvents"
+title: "スクリプトイベント / ScriptEvent"
 last_update:
   date: 2025-12-02
   author: Nano191225
@@ -7,7 +7,7 @@ last_update:
 
 ## 概要
 
-**ScriptEvents** は、Commander API が提供する強力なイベントシステムです。  
+**ScriptEvent** は、Commander API が提供する強力なイベントシステムです。  
 `/scriptevent` コマンドを使用して、様々な機能を実行できます。
 
 ## 基本構文
@@ -16,7 +16,7 @@ last_update:
 /scriptevent capi:<イベント名> <パラメータ>
 ```
 
-## 利用可能な ScriptEvents
+## 利用可能な ScriptEvent
 
 ### メッセージ表示系
 

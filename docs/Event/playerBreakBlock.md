@@ -1,8 +1,8 @@
 ---
 title: "playerBreakBlock"
 last_update:
-  date: 2025-12-04
-  author: Copilot
+  date: 2025-12-07
+  author: Nano191225
 ---
 
 ## 説明
@@ -35,6 +35,7 @@ last_update:
 
 ```mcfunction
 /execute as @a[tag=break:minecraft:diamond_ore] run say ダイヤモンド鉱石を破壊しました！
+/tag @a remove break:minecraft:diamond_ore
 ```
 
 ### 複数のブロックタイプの検出
@@ -43,17 +44,11 @@ last_update:
 
 ```mcfunction
 /execute as @a[tag=break:minecraft:diamond_ore] run tellraw @s {"rawtext":[{"text":"§bダイヤモンド鉱石を発見！"}]}
+/tag @a remove break:minecraft:diamond_ore
 /execute as @a[tag=break:minecraft:emerald_ore] run tellraw @s {"rawtext":[{"text":"§aエメラルド鉱石を発見！"}]}
+/tag @a remove break:minecraft:emerald_ore
 /execute as @a[tag=break:minecraft:ancient_debris] run tellraw @s {"rawtext":[{"text":"§6古代の残骨を発見！"}]}
-```
-
-### 座標情報の利用
-
-破壊したブロックの座標を記録する例：
-
-```mcfunction
-# 座標を記録（スコアボードで管理）
-/execute as @a[tag=capi:break] run tellraw @s {"rawtext":[{"text":"§eブロック破壊位置を記録しました"}]}
+/tag @a remove break:minecraft:ancient_debris
 ```
 
 ### 特定エリアでの破壊を検出
@@ -66,6 +61,8 @@ Y座標を使って地下での採掘を検出する例：
 
 # 地表での作業
 /execute as @a[tag=capi:break,scores={capi:break_y=60..}] run title @s actionbar "§a地表作業中"
+
+/tag @a remove capi:break
 ```
 
 ### ブロック破壊カウンター
@@ -91,9 +88,6 @@ Y座標を使って地下での採掘を検出する例：
 # スポーナーの破壊を検出
 /execute as @a[tag=break:minecraft:spawner] run tellraw @s {"rawtext":[{"text":"§c警告：スポーナーを破壊しました！"}]}
 /execute as @a[tag=break:minecraft:spawner] run scoreboard players add @s warning 1
-
-# 重要な建築物の保護
-/execute as @a[tag=break:minecraft:bedrock] run tellraw @a [{"selector":"@s"},"§c が岩盤を破壊しようとしました！"]
 ```
 
 ### 実績システムとの連携
@@ -115,8 +109,8 @@ Y座標を使って地下での採掘を検出する例：
 
 ```mcfunction
 # 夜間のみ特殊鉱石を破壊可能
-/execute as @a[tag=break:minecraft:diamond_ore] if predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run give @s diamond 1
-/execute as @a[tag=break:minecraft:diamond_ore] unless predicate {"condition":"minecraft:time_check","value":{"min":13000,"max":23000}} run tellraw @s {"rawtext":[{"text":"§cこの鉱石は夜間のみ採掘できます"}]}
+/execute if score time capi:world matches 13000..23000 as @a[tag=break:minecraft:diamond_ore] run give @s diamond 1
+/execute if score time capi:world matches !13000..23000 as @a[tag=break:minecraft:diamond_ore] run tellraw @s {"rawtext":[{"text":"§cこの鉱石は夜間のみ採掘できます"}]}
 ```
 
 ### ツールの使用状況を記録
@@ -125,8 +119,5 @@ Y座標を使って地下での採掘を検出する例：
 
 ```mcfunction
 # ダイヤモンドのピッケルで破壊
-/execute as @a[tag=capi:break,nbt={SelectedItem:{id:"minecraft:diamond_pickaxe"}}] run scoreboard players add @s diamond_tool_use 1
-
-# 素手で破壊
-/execute as @a[tag=capi:break,nbt=!{SelectedItem:{}}] run tellraw @s {"rawtext":[{"text":"§e素手での破壊は効率が悪いです！"}]}
+/execute as @a[tag=capi:break,hasitem={item=diamond_pickaxe,location=slot.weapon.mainhand}] run scoreboard players add @s diamond_tool_use 1
 ```
