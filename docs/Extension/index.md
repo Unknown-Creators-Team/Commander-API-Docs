@@ -9,11 +9,11 @@ last_update:
 
 ## Commander API Extension
 
-Commander API Extension は、Commander API の機能を拡張するための公式拡張機能です。`player.json` を使用して、ScriptAPI だけでは実装できない高度な機能を提供します。
+Commander API Extension は、Commander API の機能を拡張するための公式拡張機能です。イベントコマンドやスクリプトイベントを使用して、ScriptAPI だけでは実装できない高度な機能を提供します。
 
 ### 機能例
 
-- プレイヤーの大きさを変更
-- プレイヤーの体力を変更
-- プレイヤーの攻撃力を変更
-- チーム機能の追加（フレンドリーファイア不可）
+- プレイヤーの大きさを変更（`/event entity @s capi:size_1.2`）
+- プレイヤーの体力を変更（`/event entity @s capi:health_40`）
+- プレイヤーの攻撃力を変更（`/event entity @s capi:attack_2.0`）
+- チーム機能の追加（`/scriptevent capi:team 1`）- フレンドリーファイア不可
