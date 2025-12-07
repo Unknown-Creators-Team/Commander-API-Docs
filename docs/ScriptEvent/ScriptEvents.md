@@ -61,4 +61,4 @@ last_update:
 
 ## マクロの使用
 
-全ての ScriptEvents でマクロを使用できます。マクロについての詳細は [Macro](../Macro/Macro.md) を参照してください。
+全ての ScriptEvent でマクロを使用できます。マクロについての詳細は [Macro](../Macro/Macro.md) を参照してください。

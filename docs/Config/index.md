@@ -40,7 +40,7 @@ Commander API の動作に関する詳細なログをチャットに出力する
 
 Commander API のテストを有効にします。
 
-::: !ref ../ScriptEvents/test
+::: !ref ../ScriptEvent/test
 
 ### イベント設定
 
@@ -89,7 +89,7 @@ Commander API のテストを有効にします。
 /scriptevent capi:ab Hello, World!
 ```
 
-::: !ref ../ScriptEvents/actionbar
+::: !ref ../ScriptEvent/actionbar
 
 ### その他各種設定
 
