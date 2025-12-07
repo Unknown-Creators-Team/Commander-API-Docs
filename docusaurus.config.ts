@@ -26,7 +26,13 @@ const config: Config = {
     projectName: "Commander-API-Docs", // Usually your repo name.
 
     onBrokenLinks: "throw",
-    onBrokenMarkdownLinks: "warn",
+
+    markdown: {
+        hooks: {
+            onBrokenMarkdownLinks: "throw",
+            onBrokenMarkdownImages: "throw"
+        }
+    },
 
     // Even if you don't use internationalization, you can use this field to set
     // useful metadata like html lang. For example, if your site is Chinese, you
@@ -173,10 +179,17 @@ const config: Config = {
             appId: '73Z3Z9Z1EI',
             apiKey: 'd33991eb352b79be640578ea93459b04',
             indexName: 'Commander API',
-            // @ts-expect-error
-            askAi: "8l26FgMYf8xJ"
+            // askAi: "8l26FgMYf8xJ"
+            askAi: {
+                assistantId: "8l26FgMYf8xJ",
+            }
         }
     } satisfies Preset.ThemeConfig,
 };
 
 export default config;
+
+/**
+ * コマンドブロック
+ * 
+ */
