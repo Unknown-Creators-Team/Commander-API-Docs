@@ -173,6 +173,8 @@ const config: Config = {
             appId: '73Z3Z9Z1EI',
             apiKey: 'd33991eb352b79be640578ea93459b04',
             indexName: 'Commander API',
+            // @ts-expect-error
+            askAi: "8l26FgMYf8xJ"
         }
     } satisfies Preset.ThemeConfig,
 };
