@@ -50,7 +50,7 @@ last_update:
 
 以下のような長いコマンド（100文字以上）はコマンドを分割する必要があります。
 
-::: !ref ../Tool/calls
+::: !ref ../../tools/Tool/calls
 
 ```mcfunction
 /execute as @a[tag=it,tag=capi:damage] run say §l§c<!selector={tags=[it,capi:damage]}> §r§cが §l<!se
