@@ -1,0 +1,133 @@
+.faqSection {
+  padding: 4rem 0;
+  position: relative;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(to right, #fff, #a78bfa);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sectionSubtitle {
+  font-size: 1.2rem;
+  color: var(--ifm-color-primary-light);
+}
+
+.faqContainer {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faqItem {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faqItem:hover {
+  border-color: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+  width: 100%;
+}
+
+.details[open] {
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.summary {
+  padding: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  user-select: none;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.questionContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.questionIcon {
+  color: var(--ifm-color-primary);
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.questionText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.chevron {
+  color: var(--ifm-color-emphasis-600);
+  transition: transform 0.3s ease;
+}
+
+.details[open] .chevron {
+  transform: rotate(180deg);
+  color: var(--ifm-color-primary);
+}
+
+.answer {
+  padding: 0 1.5rem 1.5rem 3.7rem; /* Align with text, accounting for icon gap */
+  color: var(--ifm-font-color-base);
+  line-height: 1.6;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 576px) {
+  .answer {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 2rem;
+  }
+
+  .summary {
+    padding: 1rem;
+  }
+
+  .questionText {
+    font-size: 1rem;
+  }
+}

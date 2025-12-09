@@ -30,8 +30,8 @@ const config: Config = {
     markdown: {
         hooks: {
             onBrokenMarkdownLinks: "throw",
-            onBrokenMarkdownImages: "throw"
-        }
+            onBrokenMarkdownImages: "throw",
+        },
     },
 
     // Even if you don't use internationalization, you can use this field to set
@@ -46,8 +46,7 @@ const config: Config = {
         {
             href: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
             type: "text/css",
-            integrity:
-                "sha384-nB0miv6/jRmo5USUSRBER0PLDLGKz8+SOT+HBzZ4dti+W1a3w/gNhOQqX/0QxuQI2",
+            integrity: "sha384-nB0miv6/jRmo5USUSRBER0PLDLGKz8+SOT+HBzZ4dti+W1a3w/gNhOQqX/0QxuQI2",
             crossorigin: "anonymous",
         },
     ],
@@ -60,17 +59,16 @@ const config: Config = {
                     showLastUpdateAuthor: true,
                     showLastUpdateTime: true,
                     sidebarPath: "./sidebars.ts",
-                    remarkPlugins: [
-                        remarkMath,
-                        remarkDirective,
-                        remarkLinkCard,
-                        remarkEasyTabs
-                    ],
-                    rehypePlugins: [[rehypeKatex, { strict: false, output: 'mathml' }]],
+                    remarkPlugins: [remarkMath, remarkDirective, remarkLinkCard, remarkEasyTabs],
+                    path: "docs",
+                    routeBasePath: "docs",
+                    rehypePlugins: [[rehypeKatex, { strict: false, output: "mathml" }]],
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
-                    editUrl:
-                        "https://github.com/Unknown-Creators-Team/Commander-API-Docs/blob/main/",
+                    editUrl: "https://github.com/Unknown-Creators-Team/Commander-API-Docs/blob/main/",
+                },
+                sitemap: {
+                    changefreq: "always",
                 },
                 // blog: {
                 //   showReadingTime: true,
@@ -94,7 +92,25 @@ const config: Config = {
         ],
     ],
 
+    plugins: [
+        [
+            "@docusaurus/plugin-content-docs",
+            {
+                id: "tools",
+                path: "tools",
+                routeBasePath: "tools",
+                sidebarPath: "./sidebarsTools.ts",
+                // ... other options
+            },
+        ],
+    ],
+
     themeConfig: {
+        colorMode: {
+            defaultMode: "dark",
+            disableSwitch: true,
+            respectPrefersColorScheme: false,
+        },
         // Replace with your project's social card
         // image: 'img/docusaurus-social-card.jpg',
         navbar: {
@@ -110,6 +126,13 @@ const config: Config = {
                     position: "left",
                     label: "ドキュメント",
                 },
+                // {
+                //     type: "toolSidebar",
+                //     sidebarId: "toolsSidebar",
+                //     position: "left",
+                //     label: "ツール",
+                // },
+                {to: '/tools', label: 'ツール', position: 'left'},
                 // {to: '/blog', label: 'Blog', position: 'left'},
                 {
                     href: "https://github.com/Unknown-Creators-Team/Commander-API",
@@ -176,14 +199,14 @@ const config: Config = {
             darkTheme: prismThemes.dracula,
         },
         algolia: {
-            appId: '73Z3Z9Z1EI',
-            apiKey: 'd33991eb352b79be640578ea93459b04',
-            indexName: 'Commander API',
+            appId: "73Z3Z9Z1EI",
+            apiKey: "d33991eb352b79be640578ea93459b04",
+            indexName: "Commander API",
             // askAi: "8l26FgMYf8xJ"
             askAi: {
                 assistantId: "8l26FgMYf8xJ",
-            }
-        }
+            },
+        },
     } satisfies Preset.ThemeConfig,
 };
 
@@ -191,5 +214,5 @@ export default config;
 
 /**
  * コマンドブロック
- * 
+ *
  */

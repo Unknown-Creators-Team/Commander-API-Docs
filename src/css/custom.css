@@ -6,27 +6,100 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #4284fb;
-  --ifm-color-primary-dark: #2370fa;
-  --ifm-color-primary-darker: #1366fa;
-  --ifm-color-primary-darkest: #0550d9;
-  --ifm-color-primary-light: #6198fc;
-  --ifm-color-primary-lighter: #71a2fc;
-  --ifm-color-primary-lightest: #9fc1fd;
+  /* Cyber-Glass Palette */
+  --ifm-color-primary: #8b5cf6; /* Violet 500 */
+  --ifm-color-primary-dark: #7c3aed;
+  --ifm-color-primary-darker: #6d28d9;
+  --ifm-color-primary-darkest: #5b21b6;
+  --ifm-color-primary-light: #a78bfa;
+  --ifm-color-primary-lighter: #c4b5fd;
+  --ifm-color-primary-lightest: #ddd6fe;
+
+  --ifm-background-color: #0f0518; /* Deep Void */
+  --ifm-background-surface-color: #1a0b2e;
+  
+  --glass-background: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-blur: 12px;
+  
+  --ifm-navbar-background-color: rgba(15, 5, 24, 0.7);
+  --ifm-footer-background-color: #18181b;
+  
+  --ifm-font-color-base: #e3e3e3;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(139, 92, 246, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #5fa0ff;
-  --ifm-color-primary-dark: #3c8bff;
-  --ifm-color-primary-darker: #2a81ff;
-  --ifm-color-primary-darkest: #0064f5;
-  --ifm-color-primary-light: #82b5ff;
-  --ifm-color-primary-lighter: #94bfff;
-  --ifm-color-primary-lightest: #c8deff;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-color-primary: #8b5cf6;
+  --ifm-color-primary-dark: #7c3aed;
+  --ifm-color-primary-darker: #6d28d9;
+  --ifm-color-primary-darkest: #5b21b6;
+  --ifm-color-primary-light: #a78bfa;
+  --ifm-color-primary-lighter: #c4b5fd;
+  --ifm-color-primary-lightest: #ddd6fe;
+  
+  --ifm-background-color: #0f0518;
+  --ifm-footer-background-color: #18181b;
+  --docusaurus-highlighted-code-line-bg: rgba(139, 92, 246, 0.1);
+}
+
+/* Global Glass Utilities */
+.glass-panel {
+    background: var(--glass-background);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar Glass Effect */
+.navbar {
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--glass-border);
+}
+
+/* Mobile Sidebar Fix */
+.navbar-sidebar {
+  background-color: #0f0518 !important; /* Solid background to prevent transparency issues */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border-right: 1px solid var(--glass-border);
+  z-index: 200 !important; /* Ensure it's above hero content */
+  top: 0;
+  height: 100vh;
+}
+
+.navbar-sidebar__items {
+  padding-top: 1rem;
+}
+
+.navbar-sidebar__item {
+  color: var(--ifm-font-color-base);
+}
+
+.navbar-sidebar__backdrop {
+  background-color: rgba(0, 0, 0, 0.8) !important;
+  backdrop-filter: blur(4px);
+  z-index: 199 !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0518; 
+}
+::-webkit-scrollbar-thumb {
+  background: #581c87; 
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d946ef; 
 }
 
 /* KaTeX: テーブル内での二重表示を防ぐ */
@@ -139,4 +212,29 @@ table .katex-display .katex-html {
 .embedder-wrapper iframe {
   max-width: 100%;
   border-radius: 8px;
+}
+
+/* Code Block Styling Override */
+[data-theme='dark'] .prism-code {
+  background-color: #130620 !important; /* Darker background matching the theme */
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Inline Code Styling */
+[data-theme='dark'] code {
+  background-color: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  color: #e9d5ff;
+}
+
+/* Footer Styling */
+.footer {
+  background-color: var(--ifm-footer-background-color);
+  border-top: 1px solid var(--glass-border);
+  backdrop-filter: blur(var(--glass-blur));
+}
+
+.footer--dark {
+  --ifm-footer-background-color: #18181b;
 }

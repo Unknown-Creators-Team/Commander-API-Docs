@@ -2,16 +2,19 @@ import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import { FaRocket, FaBolt, FaGithub } from 'react-icons/fa';
+import { IconType } from 'react-icons';
 
 type FeatureItem = {
   title: string;
-  // Svg: React.ComponentType<React.ComponentProps<'svg'>>;
+  Icon: IconType;
   description: ReactNode;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: '不可能を可能に',
+    Icon: FaRocket,
     description: (
       <>
         Commander API は、アドオンの機能である Script API を使用して開発されています。
@@ -21,6 +24,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'より少ないコマンドで',
+    Icon: FaBolt,
     description: (
       <>
         Commander API は、複雑なコマンドを簡潔に記述できるよう設計されています。
@@ -30,6 +34,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'オープンソース',
+    Icon: FaGithub,
     description: (
       <>
         Commander API はオープンソースで開発されており、コミュニティからの貢献を歓迎します。
@@ -39,15 +44,17 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, description}: FeatureItem) {
+function Feature({title, Icon, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')} style={{padding: '3rem 0'}}>
-      {/* <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
-      </div> */}
-      <div className="text--center padding-horiz--md">
-        <Heading as="h3">{title}</Heading>
-        <p>{description}</p>
+    <div className={clsx('col col--4')} style={{padding: '1rem'}}>
+      <div className={styles.featureCard}>
+        <div className="text--center">
+          <Icon className={styles.featureIcon} />
+        </div>
+        <div className="text--center padding-horiz--md">
+          <Heading as="h3" className={styles.featureTitle}>{title}</Heading>
+          <p className={styles.featureDescription}>{description}</p>
+        </div>
       </div>
     </div>
   );
