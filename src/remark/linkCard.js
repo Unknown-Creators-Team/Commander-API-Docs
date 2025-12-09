@@ -9,7 +9,6 @@ function remarkLinkCard() {
     // containerDirectiveとして処理
     visit(tree, 'containerDirective', (node, index, parent) => {
       if (node.name === '!ref' && parent && typeof index === 'number') {
-        console.log('Found containerDirective !ref:', node);
         
         // 子ノードからURLを取得
         let url = null;
@@ -63,8 +62,6 @@ function remarkLinkCard() {
         
         // ::: !ref URL の形式をチェック
         if (firstChild.type === 'text' && firstChild.value.trim().startsWith('::: !ref ')) {
-          console.log('Found ::: !ref in file:', file.history[0]);
-          console.log('Full text:', firstChild.value);
           
           const match = firstChild.value.trim().match(/^::: !ref\s+(.+)$/);
           if (match && parent && typeof index === 'number') {
