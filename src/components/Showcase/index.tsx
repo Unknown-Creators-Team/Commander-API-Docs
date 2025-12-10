@@ -135,7 +135,7 @@ export default function Showcase() {
                     alt={ShowcaseList[activeTab].items[activeItem].label}
                     className={styles.previewMedia}
                   /> */}
-                  <video 
+                  <video
                     src={useBaseUrl(ShowcaseList[activeTab].items[activeItem].media)}
                     className={styles.previewMedia}
                     autoPlay 
@@ -148,7 +148,8 @@ export default function Showcase() {
                   <div className={styles.codeLabel}>Command Input:</div>
                   {/* <code>{ShowcaseList[activeTab].items[activeItem].code}</code> */}
                   {/* mdの```のようにコードブロックにする */}
-                  <pre>
+                  {/* はみ出す場合は、横スクロールさせる */}
+                  <pre className={styles.codeContent}>
                       {ShowcaseList[activeTab].items[activeItem].code}
                   </pre>
                 </div>

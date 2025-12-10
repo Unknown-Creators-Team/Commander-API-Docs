@@ -171,6 +171,11 @@
   font-family: 'Fira Code', monospace;
 }
 
+.codeContent {
+  white-space: pre-wrap;
+  overflow-x: scroll;
+}
+
 .itemDescription {
   color: #d1d5db;
   font-size: 1.1rem;
