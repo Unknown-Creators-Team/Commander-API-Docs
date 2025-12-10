@@ -48,16 +48,16 @@ Commander API Extension を使用するには、以下の手順を実行して�
 
 | パラメータ | 説明 | デフォルト値 | 範囲 |
 |-----------|------|-------------|------|
-| `倍率` | プレイヤーのサイズ倍率 | `1.0` | `0.1` ～ `10.0` |
+| `倍率` | プレイヤーのサイズ倍率 | `1` | `0` ～ `4` |
 
 #### 使用例
 
 ##### 通常サイズに設定
 
-プレイヤーを通常のサイズ（1.0倍）に設定します。
+プレイヤーを通常のサイズ（1倍）に設定します。
 
 ```mcfunction
-/event entity @s capi:size_1.0
+/event entity @s capi:size_1
 ```
 
 ##### 小さいサイズに設定
@@ -73,7 +73,7 @@ Commander API Extension を使用するには、以下の手順を実行して�
 プレイヤーを通常の2倍のサイズに設定します。
 
 ```mcfunction
-/event entity @s capi:size_2.0
+/event entity @s capi:size_2
 ```
 
 ##### 複数プレイヤーに適用
@@ -93,7 +93,7 @@ Commander API Extension を使用するには、以下の手順を実行して�
 /execute as @a[tag=small] run event entity @s capi:size_0.5
 
 # 大きいプレイヤー
-/execute as @a[tag=large] run event entity @s capi:size_2.0
+/execute as @a[tag=large] run event entity @s capi:size_2
 ```
 
 ##### スコアに基づいてサイズ変更
@@ -103,20 +103,16 @@ Commander API Extension を使用するには、以下の手順を実行して�
 ```mcfunction
 # レベルに応じてサイズ変更（レベルが高いほど大きくなる）
 /execute as @a[scores={level=1}] run event entity @s capi:size_0.8
-/execute as @a[scores={level=2}] run event entity @s capi:size_1.0
+/execute as @a[scores={level=2}] run event entity @s capi:size_1
 /execute as @a[scores={level=3}] run event entity @s capi:size_1.2
 /execute as @a[scores={level=4}] run event entity @s capi:size_1.5
-/execute as @a[scores={level=5}] run event entity @s capi:size_2.0
+/execute as @a[scores={level=5}] run event entity @s capi:size_2
 ```
 
 :::info
 サイズの倍率は小数で指定します。  
 `0.5` の場合、プレイヤーは通常の半分のサイズになります。  
-`2.0` の場合、プレイヤーは通常の2倍のサイズになります。
-:::
-
-:::warning 注意事項
-極端に小さい値（0.1未満）や大きい値（10.0以上）を設定すると、ゲームプレイに支障をきたす可能性があります。
+`2` の場合、プレイヤーは通常の2倍のサイズになります。
 :::
 
 ---
@@ -135,7 +131,7 @@ Commander API Extension を使用するには、以下の手順を実行して�
 
 | パラメータ | 説明 | デフォルト値 | 範囲 |
 |-----------|------|-------------|------|
-| `体力値` | プレイヤーの最大体力 | `20` | `1` ～ `1024` |
+| `体力値` | プレイヤーの最大体力 | `20` | `1` ～ `200` |
 
 #### 使用例
 
@@ -218,24 +214,16 @@ Commander API Extension を使用するには、以下の手順を実行して�
 
 | パラメータ | 説明 | デフォルト値 | 範囲 |
 |-----------|------|-------------|------|
-| `倍率` | プレイヤーの攻撃力倍率 | `1.0` | `0.1` ～ `10.0` |
+| `倍率` | プレイヤーの攻撃力倍率 | `1` | `0` ～ `200` |
 
 #### 使用例
 
 ##### 通常の攻撃力に設定
 
-プレイヤーの攻撃力を通常（1.0倍）に設定します。
+プレイヤーの攻撃力を通常（1倍）に設定します。
 
 ```mcfunction
-/event entity @s capi:attack_1.0
-```
-
-##### 低い攻撃力に設定
-
-プレイヤーの攻撃力を半分（0.5倍）に設定します。
-
-```mcfunction
-/event entity @s capi:attack_0.5
+/event entity @s capi:attack_1
 ```
 
 ##### 高い攻撃力に設定
@@ -243,7 +231,7 @@ Commander API Extension を使用するには、以下の手順を実行して�
 プレイヤーの攻撃力を2倍に設定します。
 
 ```mcfunction
-/event entity @s capi:attack_2.0
+/event entity @s capi:attack_2
 ```
 
 ##### クラスシステムでの攻撃力設定
@@ -252,16 +240,16 @@ Commander API Extension を使用するには、以下の手順を実行して�
 
 ```mcfunction
 # 戦士クラス - 高い攻撃力
-/execute as @a[tag=warrior] run event entity @s capi:attack_2.0
+/execute as @a[tag=warrior] run event entity @s capi:attack_3
 
 # 盗賊クラス - 中程度の攻撃力
-/execute as @a[tag=rogue] run event entity @s capi:attack_1.5
+/execute as @a[tag=rogue] run event entity @s capi:attack_2
 
 # 支援役クラス - 低い攻撃力
-/execute as @a[tag=support] run event entity @s capi:attack_0.7
+/execute as @a[tag=support] run event entity @s capi:attack_1
 
 # 魔法使いクラス - 低い物理攻撃力
-/execute as @a[tag=mage] run event entity @s capi:attack_0.8
+/execute as @a[tag=mage] run event entity @s capi:attack_1
 ```
 
 ##### 武器に応じた攻撃力変更
@@ -270,29 +258,28 @@ Commander API Extension を使用するには、以下の手順を実行して�
 
 ```mcfunction
 # 木の剣を持っている場合
-/execute as @a[hasitem={item=wooden_sword}] run event entity @s capi:attack_1.0
+/execute as @a[hasitem={item=wooden_sword}] run event entity @s capi:attack_1
 
 # 石の剣を持っている場合
-/execute as @a[hasitem={item=stone_sword}] run event entity @s capi:attack_1.2
+/execute as @a[hasitem={item=stone_sword}] run event entity @s capi:attack_2
 
 # 鉄の剣を持っている場合
-/execute as @a[hasitem={item=iron_sword}] run event entity @s capi:attack_1.5
+/execute as @a[hasitem={item=iron_sword}] run event entity @s capi:attack_3
 
 # ダイヤの剣を持っている場合
-/execute as @a[hasitem={item=diamond_sword}] run event entity @s capi:attack_2.0
+/execute as @a[hasitem={item=diamond_sword}] run event entity @s capi:attack_4
 ```
 
 :::info
 攻撃力の倍率は小数で指定します。  
-`1.0` の場合、通常の攻撃力です。  
-`2.0` の場合、攻撃力が2倍になります。  
-`0.5` の場合、攻撃力が半分になります。
+`1` の場合、通常の攻撃力です。  
+`2` の場合、攻撃力が2倍になります。  
 :::
 
 :::tip クラスシステムへの活用
-- **戦士**: `attack_2.0` - 高い攻撃力
-- **盗賊**: `attack_1.5` - 中程度の攻撃力
-- **支援役**: `attack_0.7` - 低い攻撃力
+- **戦士**: `attack_3` - 高い攻撃力
+- **盗賊**: `attack_2` - 中程度の攻撃力
+- **支援役**: `attack_1` - 低い攻撃力
 :::
 
 ---
@@ -313,9 +300,9 @@ Commander API Extension を使用するには、以下の手順を実行して�
 
 #### パラメータ
 
-| パラメータ | 説明 | デフォルト値 |
-|-----------|------|-------------|
-| `チーム番号` | プレイヤーが所属するチーム番号（整数） | なし（チーム未所属） |
+| パラメータ | 説明 | デフォルト値 | 範囲 |
+|-----------|------|-------------|------|
+| `チーム番号` | プレイヤーが所属するチーム番号（整数） | なし（チーム未所属） | `1` ～ `40` |
 
 #### チーム機能の特徴
 
@@ -432,25 +419,25 @@ Commander API Extension を使用するには、以下の手順を実行して�
 # 戦士クラス
 /execute as @a[tag=class_warrior] run event entity @s capi:size_1.2
 /execute as @a[tag=class_warrior] run event entity @s capi:health_40
-/execute as @a[tag=class_warrior] run event entity @s capi:attack_2.0
+/execute as @a[tag=class_warrior] run event entity @s capi:attack_3
 /execute as @a[tag=class_warrior] run scriptevent capi:team 1
 
 # 魔法使いクラス
 /execute as @a[tag=class_mage] run event entity @s capi:size_0.9
 /execute as @a[tag=class_mage] run event entity @s capi:health_12
-/execute as @a[tag=class_mage] run event entity @s capi:attack_0.8
+/execute as @a[tag=class_mage] run event entity @s capi:attack_1
 /execute as @a[tag=class_mage] run scriptevent capi:team 1
 
 # タンククラス
 /execute as @a[tag=class_tank] run event entity @s capi:size_1.5
 /execute as @a[tag=class_tank] run event entity @s capi:health_60
-/execute as @a[tag=class_tank] run event entity @s capi:attack_1.2
+/execute as @a[tag=class_tank] run event entity @s capi:attack_1
 /execute as @a[tag=class_tank] run scriptevent capi:team 1
 
 # 盗賊クラス
 /execute as @a[tag=class_rogue] run event entity @s capi:size_0.8
 /execute as @a[tag=class_rogue] run event entity @s capi:health_16
-/execute as @a[tag=class_rogue] run event entity @s capi:attack_1.8
+/execute as @a[tag=class_rogue] run event entity @s capi:attack_1
 /execute as @a[tag=class_rogue] run scriptevent capi:team 1
 ```
 
@@ -462,25 +449,25 @@ Commander API Extension を使用するには、以下の手順を実行して�
 # 赤チーム - タンク役
 /execute as @a[tag=red_tank] run event entity @s capi:size_1.3
 /execute as @a[tag=red_tank] run event entity @s capi:health_50
-/execute as @a[tag=red_tank] run event entity @s capi:attack_1.5
+/execute as @a[tag=red_tank] run event entity @s capi:attack_2
 /execute as @a[tag=red_tank] run scriptevent capi:team 1
 
 # 赤チーム - アタッカー役
-/execute as @a[tag=red_attacker] run event entity @s capi:size_1.0
+/execute as @a[tag=red_attacker] run event entity @s capi:size_1
 /execute as @a[tag=red_attacker] run event entity @s capi:health_25
-/execute as @a[tag=red_attacker] run event entity @s capi:attack_2.5
+/execute as @a[tag=red_attacker] run event entity @s capi:attack_3
 /execute as @a[tag=red_attacker] run scriptevent capi:team 1
 
 # 青チーム - タンク役
 /execute as @a[tag=blue_tank] run event entity @s capi:size_1.3
 /execute as @a[tag=blue_tank] run event entity @s capi:health_50
-/execute as @a[tag=blue_tank] run event entity @s capi:attack_1.5
+/execute as @a[tag=blue_tank] run event entity @s capi:attack_2
 /execute as @a[tag=blue_tank] run scriptevent capi:team 2
 
 # 青チーム - アタッカー役
-/execute as @a[tag=blue_attacker] run event entity @s capi:size_1.0
+/execute as @a[tag=blue_attacker] run event entity @s capi:size_1
 /execute as @a[tag=blue_attacker] run event entity @s capi:health_25
-/execute as @a[tag=blue_attacker] run event entity @s capi:attack_2.5
+/execute as @a[tag=blue_attacker] run event entity @s capi:attack_3
 /execute as @a[tag=blue_attacker] run scriptevent capi:team 2
 ```
 
@@ -492,15 +479,15 @@ Commander API Extension を使用するには、以下の手順を実行して�
 # レベルに応じてサイズと能力を変更
 /execute as @a[scores={level=1}] run event entity @s capi:size_0.8
 /execute as @a[scores={level=1}] run event entity @s capi:health_20
-/execute as @a[scores={level=1}] run event entity @s capi:attack_1.0
+/execute as @a[scores={level=1}] run event entity @s capi:attack_1
 
-/execute as @a[scores={level=5}] run event entity @s capi:size_1.0
+/execute as @a[scores={level=5}] run event entity @s capi:size_1
 /execute as @a[scores={level=5}] run event entity @s capi:health_30
-/execute as @a[scores={level=5}] run event entity @s capi:attack_1.5
+/execute as @a[scores={level=5}] run event entity @s capi:attack_1
 
 /execute as @a[scores={level=10}] run event entity @s capi:size_1.2
 /execute as @a[scores={level=10}] run event entity @s capi:health_40
-/execute as @a[scores={level=10}] run event entity @s capi:attack_2.0
+/execute as @a[scores={level=10}] run event entity @s capi:attack_2
 ```
 
 ---

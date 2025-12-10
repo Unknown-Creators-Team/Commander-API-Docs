@@ -1,0 +1,373 @@
+.container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  background: var(--ifm-background-surface-color);
+  border-radius: 8px;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .sidebar, .previewArea {
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+.sidebar {
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.previewArea {
+  flex: 1;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.componentFrame {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  padding: 15px;
+  background: var(--ifm-card-background-color);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.frameTitle {
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  font-size: 1.1em;
+  color: var(--ifm-color-primary);
+}
+
+.emptyState {
+  padding: 20px;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+  font-style: italic;
+}
+
+/* Removed .inspector styles as it is no longer used */
+
+.structurePanel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordionItem {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  background: var(--ifm-card-background-color);
+  overflow: hidden;
+}
+
+.accordionHeader {
+  padding: 10px;
+  background: var(--ifm-card-background-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  user-select: none;
+}
+
+.accordionHeader:hover {
+  background: var(--ifm-color-emphasis-100);
+}
+
+.accordionHeader.selected {
+  background: var(--ifm-color-primary-lightest);
+  color: var(--ifm-color-primary);
+}
+
+.accordionContent {
+  /* padding: 15px; */
+  background: var(--ifm-background-surface-color);
+  /* border-top: 1px solid var(--ifm-color-emphasis-200); */
+}
+
+.accordionIcon {
+  font-size: 0.8em;
+  color: var(--ifm-color-emphasis-600);
+}
+
+.elementSection {
+  margin-top: 10px;
+}
+
+.typeSelector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.typeSelector select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.formGroup label {
+  font-weight: bold;
+  font-size: 0.9em;
+}
+
+.formGroup input, .formGroup textarea, .formGroup select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+}
+
+.elementList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.elementItem {
+  padding: 10px;
+  background: var(--ifm-card-background-color);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 4px;
+  cursor: grab;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.elementItem:active {
+  cursor: grabbing;
+}
+
+.elementItem.selected {
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 2px var(--ifm-color-primary-lightest);
+}
+
+.addButton {
+  margin-top: 10px;
+  padding: 8px;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  background: var(--ifm-color-primary-dark);
+}
+
+.removeButton {
+  background: transparent;
+  border: none;
+  color: var(--ifm-color-danger);
+  cursor: pointer;
+  font-size: 1.2em;
+}
+
+.previewContainer {
+  background-color: rgba(0, 0, 0, 0.5); /* Minecraft darken background */
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.mcForm {
+  background-color: #c6c6c6; /* Minecraft GUI grey */
+  border: 2px solid #000;
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  font-family: 'Minecraftia', sans-serif; /* Assuming font exists or fallback */
+  position: relative;
+  box-shadow: inset -2px -2px 0px #555, inset 2px 2px 0px #fff;
+}
+
+.mcHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #555; /* Not exactly MC style but close enough for web */
+}
+
+.mcTitle {
+  color: #404040;
+  font-weight: bold;
+}
+
+.mcClose {
+  cursor: pointer;
+  color: #404040;
+}
+
+.mcBody {
+  color: #404040;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+}
+
+.mcButton {
+  background-color: #d0d0d0;
+  border: 2px solid #000;
+  padding: 8px;
+  margin-bottom: 4px;
+  text-align: center;
+  cursor: pointer;
+  color: #000;
+  box-shadow: inset -2px -2px 0px #555, inset 2px 2px 0px #fff;
+}
+
+.mcButton:active {
+  background-color: #a0a0a0;
+  box-shadow: inset 2px 2px 0px #555, inset -2px -2px 0px #fff;
+}
+
+.mcInput {
+  background-color: #000;
+  color: #fff;
+  border: 2px solid #a0a0a0;
+  padding: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mcLabel {
+  color: #404040;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.mcDropdown {
+  background-color: #d0d0d0;
+  border: 2px solid #000;
+  padding: 8px;
+  margin-bottom: 8px;
+  color: #000;
+  position: relative;
+  box-shadow: inset -2px -2px 0px #555, inset 2px 2px 0px #fff;
+}
+
+.mcSliderContainer {
+  margin-bottom: 8px;
+}
+
+.mcSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  background: #d0d0d0;
+  outline: none;
+  border: 1px solid #000;
+}
+
+.mcSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 10px;
+  height: 20px;
+  background: #d0d0d0;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.mcToggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.mcToggleSwitch {
+  width: 40px;
+  height: 20px;
+  background-color: #808080;
+  border: 2px solid #000;
+  position: relative;
+  cursor: pointer;
+}
+
+.mcToggleSwitch.on {
+  background-color: #808080; /* MC toggle doesn't change color much, just knob position */
+}
+
+.mcToggleKnob {
+  width: 16px;
+  height: 16px;
+  background-color: #d0d0d0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: left 0.2s;
+}
+
+.mcToggleSwitch.on .mcToggleKnob {
+  left: 20px;
+}
+
+.outputArea {
+  margin-top: 20px;
+}
+
+.outputBlock {
+  background: #1e1e1e;
+  color: #d4d4d4;
+  padding: 10px;
+  border-radius: 4px;
+  font-family: monospace;
+  white-space: pre-wrap;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.copyButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(255,255,255,0.1);
+  border: none;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.settingsPanel {
+  background: var(--ifm-card-background-color);
+  padding: 15px;
+  border-radius: 8px;
+  /* border: 1px solid var(--ifm-color-emphasis-200); */
+}

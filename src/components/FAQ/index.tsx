@@ -51,7 +51,7 @@ export default function FAQ(): ReactNode {
         </div>
         <div className={styles.faqContainer}>
           {FAQList.map((props, idx) => (
-            <FAQItem key={idx} {...props} />
+            <FAQItem {...props} />
           ))}
         </div>
       </div>

@@ -3,6 +3,7 @@ title: "イベント / Event"
 last_update:
   date: 2025-12-07
   author: Copilot
+sidebar_position: 3
 ---
 
 ## イベントの種類

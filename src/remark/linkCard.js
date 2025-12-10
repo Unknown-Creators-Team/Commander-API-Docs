@@ -83,9 +83,15 @@ function remarkLinkCard() {
                   const content = fs.readFileSync(mdPath, 'utf-8');
                   const parsed = matter(content);
                   displayTitle = parsed.data.title || null;
+                } else {
+                  const indexPath = path.join(mdPath.replace(/\.md$/, ''), 'index.md');
+                  if (fs.existsSync(indexPath)) {
+                    const content = fs.readFileSync(indexPath, 'utf-8');
+                    const parsed = matter(content);
+                    displayTitle = parsed.data.title || null;
+                  }
                 }
               } catch (err) {
-                // ファイルが読めない場合は無視
               }
               
               // URLから.mdを削除

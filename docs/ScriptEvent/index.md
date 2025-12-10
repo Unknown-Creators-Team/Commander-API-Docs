@@ -3,6 +3,7 @@ title: "スクリプトイベント / ScriptEvent"
 last_update:
   date: 2025-12-02
   author: Nano191225
+sidebar_position: 4
 ---
 
 ## 概要

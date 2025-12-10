@@ -37,7 +37,7 @@ function ReviewCard({name, role, content, rating}: {name: string, role: string, 
         </div>
         <div className={styles.rating}>
           {[...Array(rating)].map((_, i) => (
-            <FaStar key={i} className={styles.starIcon} />
+            <FaStar className={styles.starIcon} />
           ))}
         </div>
       </div>
@@ -59,7 +59,7 @@ export default function UserReviews(): ReactNode {
         </div>
         <div className={styles.reviewsGrid}>
           {Reviews.map((props, idx) => (
-            <ReviewCard key={idx} {...props} />
+            <ReviewCard {...props} />
           ))}
         </div>
       </div>

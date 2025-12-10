@@ -10,6 +10,13 @@ last_update:
 **team** は、プレイヤーのチームを設定する ScriptEvent です。  
 プロパティを使用してチーム番号を設定します。
 
+:::warning
+この機能を使用するには、Commander API Extension が必要です。
+
+::: !ref ../Extension/Commander-API-Extension.md
+
+:::
+
 ## 構文
 
 ```mcfunction

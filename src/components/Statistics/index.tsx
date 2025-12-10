@@ -66,7 +66,7 @@ export default function Statistics({owner = DEFAULT_OWNER, repo = DEFAULT_REPO}:
       <div className="container">
         <div className={styles.statsGrid}>
           {statsList.map((props, idx) => (
-            <StatItem key={idx} {...props} />
+            <StatItem {...props} />
           ))}
         </div>
       </div>

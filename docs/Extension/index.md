@@ -3,6 +3,7 @@ title: "拡張機能 / Extension"
 last_update:
   date: 2025-12-07
   author: Nano191225
+sidebar_position: 8
 ---
 
 ここでは、Commander API の公式・公認拡張機能について紹介します。
