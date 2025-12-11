@@ -1,7 +1,7 @@
 ---
 title: "最初のコマンド / First Command"
 last_update:
-  date: 2025-12-11
+  date: 2025-12-12
   author: Nano191225
 sidebar_position: 2
 ---
@@ -75,7 +75,7 @@ Commander API のイベントシステムを使うと、特定の行動を検知
 
 ### ボタンが押されたら実行
 
-以下のコマンドを反復で実行しながら、ワールド内のボタンを押してみましょう：
+以下のコマンドを反復で実行しながら、ワールド内のボタンを押してみましょう。
 
 ```mcfunction
 /execute as @a[tag=capi:button] run say ボタンが押されました！
@@ -108,7 +108,7 @@ Commander API は、プレイヤーの体力を自動的にスコアボードに
 `capi:health` は Commander API が自動的に更新するスコアです。詳細は [health イベント](../Event/health.md)を参照してください。
 :::
 
-## 実践例：簡単なウェルカムメッセージ
+## 【実践】 簡単なウェルカムメッセージ
 
 プレイヤーがワールドに参加したときにメッセージを表示してみましょう。
 
