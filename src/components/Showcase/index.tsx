@@ -15,25 +15,25 @@ const ShowcaseList = [
         label: 'Explosion',
         desc: '指定した座標で爆発を起こす',
         code: '/scriptevent capi:explosion {location=[~,~,~-10], radius=5}',
-        media: '/img/showcase/scriptevent/explosion.mp4'
+        media: '/showcase/scriptevent/explosion.mp4'
       },
       {
         label: 'Actionbar',
         desc: 'アクションバーに名前を表示',
         code: '/scriptevent capi:actionbar Hello <!name>',
-        media: '/img/showcase/scriptevent/actionbar.mp4'
+        media: '/showcase/scriptevent/actionbar.mp4'
       },
       {
         label: 'Form',
         desc: 'プレイヤーにモーダルフォームを表示',
         code: "/scriptevent capi:form {typ=message,ttl=Form,bdy='Commander API is',bt1={txt=Awesome!,act={typ=run,val='say Awesome!'}},bt2={txt=Nice!,act={typ=run,val='say Nice!'}}}",
-        media: '/img/showcase/scriptevent/form.mp4'
+        media: '/showcase/scriptevent/form.mp4'
       },
       {
         label: 'Spawn Entity',
         desc: '指定したエンティティを炎上させながら召喚',
         code: '/scriptevent capi:spawn_entity {id=creeper, location=[~, ~, ~-3], fire=3}',
-        media: '/img/showcase/scriptevent/spawn_entity.mp4'
+        media: '/showcase/scriptevent/spawn_entity.mp4'
       }
     ]
   },
@@ -46,25 +46,25 @@ const ShowcaseList = [
         label: 'Block Break',
         desc: 'ブロック破壊を検知してアクションバーに表示',
         code: '/execute as @a[tag=capi:break] at @s run scriptevent capi:actionbar <!tag=break>',
-        media: '/img/showcase/event/break_block.mp4'
+        media: '/showcase/event/break_block.mp4'
       },
       {
         label: 'Projectile',
         desc: '発射物が何かに当たった瞬間を検知',
         code: '/execute as @a[tag=capi:hit] at @s run scriptevent capi:explosion {location=[<!score=capi:hit_x>, <!score=capi:hit_y>, <!score=capi:hit_z>], radius=1}',
-        media: '/img/showcase/event/projectile_hit.mp4'
+        media: '/showcase/event/projectile_hit.mp4'
       },
       {
         label: 'Item Use',
         desc: 'アイテムを使用した瞬間を検知',
         code: "/execute as @a[tag=capi:item_use] at @s run scriptevent capi:set_item {id=diamond_sword, name='§bMy Diamond Sword!', slot=0, enchants=[{name=sharpness,level=3}]}",
-        media: '/img/showcase/event/item_use.mp4'
+        media: '/showcase/event/item_use.mp4'
       },
       {
         label: 'Entity Die',
         desc: 'エンティティが死亡した瞬間を検知',
         code: '/execute as @a[tag=capi:kill] at @s run scriptevent capi:actionbar Killed entity!',
-        media: '/img/showcase/event/entity_die.mp4'
+        media: '/showcase/event/entity_die.mp4'
       }
     ]
   }

@@ -1,4 +1,5 @@
 import type {ReactNode} from 'react';
+import {useState, useEffect} from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
@@ -15,6 +16,22 @@ import styles from './index.module.css';
 
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
+  const rotatingTexts = ['力を。', '希望を。', '可能性を。'];
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % rotatingTexts.length);
+        setIsAnimating(false);
+      }, 500);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <header className={styles.heroBanner}>
       <div className={clsx('container', styles.heroContainer)}>
@@ -23,8 +40,13 @@ function HomepageHeader() {
             {siteConfig.title}
           </Heading>
           <p className={styles.heroSubtitle}>
-            Minecraft の限界を突破する。<br />
-            Script API の力で、コマンド開発に革命を。
+            コマンドの限界を突破する。<br />
+            コマンド勢に新たな
+            <span className={styles.rotatingTextContainer}>
+              <span className={clsx(styles.rotatingText, isAnimating && styles.animating)}>
+                {rotatingTexts[currentIndex]}
+              </span>
+            </span>
           </p>
           <div className={styles.buttons}>
             <Link
@@ -34,7 +56,7 @@ function HomepageHeader() {
             </Link>
             <Link
               className="button button--secondary button--lg"
-              to="https://github.com/Nano191225/Commander-API-Docs">
+              to="https://github.com/Unknown-Creators-Team/Commander-API">
                 GitHub
             </Link>
           </div>

@@ -5,7 +5,7 @@ sidebar_position: 1
 
 # Commander API ドキュメントへようこそ
 
-**Commander API** は、Minecraft 統合版（Bedrock Edition）のコマンド機能を拡張するための強力なツールです。  
+**Commander API** は、マイクラ統合版のコマンド機能を拡張するための強力なツールです。  
 ScriptAPI を活用し、バニラのコマンドだけでは実現できない複雑な処理やイベント検知を可能にします。  
 Commander APIの公式Discordサーバーは[こちら](https://discord.gg/uTqyqtHWG4)
 

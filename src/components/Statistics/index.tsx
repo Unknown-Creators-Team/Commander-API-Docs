@@ -3,9 +3,11 @@ import clsx from 'clsx';
 import { FaDownload, FaStar, FaDiscord, FaCode } from 'react-icons/fa';
 import styles from './styles.module.css';
 import { useGitHubStats } from './useGitHubStats';
+import { useDiscordStats } from './useDiscordStats';
 
 const DEFAULT_OWNER = 'Unknown-Creators-Team';
 const DEFAULT_REPO = 'Commander-API';
+const DEFAULT_DISCORD_SERVER_ID = '1445364836434186433';
 
 function formatNumber(num: number): string {
   if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M+';
@@ -29,8 +31,9 @@ function StatItem({icon: Icon, value, label, color, loading}: {icon: React.Eleme
   );
 }
 
-export default function Statistics({owner = DEFAULT_OWNER, repo = DEFAULT_REPO}: {owner?: string, repo?: string}): ReactNode {
+export default function Statistics({owner = DEFAULT_OWNER, repo = DEFAULT_REPO, serverId = DEFAULT_DISCORD_SERVER_ID}: {owner?: string, repo?: string, serverId?: string}): ReactNode {
   const { stars, downloads, loading } = useGitHubStats(owner, repo);
+  const { members, loading: discordLoading } = useDiscordStats(serverId);
 
   const statsList = [
     {
@@ -49,9 +52,10 @@ export default function Statistics({owner = DEFAULT_OWNER, repo = DEFAULT_REPO}:
     },
     {
       icon: FaDiscord,
-      value: '3+',
+      value: formatNumber(members) + '+',
       label: 'Community Members',
       color: '#5865F2', // Discord Blurple
+      loading: discordLoading
     },
     {
       icon: FaCode,

@@ -6,7 +6,7 @@ import styles from './styles.module.css';
 const FAQList = [
   {
     question: 'Commander APIとは何ですか？',
-    answer: 'Commander APIは、Minecraft Bedrock EditionのScript APIを拡張し、コマンド開発をより簡単かつ強力にするためのラッパーライブラリです。複雑なスクリプト記述を簡略化し、直感的なイベント処理やカスタム機能の追加を可能にします。',
+    answer: 'Commander APIは、マイクラのScript APIを拡張し、コマンド開発をより簡単かつ強力にするためのラッパーライブラリです。複雑なスクリプト記述を簡略化し、直感的なイベント処理やカスタム機能の追加を可能にします。',
   },
   {
     question: '他のアドオンと競合しますか？',

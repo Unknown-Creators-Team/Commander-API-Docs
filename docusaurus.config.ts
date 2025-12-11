@@ -136,7 +136,8 @@ const config: Config = {
                 // {to: '/blog', label: 'Blog', position: 'left'},
                 {
                     href: "https://github.com/Unknown-Creators-Team/Commander-API",
-                    label: "GitHub",
+                    // label: "GitHub",
+                    className: "header-github-link",
                     position: "right",
                 },
             ],
@@ -148,28 +149,41 @@ const config: Config = {
                     title: "ドキュメント",
                     items: [
                         {
-                            label: "マクロ",
+                            label: "イベント / Event",
+                            to: "/docs/Event",
+                        },
+                        {
+                            label: "スクリプトイベント / ScriptEvent",
+                            to: "/docs/ScriptEvent",
+                        },
+                        {
+                            label: "マクロ / Macro",
                             to: "/docs/Macro",
                         },
+                        {
+                            label: "設定 / Config",
+                            to: "/docs/Config",
+                        },
+                        {
+                            label: "トラブルシューティング / Troubleshooting",
+                            to: "/docs/tshoot",
+                        }
+
                     ],
                 },
-                // {
-                //   title: 'Community',
-                //   items: [
-                //     {
-                //       label: 'Stack Overflow',
-                //       href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-                //     },
-                //     {
-                //       label: 'Discord',
-                //       href: 'https://discordapp.com/invite/docusaurus',
-                //     },
-                //     {
-                //       label: 'X',
-                //       href: 'https://x.com/docusaurus',
-                //     },
-                //   ],
-                // },
+                {
+                  title: 'コミュニティ',
+                  items: [
+                    {
+                      label: 'Discord',
+                      href: 'https://discord.gg/uTqyqtHWG4',
+                    },
+                    // {
+                    //   label: 'X',
+                    //   href: 'https://x.com/docusaurus',
+                    // },
+                  ],
+                },
                 {
                     title: "その他",
                     items: [
@@ -192,7 +206,7 @@ const config: Config = {
                     ],
                 },
             ],
-            copyright: `Copyright © 2025 Unknown. Built with Docusaurus.`,
+            copyright: `Copyright © 2025 Unknown.`,
         },
         prism: {
             theme: prismThemes.github,
@@ -211,8 +225,3 @@ const config: Config = {
 };
 
 export default config;
-
-/**
- * コマンドブロック
- *
- */
