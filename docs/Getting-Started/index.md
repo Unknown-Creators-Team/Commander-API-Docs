@@ -1,7 +1,7 @@
 ---
 title: "はじめに / Getting Started"
 last_update:
-  date: 2025-12-11
+  date: 2025-12-12
   author: Nano191225
 sidebar_position: 2
 ---
@@ -23,7 +23,7 @@ sidebar_position: 2
 
 ## 必要なもの
 
-Commander API を使用するには、以下が必要です：
+Commander API を使用するには、以下が必要です。
 
 - **マイクラ統合版**
   - ベータAPIを有効にする必要があります
@@ -37,7 +37,7 @@ Commander API はベータAPIを使用します。この機能を有効にした
 
 ## 学習の流れ
 
-Commander API を効率的に学ぶために、以下の順序でドキュメントを読むことをおすすめします：
+Commander API を効率的に学ぶために、以下の順序でドキュメントを読むことをおすすめします。
 
 ### 1. [インストール](./installation.md)
 Commander API のダウンロードとワールドへの導入方法を学びます。
@@ -59,7 +59,7 @@ Commander API のダウンロードとワールドへの導入方法を学びま
 
 ## サポート
 
-質問や問題がある場合は、以下のリソースを活用してください：
+質問や問題がある場合は、以下のリソースを活用してください。
 
 - **[公式 Discord サーバー](https://discord.gg/uTqyqtHWG4)** - コミュニティとの交流、質問
 - **[GitHub Issues](https://github.com/Unknown-Creators-Team/Commander-API/issues)** - バグ報告、機能リクエスト
@@ -69,4 +69,4 @@ Commander API のダウンロードとワールドへの導入方法を学びま
 ドキュメント内の検索機能（`Ctrl + K` または `Cmd + K`）を使うと、目的の情報を素早く見つけることができます。
 :::
 
-次のステップ: [インストール →](./installation.md)
+::: !ref ./installation
