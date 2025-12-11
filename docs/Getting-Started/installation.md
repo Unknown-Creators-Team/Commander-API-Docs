@@ -1,7 +1,7 @@
 ---
 title: "インストール / Installation"
 last_update:
-  date: 2025-12-11
+  date: 2025-12-12
   author: Nano191225
 sidebar_position: 1
 ---
@@ -80,7 +80,7 @@ sidebar_position: 1
 Commander API が正しくインストールされているか確認しましょう。
 
 1. ワールドに入る
-2. チャットを開き、以下のコマンドを実行：
+2. チャットを開き、以下のコマンドを実行
 
 ```mcfunction
 /scriptevent capi:actionbar Hello, Commander API!
