@@ -1,7 +1,7 @@
 ---
 title: "基本概念 / Basic Concepts"
 last_update:
-  date: 2025-12-11
+  date: 2025-12-12
   author: Nano191225
 sidebar_position: 3
 ---
@@ -54,13 +54,13 @@ Commander API のイベントは、大きく2つのタイプに分けられま�
 
 `capi:health` というスコアボードに、プレイヤーの現在の体力が常に記録されています。
 
-**主なティックイベント（スコアベース）:**
+**主なティックイベント（スコアベース）**
 - [health](../Event/health.md) - 体力
 - [location](../Event/location.md) - 座標（x, y, z）
 - [velocity](../Event/velocity.md) - 移動速度
 - [level](../Event/level.md) - レベル
 
-**主なティックイベント（タグベース）:**
+**主なティックイベント（タグベース）**
 - [playerStateTags](../Event/playerStateTags.md) - プレイヤーの状態（泳いでいる、飛んでいる、など）
 
 :::info イベントの詳細
