@@ -29,8 +29,11 @@
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
         "react-icons": "^5.5.0",
+        "react-markdown": "^10.1.0",
         "rehype-katex": "^7.0.1",
+        "remark-breaks": "^4.0.0",
         "remark-directive": "^4.0.0",
+        "remark-gfm": "^4.0.1",
         "remark-math": "^6.0.0",
         "unist-util-visit": "^5.0.0"
     },

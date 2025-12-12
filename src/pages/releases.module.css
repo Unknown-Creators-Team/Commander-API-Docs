@@ -1,0 +1,412 @@
+.releasesPage {
+  background: linear-gradient(180deg, #0f0518 0%, #1a0b2e 100%);
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+.pageHeader {
+  padding: 6rem 0 4rem;
+  background: radial-gradient(circle at 50% -20%, #2e1065 0%, transparent 60%);
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(to right, #fff, #e879f9);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 20px rgba(217, 70, 239, 0.3));
+}
+
+.pageDescription {
+  font-size: 1.2rem;
+  color: #e9d5ff;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.tabsContainer {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  border-bottom: 2px solid rgba(139, 92, 246, 0.2);
+}
+
+.tabButton {
+  padding: 1rem 2rem;
+  background: transparent;
+  border: none;
+  border-bottom: 3px solid transparent;
+  color: #a78bfa;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  bottom: -2px;
+}
+
+.tabButton:hover {
+  color: #e879f9;
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.tabButtonActive {
+  color: #fff;
+  border-bottom-color: #8b5cf6;
+}
+
+.repoSection {
+  padding: 0;
+}
+
+.repoTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.releasesList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.releaseCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.releaseCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(139, 92, 246, 0.5);
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.2);
+  transform: translateY(-2px);
+}
+
+.releaseHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.releaseName {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.5rem 0;
+}
+
+.releaseMeta {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.releaseTag {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: rgba(139, 92, 246, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.4);
+  border-radius: 6px;
+  color: #e879f9;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.releaseDate {
+  color: #a78bfa;
+  font-size: 0.9rem;
+}
+
+.githubLink {
+  padding: 0.5rem 1rem;
+  background: rgba(139, 92, 246, 0.1);
+  border: 1px solid rgba(139, 92, 246, 0.3);
+  border-radius: 6px;
+  color: #e879f9;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.githubLink:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.5);
+  color: #fff;
+  text-decoration: none;
+}
+
+.releaseBody {
+  color: #e9d5ff;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.releaseBody p {
+  margin: 0.5rem 0;
+}
+
+.releaseBody h1,
+.releaseBody h2,
+.releaseBody h3,
+.releaseBody h4,
+.releaseBody h5,
+.releaseBody h6 {
+  color: #fff;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.releaseBody ul,
+.releaseBody ol {
+  margin: 0.5rem 0;
+  padding-left: 1.5rem;
+}
+
+.releaseBody li {
+  margin: 0.25rem 0;
+}
+
+.releaseBody code {
+  background: rgba(139, 92, 246, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  color: #e879f9;
+}
+
+.releaseBody pre {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.releaseBody pre code {
+  background: none;
+  padding: 0;
+  color: #e9d5ff;
+}
+
+.releaseBody a {
+  color: #e879f9;
+  text-decoration: underline;
+}
+
+.releaseBody a:hover {
+  color: #fff;
+}
+
+.releaseBody blockquote {
+  border-left: 3px solid #8b5cf6;
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: #c4b5fd;
+}
+
+.releaseBody hr {
+  border: none;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+  margin: 1rem 0;
+}
+
+.releaseBody table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+
+.releaseBody th,
+.releaseBody td {
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.releaseBody th {
+  background: rgba(139, 92, 246, 0.1);
+  font-weight: 600;
+  color: #fff;
+}
+
+.assetsSection {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+.assetsTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1rem;
+}
+
+.assetsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.assetCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  gap: 1rem;
+}
+
+.assetCard:hover {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.4);
+  transform: translateX(4px);
+  text-decoration: none;
+}
+
+.assetInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.assetName {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.assetMeta {
+  color: #a78bfa;
+  font-size: 0.85rem;
+}
+
+.downloadIcon {
+  color: #e879f9;
+  flex-shrink: 0;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  color: #e9d5ff;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid rgba(139, 92, 246, 0.2);
+  border-top-color: #8b5cf6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.error {
+  padding: 2rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  color: #fca5a5;
+  text-align: center;
+}
+
+.noReleases {
+  padding: 3rem;
+  text-align: center;
+  color: #e9d5ff;
+  font-size: 1.1rem;
+}
+
+@media screen and (max-width: 996px) {
+  .pageTitle {
+    font-size: 2.5rem;
+  }
+
+  .pageHeader {
+    padding: 4rem 0 3rem;
+  }
+
+  .tabsContainer {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .tabButton {
+    white-space: nowrap;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .repoTitle {
+    font-size: 2rem;
+  }
+
+  .releaseHeader {
+    flex-direction: column;
+  }
+
+  .releaseName {
+    font-size: 1.5rem;
+  }
+
+  .releaseCard {
+    padding: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+
+  .pageDescription {
+    font-size: 1rem;
+  }
+
+  .repoTitle {
+    font-size: 1.75rem;
+  }
+
+  .releaseName {
+    font-size: 1.25rem;
+  }
+
+  .releaseCard {
+    padding: 1rem;
+  }
+
+  .assetCard {
+    padding: 0.75rem 1rem;
+  }
+
+  .assetName {
+    font-size: 0.9rem;
+  }
+}

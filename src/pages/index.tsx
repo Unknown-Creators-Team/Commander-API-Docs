@@ -54,11 +54,18 @@ function HomepageHeader() {
               to="/docs">
                 ドキュメントを読む
             </Link>
-            <Link
-              className="button button--secondary button--lg"
-              to="https://github.com/Unknown-Creators-Team/Commander-API">
-                GitHub
-            </Link>
+            <div className={styles.secondaryButtons}>
+              <Link
+                className={clsx("button button--lg", styles.downloadButton)}
+                to="/releases">
+                  ダウンロード
+              </Link>
+              <Link
+                className="button button--secondary button--lg"
+                to="https://github.com/Unknown-Creators-Team/Commander-API">
+                  GitHub
+              </Link>
+            </div>
           </div>
         </div>
         <div className={styles.heroImage}>
