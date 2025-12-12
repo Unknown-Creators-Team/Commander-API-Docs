@@ -24,11 +24,13 @@ Commander API Extension では、以下の機能を利用できます：
 
 ## インストール方法
 
-Commander API Extension を使用するには、以下の手順を実行してください：
+Commander API Extension を使用するには、以下の手順を実行してください。
 
-1. Commander API がインストールされていることを確認
-2. Commander API Extension パッケージをワールドに追加
-3. ワールドを再読み込み（`/reload` コマンド）
+1. [Commander API をインストール](./../../Getting-Started/installation.md)
+2. Commander API Extension の [Releases](https://github.com/Unknown-Creators-Team/Commander-API-Extension/releases) ページから **Commander-API-Extension.mcpack** をダウンロード
+3. ビヘイビアパックをインポート
+
+インポート方法は[こちら](./../../Getting-Started/installation.md#ビヘイビアパックをインポート)を参照してください。
 
 ---
 
