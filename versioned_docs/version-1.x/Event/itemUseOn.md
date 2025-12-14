@@ -1,3 +1,9 @@
+---
+last_update:
+  date: 2023-04-24
+  author: Nano191225
+---
+
 プレイヤーがアイテムを設置したときにトリガーされます。
 ## tags
 * **Capi:itemUseOn**

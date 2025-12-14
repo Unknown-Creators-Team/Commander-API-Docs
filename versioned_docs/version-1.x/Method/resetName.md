@@ -1,3 +1,9 @@
+---
+last_update:
+  date: 2023-03-24
+  author: Nano191225
+---
+
 resetNameを使ってrenameを使用して変更したネームタグをリセットします。
 
 ## 使用例

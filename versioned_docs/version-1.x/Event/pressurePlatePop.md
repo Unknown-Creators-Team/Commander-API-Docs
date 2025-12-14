@@ -1,3 +1,9 @@
+---
+last_update:
+  date: 2023-07-15
+  author: Nano191225
+---
+
 プレイヤーが感圧版を踏み終えたときにトリガーされます。
 ## tags
 * **Capi:pop**

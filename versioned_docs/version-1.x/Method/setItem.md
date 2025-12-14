@@ -1,3 +1,9 @@
+---
+last_update:
+  date: 2023-04-24
+  author: Nano191225
+---
+
 setItemを使用してプレイヤーにアイテムを渡します
 ## 使用例
 ### Notchにダイヤ剣を渡す

@@ -1,3 +1,9 @@
+---
+last_update:
+  date: 2023-04-24
+  author: Nano191225
+---
+
 プレイヤーがワールドに参加したときにトリガーされます。
 ## tags
 * **Capi:join**

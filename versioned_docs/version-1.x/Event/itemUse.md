@@ -1,3 +1,9 @@
+---
+last_update:
+  date: 2023-04-23
+  author: Nano191225
+---
+
 プレイヤーがアイテムを使用したときにトリガーされます。
 ## tags
 * **Capi:itemUse**

@@ -1,3 +1,9 @@
+---
+last_update:
+  date: 2023-09-21
+  author: Nano191225
+---
+
 特定のアクションによってつくタグ
 
 ### Capi:hasOp

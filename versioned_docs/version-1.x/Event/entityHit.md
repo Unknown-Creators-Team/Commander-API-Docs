@@ -1,3 +1,9 @@
+---
+last_update:
+  date: 2023-04-22
+  author: Nano191225
+---
+
 プレイヤーがエンティティを攻撃したときにトリガーされます。
 ## tags
 * **Capi:attack**
