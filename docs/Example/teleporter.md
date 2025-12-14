@@ -35,12 +35,12 @@ execute as @a[tag=item_use.id:minecraft:compass] run tag @s remove item_use.id:m
 ### 右クリック処理 (Call)
 以下のような長いコマンド（100文字以上）はコマンドを分割する必要があります。
 
-::: !ref ../../tools/calls
+::: !ref /tools/calls
 
 JSON形式より、ESONのほうがCallに向いているため、以下のページから変換することをおすすめします。  
 変換時はコマンド部分 `scriptevent capi:form` は含まないように注意してください。
 
-::: !ref ../../tools/eson-json
+::: !ref /tools/eson-json
 
 以下のコマンドをコール `teleporter_form` で登録してください。
 
