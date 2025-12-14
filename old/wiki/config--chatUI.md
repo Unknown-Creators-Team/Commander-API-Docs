@@ -1,0 +1,1 @@
+[ドキュメント](https://c-api.docs.un-known.xyz/config/chatui/)へ移行されました。

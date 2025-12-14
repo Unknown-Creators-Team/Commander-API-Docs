@@ -46,7 +46,7 @@ const config: Config = {
         {
             href: "https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css",
             type: "text/css",
-            integrity: "sha384-nB0miv6/jRmo5USUSRBER0PLDLGKz8+SOT+HBzZ4dti+W1a3w/gNhOQqX/0QxuQI2",
+            integrity: "sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+",
             crossorigin: "anonymous",
         },
     ],
@@ -66,6 +66,13 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl: "https://github.com/Unknown-Creators-Team/Commander-API-Docs/blob/main/",
+                    
+                    versions: {
+                        current: {
+                            label: "Preview",
+                            badge: true
+                        }
+                    }
                     
                 },
                 sitemap: {},
@@ -125,7 +132,7 @@ const config: Config = {
             items: [
                 {
                     type: "docSidebar",
-                    sidebarId: "tutorialSidebar",
+                    sidebarId: "sidebar",
                     position: "left",
                     label: "ドキュメント",
                 },
@@ -136,7 +143,13 @@ const config: Config = {
                 //     label: "ツール",
                 // },
                 {to: '/tools', label: 'ツール', position: 'left'},
+                {to: '/releases', label: 'リリース', position: 'left'},
                 // {to: '/blog', label: 'Blog', position: 'left'},
+                {
+                    type: 'docsVersionDropdown',
+                    // versions: ["current", "2.0.0"],
+                    position: 'right',
+                },
                 {
                     href: "https://github.com/Unknown-Creators-Team/Commander-API",
                     // label: "GitHub",

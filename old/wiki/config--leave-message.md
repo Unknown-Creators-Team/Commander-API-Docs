@@ -1,0 +1,1 @@
+[ドキュメント](https://c-api.docs.un-known.xyz/config/leave-message/)へ移行されました。
