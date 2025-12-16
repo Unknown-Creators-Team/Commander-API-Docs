@@ -94,12 +94,8 @@ const config: Config = {
                 theme: {
                     customCss: "./src/css/custom.css",
                 },
-
-                googleAnalytics: {
-                    trackingID: "G-B98HLJN15L"
-                },
                 gtag: {
-                    trackingID: "G-B98HLJN15L"
+                    trackingID: "G-LEPVKL22L8"
                 }
             } satisfies Preset.Options,
         ],
