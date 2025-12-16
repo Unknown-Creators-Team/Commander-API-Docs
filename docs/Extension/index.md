@@ -1,16 +1,16 @@
 ---
-title: "拡張機能 / Extension"
+title: "拡張アドオン / Extension"
 last_update:
   date: 2025-12-07
   author: Nano191225
 sidebar_position: 8
 ---
 
-ここでは、Commander API の公式・公認拡張機能について紹介します。
+ここでは、Commander API の公式・公認拡張アドオンについて紹介します。
 
 ## Commander API Extension
 
-Commander API Extension は、Commander API の機能を拡張するための公式拡張機能です。イベントコマンドやスクリプトイベントを使用して、ScriptAPI だけでは実装できない高度な機能を提供します。
+Commander API Extension は、Commander API の機能を拡張するための公式拡張アドオンです。イベントコマンドやスクリプトイベントを使用して、ScriptAPI だけでは実装できない高度な機能を提供します。
 
 ### 機能例
 
