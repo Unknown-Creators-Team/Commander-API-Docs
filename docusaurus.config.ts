@@ -98,6 +98,9 @@ const config: Config = {
                 googleAnalytics: {
                     trackingID: "G-B98HLJN15L"
                 },
+                gtag: {
+                    trackingID: "G-B98HLJN15L"
+                }
             } satisfies Preset.Options,
         ],
     ],
