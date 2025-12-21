@@ -53,7 +53,7 @@ last_update:
 プレイヤーのランクが設定されていない場合、「ビギナー」と表示します。
 
 ```mcfunction
-/scriptevent capi:say ようこそ、<!fallback=[<!score=rank>, ビギナー]>ランクの<!name=@s>さん！
+/scriptevent capi:say ようこそ、<!fallback=[<!score=rank>, ビギナー]>ランクの<!name>さん！
 ```
 
 **ランクが設定されている場合の出力**:

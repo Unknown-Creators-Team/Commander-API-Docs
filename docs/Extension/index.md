@@ -18,3 +18,11 @@ Commander API Extension は、Commander API の機能を拡張するための公
 - プレイヤーの体力を変更（`/event entity @s capi:health_40`）
 - プレイヤーの攻撃力を変更（`/event entity @s capi:attack_2.0`）
 - チーム機能の追加（`/scriptevent capi:team 1`）- フレンドリーファイア不可
+
+## Commander API Screen
+
+Commander API Screen は、画面にタイトルのような情報を表示するための公式拡張アドオンです。
+
+### 機能例
+
+- 画面上に文字を表示 (`/scriptevent capi:screen {type=tr,index=1,text=Hello World}`)

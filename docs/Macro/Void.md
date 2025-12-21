@@ -52,7 +52,7 @@ last_update:
 プレイヤーに設定されているかもしれない追加情報を表示します。
 
 ```mcfunction
-/scriptevent capi:say ようこそ、<!name=@s>さん<!void=' (<!tag=rank>ランク)'>！
+/scriptevent capi:say ようこそ、<!name>さん<!void=' (<!tag=rank>ランク)'>！
 ```
 
 **ランクが設定されている場合の出力**:

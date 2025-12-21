@@ -57,8 +57,8 @@ sidebar_position: 4
 - **[impulse](./impulse.md)** - エンティティに衝撃を与える
 - **[knockback](./knockback.md)** - エンティティをノックバック
 - **[shoot](./shoot.md)** - 発射物を発射
+- **[title](./title.md)** - 画面操作
 - **[team](./team.md)** - チーム操作
-- **[screen](./screen.md)** - 画面操作
 
 ## マクロの使用
 

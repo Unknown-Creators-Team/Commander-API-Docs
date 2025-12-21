@@ -153,16 +153,38 @@ export default function Releases(): ReactNode {
     {
       repo: 'Commander-API',
       displayName: 'Commander API',
-      owner: 'Unknown-Creators-Team'
+      owner: 'Unknown-Creators-Team',
+      tab: 'commander-api',
     },
     {
       repo: 'Commander-API-Extension',
       displayName: 'Commander API Extension',
-      owner: 'Unknown-Creators-Team'
-    }
+      owner: 'Unknown-Creators-Team',
+      tab: 'commander-api-extension',
+    },
+    {
+      repo: 'Commander-API-Screen',
+      displayName: 'Commander API Screen',
+      owner: 'Unknown-Creators-Team',
+      tab: 'commander-api-screen',
+    },
   ];
 
-  const [activeTab, setActiveTab] = useState(0);
+  // Helper to get tab index from tab string
+  const getTabIndexFromQuery = (tab: string | null) => {
+    if (!tab) return 0;
+    const idx = repos.findIndex(r => r.tab === tab.toLowerCase());
+    return idx === -1 ? 0 : idx;
+  };
+
+  // Read tab from query string
+  const getTabFromLocation = () => {
+    if (typeof window === 'undefined') return null;
+    const params = new URLSearchParams(window.location.search);
+    return params.get('tab');
+  };
+
+  const [activeTab, setActiveTab] = useState(() => getTabIndexFromQuery(getTabFromLocation()));
   const [reposData, setReposData] = useState<RepoReleases[]>(
     repos.map(r => ({
       repo: r.repo,
@@ -173,6 +195,27 @@ export default function Releases(): ReactNode {
     }))
   );
 
+  // Sync tab with query string on mount and when query changes
+  useEffect(() => {
+    const onPopState = () => {
+      setActiveTab(getTabIndexFromQuery(getTabFromLocation()));
+    };
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  // When activeTab changes, update the query string
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const tab = repos[activeTab]?.tab;
+    const params = new URLSearchParams(window.location.search);
+    if (tab) {
+      params.set('tab', tab);
+      const newUrl = `${window.location.pathname}?${params.toString()}`;
+      window.history.replaceState({}, '', newUrl);
+    }
+  }, [activeTab]);
+
   useEffect(() => {
     const fetchReleases = async () => {
       const updatedData = await Promise.all(
@@ -181,13 +224,10 @@ export default function Releases(): ReactNode {
             const response = await fetch(
               `https://api.github.com/repos/${repo.owner}/${repo.repo}/releases`
             );
-            
             if (!response.ok) {
               throw new Error(`HTTP error! status: ${response.status}`);
             }
-            
             const data = await response.json();
-            
             return {
               repo: repo.repo,
               displayName: repo.displayName,
@@ -206,10 +246,8 @@ export default function Releases(): ReactNode {
           }
         })
       );
-
       setReposData(updatedData);
     };
-
     fetchReleases();
   }, []);
 
