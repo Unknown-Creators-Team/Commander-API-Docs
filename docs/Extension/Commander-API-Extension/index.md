@@ -27,7 +27,7 @@ Commander API Extension では、以下の機能を利用できます：
 Commander API Extension を使用するには、以下の手順を実行してください。
 
 1. [Commander API をインストール](./../../Getting-Started/installation.md)
-2. Commander API Extension の [Releases](https://github.com/Unknown-Creators-Team/Commander-API-Extension/releases) ページから **Commander-API-Extension.mcpack** をダウンロード
+2. Commander API Extension の [Releases](https://capi.un-known.xyz/releases/?tab=commander-api-extension) ページから **Commander-API-Extension.mcpack** をダウンロード
 3. ビヘイビアパックをインポート
 
 インポート方法は[こちら](./../../Getting-Started/installation.md#ビヘイビアパックをインポート)を参照してください。

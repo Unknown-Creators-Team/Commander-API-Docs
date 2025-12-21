@@ -38,9 +38,11 @@ Commander API Screen は、画面の様々な位置にテキストを表示で�
 
 ## 導入方法
 
-1. Commander API 本体を導入
-2. Commander API Screen アドオンをワールドに追加
-3. `capi:screen` スクリプトイベントが使用可能になります
+1. [Commander API をインストール](./../../Getting-Started/installation.md)
+2. Commander API Screen の [Releases](https://capi.un-known.xyz/releases/?tab=commander-api-screen) ページから **Commander-API-Screen.mcaddon** をダウンロード
+3. ビヘイビアパックをインポート
+
+インポート方法は[こちら](./../../Getting-Started/installation.md#ビヘイビアパックをインポート)を参照してください。
 
 :::tip
 Commander API の設定で `forceUse` を有効にすると、拡張アドオンが読み込まれていない場合でもエラーを抑制できます。
@@ -53,8 +55,8 @@ Commander API の設定で `forceUse` を有効にすると、拡張アドオン
 画面右上にプレイヤーのステータスを常時表示：
 
 ```mcfunction
-/execute as @a run scriptevent capi:screen {type=tr,index=1,text=§c❤ <!score=Capi:health>}
-/execute as @a run scriptevent capi:screen {type=tr,index=2,text=§a💰 <!score=money>}
+/execute as @a run scriptevent capi:screen {type=tr,index=1,text=§c❤ <!score=capi:health>}
+/execute as @a run scriptevent capi:screen {type=tr,index=2,text=§a💰 <!score=capi:money>}
 ```
 
 ### カスタムボスバー
@@ -71,7 +73,7 @@ Commander API の設定で `forceUse` を有効にすると、拡張アドオン
 画面左下にリアルタイム座標を表示：
 
 ```mcfunction
-/execute as @a run scriptevent capi:screen {type=bl,index=1,text=X: <!location=~x> Y: <!location=~y> Z: <!location=~z>}
+/execute as @a run scriptevent capi:screen {type=bl,index=1,text=<!pos=capi:location>}
 ```
 
 ## 関連リンク
