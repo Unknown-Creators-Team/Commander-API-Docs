@@ -1,7 +1,7 @@
 ---
 title: "team"
 last_update:
-  date: 2025-12-02
+  date: 2025-12-23
   author: Nano191225
 ---
 
@@ -22,6 +22,12 @@ last_update:
 ```mcfunction
 /scriptevent capi:team <チーム番号>
 ```
+
+:::info 
+チーム番号は0から40までの整数を指定できます。
+0はチームなし状態を表します。
+統合版のマルチプレイは40人まで同時接続可能なため、40を上限としています。40以上を必要とする場合は、改造するかコミュニティで提案してください。
+:::
 
 ## パラメータ
 
@@ -81,7 +87,7 @@ last_update:
 ランダムにチームを割り当てます。
 
 ```mcfunction
-/execute as @a run scriptevent capi:team <!calc=random(1,4)>
+/execute as @a run scriptevent capi:team <!calc=floor(rand*4)+1>
 ```
 
 ::: !ref ../Macro/Calc.md
@@ -103,7 +109,7 @@ last_update:
 
 ```mcfunction
 # プロパティからチーム番号を読み取る
-/execute as @a run testforproperty @s capi:team 1
+/testfor @a[has_property={capi:team=2..}]
 ```
 
 ### チームごとにコマンドを実行
