@@ -66,14 +66,13 @@ const config: Config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl: "https://github.com/Unknown-Creators-Team/Commander-API-Docs/blob/main/",
-                    
+
                     versions: {
                         current: {
                             label: "Preview",
-                            badge: true
-                        }
-                    }
-                    
+                            badge: true,
+                        },
+                    },
                 },
                 sitemap: {},
                 // blog: {
@@ -95,8 +94,8 @@ const config: Config = {
                     customCss: "./src/css/custom.css",
                 },
                 gtag: {
-                    trackingID: "G-LEPVKL22L8"
-                }
+                    trackingID: "G-LEPVKL22L8",
+                },
             } satisfies Preset.Options,
         ],
     ],
@@ -141,13 +140,13 @@ const config: Config = {
                 //     position: "left",
                 //     label: "ツール",
                 // },
-                {to: '/tools', label: 'ツール', position: 'left'},
-                {to: '/releases', label: 'リリース', position: 'left'},
+                { to: "/tools", label: "ツール", position: "left" },
+                { to: "/releases", label: "リリース", position: "left" },
                 // {to: '/blog', label: 'Blog', position: 'left'},
                 {
-                    type: 'docsVersionDropdown',
+                    type: "docsVersionDropdown",
                     // versions: ["current", "2.0.0"],
-                    position: 'right',
+                    position: "right",
                 },
                 {
                     href: "https://github.com/Unknown-Creators-Team/Commander-API",
@@ -182,22 +181,21 @@ const config: Config = {
                         {
                             label: "トラブルシューティング / Troubleshooting",
                             to: "/docs/tshoot",
-                        }
-
+                        },
                     ],
                 },
                 {
-                  title: 'コミュニティ',
-                  items: [
-                    {
-                      label: 'Discord',
-                      href: 'https://discord.gg/uTqyqtHWG4',
-                    },
-                    // {
-                    //   label: 'X',
-                    //   href: 'https://x.com/docusaurus',
-                    // },
-                  ],
+                    title: "コミュニティ",
+                    items: [
+                        {
+                            label: "Discord",
+                            href: "https://discord.gg/uTqyqtHWG4",
+                        },
+                        // {
+                        //   label: 'X',
+                        //   href: 'https://x.com/docusaurus',
+                        // },
+                    ],
                 },
                 {
                     title: "その他",
@@ -237,6 +235,19 @@ const config: Config = {
             },
         },
     } satisfies Preset.ThemeConfig,
+    headTags: [
+        // <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9565261501369626" crossorigin="anonymous"></script>
+        {
+            tagName: "script",
+            attributes: {
+                async: true,
+                src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
+                crossorigin: "anonymous",
+                "data-ad-client": "ca-pub-9565261501369626",
+            },
+            innerHTML: "",
+        },
+    ],
 };
 
 export default config;
