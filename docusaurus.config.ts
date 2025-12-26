@@ -240,7 +240,7 @@ const config: Config = {
         {
             tagName: "script",
             attributes: {
-                async: "",
+                async: "true",
                 src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
                 crossorigin: "anonymous",
                 "data-ad-client": "ca-pub-9565261501369626",
