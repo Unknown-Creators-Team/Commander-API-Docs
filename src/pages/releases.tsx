@@ -225,6 +225,9 @@ export default function Releases(): ReactNode {
               `https://api.github.com/repos/${repo.owner}/${repo.repo}/releases`
             );
             if (!response.ok) {
+              if (response.status === 403 && (await response.json()).message.includes('rate limit') ) {
+                throw new Error(`GitHub API のレート制限に達しました。しばらくしてから再度お試しください。 https://github.com/${repo.owner}/${repo.repo}/releases から直接ダウンロードすることもできます。`);
+              }
               throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
