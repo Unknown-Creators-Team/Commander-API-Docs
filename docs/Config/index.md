@@ -1,7 +1,7 @@
 ---
 title: "設定 / Config"
 last_update:
-  date: 2025-12-07
+  date: 2026-02-11
   author: Nano191225
 sidebar_position: 6
 ---

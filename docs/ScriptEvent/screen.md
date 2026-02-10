@@ -1,5 +1,5 @@
 ---
-title: "Screen スクリプトイベント"
+title: "screen"
 last_update:
   date: 2025-12-22
   author: Nano191225

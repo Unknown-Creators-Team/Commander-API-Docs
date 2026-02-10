@@ -219,7 +219,7 @@ const config: Config = {
                     ],
                 },
             ],
-            copyright: `Copyright © 2025 Unknown.`,
+            copyright: `Copyright © 2026 Unknown.`,
         },
         prism: {
             theme: prismThemes.github,

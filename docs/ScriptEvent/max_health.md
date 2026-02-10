@@ -1,5 +1,5 @@
 ---
-title: "health"
+title: "max_health"
 last_update:
   date: 2025-12-23
   author: FMmikankun5009
