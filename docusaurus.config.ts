@@ -69,7 +69,7 @@ const config: Config = {
 
                     versions: {
                         current: {
-                            label: "Preview",
+                            label: "Canary",
                             badge: true,
                         },
                     },
