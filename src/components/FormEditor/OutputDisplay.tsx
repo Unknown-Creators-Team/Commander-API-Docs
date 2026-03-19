@@ -8,8 +8,9 @@ interface OutputDisplayProps {
 }
 
 export default function OutputDisplay({ formData }: OutputDisplayProps) {
-  const jsonOutput = generateJSON(formData);
-  const esonOutput = generateESONCommand(formData);
+  const data = JSON.parse(JSON.stringify(formData).replace(/\\n/g, "<!n>"));
+  const jsonOutput = generateJSON(data);
+  const esonOutput = generateESONCommand(data);
 
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
